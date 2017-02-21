@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_demo_simplify\\build\\intermediates\\res\\merged\\debug\\color\\umeng_switch_textcolor.xml",
+        "source": "F:\\myLibrary\\MyApplication\\umeng_community_demo_simplify\\build\\intermediates\\exploded-aar\\MyApplication\\umeng_community_simplify_library_project\\unspecified\\res\\color\\umeng_switch_textcolor.xml"
+    },
+    {
+        "merged": "F:\\ASTest\\MyApplication\\umeng_community_demo_simplify\\build\\intermediates\\res\\merged\\debug\\color\\umeng_comm_toogle_color.xml",
+        "source": "F:\\ASTest\\MyApplication\\umeng_community_demo_simplify\\build\\intermediates\\exploded-aar\\MyApplication\\umeng_community_simplify_library_project\\unspecified\\res\\color\\umeng_comm_toogle_color.xml"
+    },
+    {
+        "merged": "F:\\ASTest\\MyApplication\\umeng_community_demo_simplify\\build\\intermediates\\res\\merged\\debug\\color\\umeng_comm_topic_toogle_color.xml",
+        "source": "F:\\ASTest\\MyApplication\\umeng_community_demo_simplify\\build\\intermediates\\exploded-aar\\MyApplication\\umeng_community_simplify_library_project\\unspecified\\res\\color\\umeng_comm_topic_toogle_color.xml"
+    },
+    {
+        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_demo_simplify\\build\\intermediates\\res\\merged\\debug\\color\\umeng_comm_toogle_color.xml",
+        "source": "F:\\myLibrary\\MyApplication\\umeng_community_demo_simplify\\build\\intermediates\\exploded-aar\\MyApplication\\umeng_community_simplify_library_project\\unspecified\\res\\color\\umeng_comm_toogle_color.xml"
+    },
+    {
+        "merged": "F:\\ASTest\\MyApplication\\umeng_community_demo_simplify\\build\\intermediates\\res\\merged\\debug\\color\\umeng_switch_textcolor.xml",
+        "source": "F:\\ASTest\\MyApplication\\umeng_community_demo_simplify\\build\\intermediates\\exploded-aar\\MyApplication\\umeng_community_simplify_library_project\\unspecified\\res\\color\\umeng_switch_textcolor.xml"
+    },
+    {
+        "merged": "F:\\ASTest\\MyApplication\\umeng_community_demo_simplify\\build\\intermediates\\res\\merged\\debug\\color\\umeng_comm_location_text.xml",
+        "source": "F:\\ASTest\\MyApplication\\umeng_community_demo_simplify\\build\\intermediates\\exploded-aar\\MyApplication\\umeng_community_simplify_library_project\\unspecified\\res\\color\\umeng_comm_location_text.xml"
+    },
+    {
+        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_demo_simplify\\build\\intermediates\\res\\merged\\debug\\color\\umeng_comm_location_text.xml",
+        "source": "F:\\myLibrary\\MyApplication\\umeng_community_demo_simplify\\build\\intermediates\\exploded-aar\\MyApplication\\umeng_community_simplify_library_project\\unspecified\\res\\color\\umeng_comm_location_text.xml"
+    },
+    {
+        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_demo_simplify\\build\\intermediates\\res\\merged\\debug\\color\\umeng_comm_topic_toogle_color.xml",
+        "source": "F:\\myLibrary\\MyApplication\\umeng_community_demo_simplify\\build\\intermediates\\exploded-aar\\MyApplication\\umeng_community_simplify_library_project\\unspecified\\res\\color\\umeng_comm_topic_toogle_color.xml"
+    }
+]

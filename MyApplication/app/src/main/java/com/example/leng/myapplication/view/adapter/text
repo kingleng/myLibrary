@@ -1,0 +1,27 @@
+内存泄露分析
+发生OOM的条件分析、避免内存泄漏（如何使用更高效的ArrayMap容器、如何避免不经意的“自动装箱”、Lint，StictMode等工具的使用技巧）、内存管理机制（共享内存、分配与回收内存、限制应用的内存、应用切换操作）、OOM（查看内存使用情况）、onLowMemory与onTrimMemory的回调
+性能优化工具的使用
+MAT、LeakCanary、Memory Monitor、Allocation Tracking、Heap Tool、TraceView、hierarchyviewer布局检测工具
+第三方分析工具
+MemoryAnalyzer、GT Home、iTest
+Android的渲染机制分析
+渲染性能问题的根源、渲染优化（UI卡顿分析、过度渲染问题、布局优化）、内存优化（内存抖动问题）、计算优化
+电量优化
+分析电量的流失、分析电量消耗数据、分析充电状态和电池管理、battery-historian工具的使用、窝信号对电量消耗、Job Schedule
+网络优化
+Batching批处理技术、Prefetching预取技术、GCMNetworkManager高级实践、Network Traffic Tool工具的使用
+View的性能
+自定义View的性能优化、提升View的渲染性能、处理重复layout操作的性能问题
+Bitmap内存优化
+缩放性能优化、缓存性能优化、重用性能优化、PNG压缩性能优化、微信图片终极压缩方案问题
+安装包性能优化
+打包流程分析、aapt资源文件打包原理、resources_arsc二进制机构分析、资源文件压缩、资源动态加载、Lint工具优化、极限压缩、Proguard混淆
+数据传输的效率优化
+FlatBuffers、WEBP格式图片使用、7Zip极限压缩
+隐形内存杀手Service的调优
+如何优化后台服务的内存消耗；如何保障服务的常驻内存、双进程守护
+设计线程池优化性能
+多线程并发的性能问题
+线程间通讯、AsyncTask源码级分析及注意、HandlerThread的处理、IntentService使用场景分析和实践、ThreadPool使用场景和注意
+程序调优提高应用启动速度
+线分析程序启动流程、优化启动流程和提速
