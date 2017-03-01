@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/miCompose"
+        android:icon="@drawable/expression_1"
+        android:onClick="onComposeAction"
+        app:showAsAction="ifRoom"
+        android:title="Compose">
+    </item>
+    <item
+        android:id="@+id/miProfile"
+        android:icon="@drawable/expression_2"
+        app:showAsAction="ifRoom|withText"
+        android:title="Profile">
+    </item>
+    <item
+        android:id="@+id/miProfile2"
+        android:icon="@drawable/expression_3"
+        app:showAsAction="ifRoom|withText"
+        android:title="Profile">
+    </item>
+    <item
+        android:id="@+id/miProfile3"
+        android:icon="@drawable/expression_4"
+        app:showAsAction="ifRoom|withText"
+        android:title="Profile">
+    </item>
+    <item
+        android:id="@+id/miProfile4"
+        android:icon="@drawable/expression_5"
+        app:showAsAction="ifRoom|withText"
+        android:title="Profile">
+    </item>
+    <item
+        android:id="@+id/miProfile5"
+        android:icon="@drawable/expression_6"
+        app:showAsAction="ifRoom|withText"
+        android:title="Profile">
+    </item>
+</menu>

@@ -8,4 +8,6 @@
     <color name="google_green">#13e73a</color>
     <color name="google_red">#e90955</color>
     <color name="google_yellow">#f1de0e</color>
+
+    <color name="translucent_background">#80000000</color>
 </resources>

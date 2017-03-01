@@ -31,6 +31,15 @@
         android:layout_centerInParent="true"
         android:background="@drawable/homepage_car_habit_background"/>
 
+    <TextView
+        android:id="@+id/myview_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="asdasdasdsadad"
+        android:layout_below="@+id/myview7"
+        android:layout_centerHorizontal="true"/>
+
     <com.example.leng.myapplication.view.myView.MyView4
         android:id="@+id/myview4"
         android:layout_width="66.6dp"

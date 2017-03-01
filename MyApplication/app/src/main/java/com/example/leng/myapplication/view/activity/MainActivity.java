@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
+import android.widget.TextView;
 
 import com.example.leng.myapplication.R;
 import com.example.leng.myapplication.view.myView.MyView;
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private MyView4 myView4;
     private MyView7 myView7;
     private MyView8 myView8;
+
+    TextView myview_text;
 
 
     private AnimatorSet mAnimatorSet;
@@ -52,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         myView4 = (MyView4)findViewById(R.id.myview4);
         myView7 = (MyView7)findViewById(R.id.myview7);
         myView8 = (MyView8)findViewById(R.id.myview8);
+        myview_text = (TextView)findViewById(R.id.myview_text);
 
 
         myView.setOnClickListener(new View.OnClickListener() {
@@ -116,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
         waveShiftAnim.setInterpolator(new LinearInterpolator());
 
         ObjectAnimator animator2 = ObjectAnimator.ofFloat(myView, "rotation", 0F, 360F);//360度旋转
+//        ObjectAnimator animator2 = ObjectAnimator.ofFloat(myview_text, "rotation", 0F, 360F);//360度旋转
         animator2.setRepeatCount(ValueAnimator.INFINITE);
         animator2.setDuration(10000);
         animator2.setInterpolator(new LinearInterpolator());

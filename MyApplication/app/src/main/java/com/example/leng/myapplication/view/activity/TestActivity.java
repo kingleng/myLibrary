@@ -3,12 +3,17 @@ package com.example.leng.myapplication.view.activity;
 import android.graphics.Matrix;
 import android.graphics.PointF;
 import android.graphics.RectF;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.leng.myapplication.R;
 import com.example.leng.myapplication.view.myView.MyImageView;
@@ -28,6 +33,19 @@ public class TestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+
+//        ActionBar actionBar = getSupportActionBar(); // or getActionBar();
+//        getSupportActionBar().setTitle("My new title"); // set the top title
+//
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);
+//        getSupportActionBar().setLogo(R.mipmap.ic_launcher);
+//        getSupportActionBar().setDisplayUseLogoEnabled(true);
+
+        // Find the toolbar view inside the activity layout
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        // Sets the Toolbar to act as the ActionBar for this Activity window.
+        // Make sure the toolbar exists in the activity and is not null
+        setSupportActionBar(toolbar);
 
         pullToRefreshRecyclerview = (PullToRefreshRecyclerview)findViewById(R.id.pulltorefreshRecyclerView0);
 
@@ -49,6 +67,17 @@ public class TestActivity extends AppCompatActivity {
 
 //        imageView.setOnTouchListener(new TouchListener());
 
+    }
+
+    public void onComposeAction(MenuItem mi){
+        Toast.makeText(this,"onComposeAction",Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+        return true;
     }
 
     private final class TouchListener implements View.OnTouchListener {
