@@ -1,0 +1,48 @@
+package com.example.leng.myapplication.view.tools;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import io.reactivex.Observable;
+import io.reactivex.subjects.PublishSubject;
+import io.reactivex.subjects.Subject;
+
+
+/**
+ * Created by leng on 2017/3/1.
+ */
+
+public class RxBus {
+
+    private static final RxBus INSTANCE = new RxBus();
+
+//    private final Subject<Object> mBusSubject = new SerializedSubject<>(PublishSubject.create());
+
+    public static RxBus getInstance(){
+        return INSTANCE;
+    }
+
+//    public <T>Observable<T> register(@NonNull Object tag,@NonNull Class<T> clazz){
+//        List<Subject> subjects = maps.get(tag);
+//        if(subjects == null){
+//            subjects = new ArrayList<>();
+//            maps.put(tag,subjects);
+//        }
+//        Subject<T> object = PublishSubject.<T>create();
+//        subjects.add(object);
+//        return object;
+//    }
+//
+//    public void unregister(@NonNull Object tag,@NonNull Observable observable){
+//        List<Subject> subjects = maps.get(tag);
+//        if(subjects!=null){
+//            subjects.remove(observable);
+//            if(subjects.isEmpty()){
+//                maps.remove(tag);
+//            }
+//        }
+//    }
+
+
+
+}

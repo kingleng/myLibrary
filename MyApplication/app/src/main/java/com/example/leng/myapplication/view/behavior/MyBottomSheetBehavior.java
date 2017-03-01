@@ -11,8 +11,11 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
+import com.example.leng.myapplication.view.event.FinishEvent;
 import com.example.leng.myapplication.view.tools.DensityUtil;
 import com.example.leng.myapplication.view.tools.WHUtil;
+
+import org.greenrobot.eventbus.EventBus;
 
 /**
  * Created by leng on 2017/2/27.
@@ -20,7 +23,8 @@ import com.example.leng.myapplication.view.tools.WHUtil;
 
 public class MyBottomSheetBehavior extends CoordinatorLayout.Behavior {
 
-    private static int DEFUALT_VALUE = 700;
+    private static int MAX_VALUE = 1000;
+    public static int DEFUALT_VALUE = 700;
     private static int HALF_VALUE = 450;
     private static int DOWN_DURATION = 250;
 
@@ -36,8 +40,8 @@ public class MyBottomSheetBehavior extends CoordinatorLayout.Behavior {
 
 
 
-    public interface CallBack{
-        void finish();
+    public abstract static class CallBack{
+        public abstract void finish();
     }
 
     public void setCallBack(CallBack mCallBack){
@@ -67,9 +71,11 @@ public class MyBottomSheetBehavior extends CoordinatorLayout.Behavior {
 
         if(width == 0){
             child.setAlpha(0);
-            height = DensityUtil.dip2px(child.getContext(),300);
+//            height = DensityUtil.dip2px(child.getContext(),300);
             width = WHUtil.getWidth(child.getContext())[0];
+            height = WHUtil.getWidth(child.getContext())[1];
             zoomValue = DensityUtil.dip2px(child.getContext(),60)/(float)width;
+            finishAnimation(child);
         }
 
         return true;
@@ -107,22 +113,19 @@ public class MyBottomSheetBehavior extends CoordinatorLayout.Behavior {
         int action = ev.getAction();
         switch (action){
             case MotionEvent.ACTION_DOWN:
-//                lastY = ev.getY();
                 break;
             case MotionEvent.ACTION_MOVE:
                 float newY = child.getY() + ev.getY() - lastY;
-                if(newY>0 && newY<DEFUALT_VALUE){
+                if(newY>0){
                     child.setY(newY);
                     lastY = ev.getY();
                     float alpha = Math.max(Math.min((DEFUALT_VALUE-child.getY())/DEFUALT_VALUE,1),0);
-//                    Log.e("onTouchEvent","alpha = "+alpha);
                     child.setAlpha(alpha);
                     ViewGroup.LayoutParams lp = child.getLayoutParams();
-//                    lp.height = (int)((height*(alpha*zoomValue+(1f-zoomValue))));
                     lp.width = (int)((width*(alpha*zoomValue+(1f-zoomValue))));
                     child.setLayoutParams(lp);
                     child.setX(width*zoomValue/2f*(1f-alpha));
-                    if(alpha<0.1f){
+                    if(child.getY() == DEFUALT_VALUE){
                         child.setVisibility(View.GONE);
                     }else{
                         child.setVisibility(View.VISIBLE);
@@ -130,9 +133,6 @@ public class MyBottomSheetBehavior extends CoordinatorLayout.Behavior {
                 }
                 break;
             case MotionEvent.ACTION_UP:
-//                if(child.getY()>1300){
-//                    mCallBack.finish();
-//                }
                 finishAnimation(child);
                 break;
         }
@@ -144,14 +144,18 @@ public class MyBottomSheetBehavior extends CoordinatorLayout.Behavior {
 
         final float valueY = view.getY();
 
+
         mFinishAnimation = new Animation() {
             @Override
             public void applyTransformation(float interpolatedTime, Transformation t) {
-                if(view.getY()>HALF_VALUE){
-                    view.setY((DEFUALT_VALUE-valueY)*interpolatedTime+valueY);
-
-                }else{
+                if(valueY<HALF_VALUE){
                     view.setY(valueY*(1-interpolatedTime));
+                }else if(valueY<DEFUALT_VALUE){
+                    view.setY((DEFUALT_VALUE-valueY)*interpolatedTime+valueY);
+                }else if(valueY<MAX_VALUE){
+                    view.setY(valueY - (valueY-DEFUALT_VALUE)*interpolatedTime);
+                }else{
+                    view.setY(valueY + (height-valueY)*interpolatedTime);
                 }
 
                 float alpha = Math.max(Math.min((DEFUALT_VALUE-view.getY())/DEFUALT_VALUE,1),0);
@@ -160,7 +164,7 @@ public class MyBottomSheetBehavior extends CoordinatorLayout.Behavior {
                 lp.width = (int)((width*(alpha*zoomValue+(1f-zoomValue))));
                 view.setLayoutParams(lp);
                 view.setX(width*zoomValue/2f*(1f-alpha));
-                if(alpha<0.1f){
+                if(view.getY() == DEFUALT_VALUE){
                     view.setVisibility(View.GONE);
                 }else{
                     view.setVisibility(View.VISIBLE);
@@ -169,10 +173,30 @@ public class MyBottomSheetBehavior extends CoordinatorLayout.Behavior {
             }
         };
         mFinishAnimation.setDuration(DOWN_DURATION);
+        mFinishAnimation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                if(view.getY() >= (height-10)){
+                    if(mCallBack!=null){
+                        mCallBack.finish();
+                    }
+                    EventBus.getDefault().post(new FinishEvent());
+                }
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
 
         view.clearAnimation();
         view.startAnimation(mFinishAnimation);
-
 
     }
 
