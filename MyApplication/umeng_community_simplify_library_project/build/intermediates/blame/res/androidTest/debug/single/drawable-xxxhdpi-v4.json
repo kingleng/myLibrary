@@ -1,9 +1,5 @@
 [
     {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_item_comment_p.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_item_comment_p.png"
-    },
-    {
         "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_add_click.png",
         "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_add_click.png"
     },
@@ -16,20 +12,36 @@
         "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_comment_item_more.png"
     },
     {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_find_comment.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_find_comment.png"
-    },
-    {
         "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_like_p.png",
         "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_like_p.png"
     },
     {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_favorite_p.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_favorite_p.png"
+        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_item_comment_n.png",
+        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_item_comment_n.png"
     },
     {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_write_click.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_write_click.png"
+        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_favorite_n.png",
+        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_favorite_n.png"
+    },
+    {
+        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_comm_simplify_essential.png",
+        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_comm_simplify_essential.png"
+    },
+    {
+        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_item_like_p.png",
+        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_item_like_p.png"
+    },
+    {
+        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_comm_simplify_time.png",
+        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_comm_simplify_time.png"
+    },
+    {
+        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_comment_item_reply.png",
+        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_comment_item_reply.png"
+    },
+    {
+        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_close_n.png",
+        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_close_n.png"
     },
     {
         "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_comm_simplify_top.png",
@@ -40,10 +52,6 @@
         "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_add.png"
     },
     {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_item_like_n.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_item_like_n.png"
-    },
-    {
         "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_item_like_n.png",
         "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_item_like_n.png"
     },
@@ -52,56 +60,44 @@
         "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_find_like.png"
     },
     {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_comm_simplify_essential.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_comm_simplify_essential.png"
-    },
-    {
         "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_backward_white.png",
         "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_backward_white.png"
-    },
-    {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_write.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_write.png"
     },
     {
         "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_setting_photo_icon.png",
         "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_setting_photo_icon.png"
     },
     {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_comm_simplify_time.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_comm_simplify_time.png"
-    },
-    {
         "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_item_comment_p.png",
         "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_item_comment_p.png"
     },
     {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_close_p.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_close_p.png"
+        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_comm_simplify_announce.png",
+        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_comm_simplify_announce.png"
     },
     {
         "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_write.png",
         "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_write.png"
     },
     {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_item_comment_n.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_item_comment_n.png"
+        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_find_setting.png",
+        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_find_setting.png"
     },
     {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_more.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_more.png"
+        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_like_n.png",
+        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_like_n.png"
+    },
+    {
+        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_like_icon_p.png",
+        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_like_icon_p.png"
     },
     {
         "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_favorite_p.png",
         "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_favorite_p.png"
     },
     {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_like_p.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_like_p.png"
-    },
-    {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_backward_white.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_backward_white.png"
+        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_pic.png",
+        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_pic.png"
     },
     {
         "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_write_click.png",
@@ -116,135 +112,15 @@
         "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_close_p.png"
     },
     {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_comment_item_more.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_comment_item_more.png"
+        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_find_comment.png",
+        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_find_comment.png"
     },
     {
         "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_cheers.png",
         "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_cheers.png"
     },
     {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_pic.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_pic.png"
-    },
-    {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_like_icon_p.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_like_icon_p.png"
-    },
-    {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_comment_item_reply.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_comment_item_reply.png"
-    },
-    {
-        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_item_comment_n.png",
-        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_item_comment_n.png"
-    },
-    {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_find_notity.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_find_notity.png"
-    },
-    {
-        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_favorite_n.png",
-        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_favorite_n.png"
-    },
-    {
-        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_comm_simplify_essential.png",
-        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_comm_simplify_essential.png"
-    },
-    {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_close_n.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_close_n.png"
-    },
-    {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_like_n.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_like_n.png"
-    },
-    {
-        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_item_like_p.png",
-        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_item_like_p.png"
-    },
-    {
-        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_comm_simplify_time.png",
-        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_comm_simplify_time.png"
-    },
-    {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_item_like_p.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_item_like_p.png"
-    },
-    {
-        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_comment_item_reply.png",
-        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_comment_item_reply.png"
-    },
-    {
-        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_close_n.png",
-        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_close_n.png"
-    },
-    {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_find_setting.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_find_setting.png"
-    },
-    {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_comm_simplify_announce.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_comm_simplify_announce.png"
-    },
-    {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_favorite_n.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_favorite_n.png"
-    },
-    {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_cheers.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_cheers.png"
-    },
-    {
-        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_comm_simplify_announce.png",
-        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_comm_simplify_announce.png"
-    },
-    {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_comm_simplify_top.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_comm_simplify_top.png"
-    },
-    {
-        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_find_setting.png",
-        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_find_setting.png"
-    },
-    {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_like_icon_n.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_like_icon_n.png"
-    },
-    {
-        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_like_n.png",
-        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_like_n.png"
-    },
-    {
-        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_like_icon_p.png",
-        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_feed_detail_like_icon_p.png"
-    },
-    {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_add.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_add.png"
-    },
-    {
-        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_pic.png",
-        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_pic.png"
-    },
-    {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_find_like.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_find_like.png"
-    },
-    {
-        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_find_comment.png",
-        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_find_comment.png"
-    },
-    {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_add_click.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_add_click.png"
-    },
-    {
         "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_find_notity.png",
         "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_find_notity.png"
-    },
-    {
-        "merged": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4\\umeng_simplify_setting_photo_icon.png",
-        "source": "F:\\ASTest\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-xxxhdpi-v4\\umeng_simplify_setting_photo_icon.png"
     }
 ]

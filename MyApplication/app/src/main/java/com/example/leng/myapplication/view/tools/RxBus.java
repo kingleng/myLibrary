@@ -1,11 +1,19 @@
 package com.example.leng.myapplication.view.tools;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.reactivestreams.Subscriber;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import io.reactivex.Flowable;
 import io.reactivex.Observable;
+import io.reactivex.functions.Consumer;
 import io.reactivex.subjects.PublishSubject;
 import io.reactivex.subjects.Subject;
+
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
 
 /**
@@ -17,6 +25,8 @@ public class RxBus {
     private static final RxBus INSTANCE = new RxBus();
 
 //    private final Subject<Object> mBusSubject = new SerializedSubject<>(PublishSubject.create());
+
+    private final Map<String ,List<Flowable>> maps = new HashMap<>();
 
     public static RxBus getInstance(){
         return INSTANCE;

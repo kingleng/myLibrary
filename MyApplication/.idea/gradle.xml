@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/mylibrary" />
             <option value="$PROJECT_DIR$/myloginlibrary" />
             <option value="$PROJECT_DIR$/umeng_community_demo_simplify" />
             <option value="$PROJECT_DIR$/umeng_community_simplify_library_project" />

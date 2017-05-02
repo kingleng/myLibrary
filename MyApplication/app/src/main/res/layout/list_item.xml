@@ -5,6 +5,4 @@
     android:layout_height="wrap_content"
     android:background="#dedede"
     android:gravity="center"
-    android:padding="20dp"
-    android:textSize="15sp"
-    android:text="123123"/>
+    android:padding="20dp" />
