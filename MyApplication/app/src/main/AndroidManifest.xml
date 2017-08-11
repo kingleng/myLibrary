@@ -25,31 +25,39 @@
         android:theme="@style/Theme.DesignDemo">
         <activity android:name=".view.activity.MainActivity">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
+             <!--<intent-filter>-->
+             <!--<action android:name="android.intent.action.MAIN" />-->
 
 
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+             <!--<category android:name="android.intent.category.LAUNCHER" />-->
+             <!--</intent-filter>-->
         </activity>
         <activity android:name=".view.activity.Main2Activity" />
         <activity android:name=".view.activity.Main3Activity" />
         <activity android:name=".view.activity.Main4Activity" />
         <activity android:name=".view.activity.Main5Activity" />
-        <activity android:name=".view.activity.DemoActivity" />
+        <activity android:name=".view.activity.DemoActivity" >
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
         <activity android:name=".view.activity.MyTextNewActivity" />
         <activity
             android:name=".view.activity.TestActivity"
             android:label="mytest!!!">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
+             <!--<intent-filter>-->
+             <!--<action android:name="android.intent.action.MAIN" />-->
 
 
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+             <!--<category android:name="android.intent.category.LAUNCHER" />-->
+             <!--</intent-filter>-->
         </activity>
-        <activity android:name=".view.activity.CoordinatorLayoutActivity"
+        <activity
+            android:name=".view.activity.CoordinatorLayoutActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -57,9 +65,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.activity.CoordinatorLayout2Activity"
-            android:theme="@style/AppTheme.translucent"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".view.activity.CoordinatorLayout2Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.translucent" />
+        <activity android:name=".view.activity.MyGameActivity"
+            android:screenOrientation="portrait">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
     </application>
 
 </manifest>

@@ -122,7 +122,7 @@ public class CoordinatorLayoutActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(CoordinatorLayoutActivity.this,CoordinatorLayout2Activity.class));
+                startActivity(new Intent(CoordinatorLayoutActivity.this,CoordinatorLayout2Activity.class));
 
 //                flowable.subscribe(consumer);
 //                Flowable.just("hello RxJava 2")
@@ -146,25 +146,25 @@ public class CoordinatorLayoutActivity extends AppCompatActivity {
 //                            }
 //                        });
 
-                Flowable.just("map1")
-                        .map(new Function<String, Integer>() {
-                            @Override
-                            public Integer apply(String s) throws Exception {
-                                return s.hashCode();
-                            }
-                        })
-                        .map(new Function<Integer, String>() {
-                            @Override
-                            public String apply(Integer integer) throws Exception {
-                                return integer.toString();
-                            }
-                        })
-                        .subscribe(new Consumer<String>() {
-                            @Override
-                            public void accept(String s) throws Exception {
-                                System.out.println(s);
-                            }
-                        });
+//                Flowable.just("map1")
+//                        .map(new Function<String, Integer>() {
+//                            @Override
+//                            public Integer apply(String s) throws Exception {
+//                                return s.hashCode();
+//                            }
+//                        })
+//                        .map(new Function<Integer, String>() {
+//                            @Override
+//                            public String apply(Integer integer) throws Exception {
+//                                return integer.toString();
+//                            }
+//                        })
+//                        .subscribe(new Consumer<String>() {
+//                            @Override
+//                            public void accept(String s) throws Exception {
+//                                System.out.println(s);
+//                            }
+//                        });
 
             }
         });
@@ -174,18 +174,8 @@ public class CoordinatorLayoutActivity extends AppCompatActivity {
     private void loadBackdrop() {
         imageView = (ImageView) findViewById(R.id.backdrop);
 
-        MyGlide.ImageDownLoader(this,"http://dl.bizhi.sogou.com/images/2012/02/16/187433.jpg",R.drawable.default_pic,imageView);
-//        Glide.with(this)
-//                .load("http://dl.bizhi.sogou.com/images/2012/02/16/187433.jpg")
-//                .placeholder(R.drawable.default_pic)//加载中显示的图片
-////                .error(R.drawable.default_pic)//加载失败时显示的图片
-////                .crossFade()//淡入显示,注意:如果设置了这个,则必须要去掉asBitmap
-////                .override(80,80)//设置最终显示的图片像素为80*80,注意:这个是像素,而不是控件的宽高
-////                .centerCrop()//中心裁剪,缩放填充至整个ImageView
-////                .skipMemoryCache(true)//跳过内存缓存
-////                .diskCacheStrategy(DiskCacheStrategy.RESULT)// DiskCacheStrategy.NONE:什么都不缓存 DiskCacheStrategy.SOURCE:仅缓存原图(全分辨率的图片) DiskCacheStrategy.RESULT:仅缓存最终的图片,即修改了尺寸或者转换后的图片 DiskCacheStrategy.ALL:缓存所有版本的图片,默认模式
-////                .thumbnail(0.1f)//10%的原图大小
-//                .into(imageView);
+//        MyGlide.ImageDownLoader(this,"http://dl.bizhi.sogou.com/images/2012/02/16/187433.jpg",R.drawable.default_pic,imageView);
+        MyGlide.ImageDownLoader(this,"https://test.cpsdna.com//files//81044301300//takelook//20170419//180202_25_thumb.jpg",R.drawable.default_pic,imageView);
 
 
     }

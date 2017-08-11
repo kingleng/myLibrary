@@ -96,12 +96,12 @@
         "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-nodpi-v4\\emoji_1f602.png"
     },
     {
-        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-nodpi-v4\\emoji_1f63c.png",
-        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-nodpi-v4\\emoji_1f63c.png"
-    },
-    {
         "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-nodpi-v4\\emoji_1f43c.png",
         "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-nodpi-v4\\emoji_1f43c.png"
+    },
+    {
+        "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-nodpi-v4\\emoji_1f63c.png",
+        "source": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\bundles\\debug\\res\\drawable-nodpi-v4\\emoji_1f63c.png"
     },
     {
         "merged": "F:\\myLibrary\\MyApplication\\umeng_community_simplify_library_project\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-nodpi-v4\\emoji_1f63e.png",

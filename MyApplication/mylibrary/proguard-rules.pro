@@ -21,3 +21,5 @@
       public *;
     }
 
+-keep class cn.manmanda.util.https_glide.OkHttpGlideModule
+

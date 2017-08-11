@@ -19,7 +19,7 @@ ADDED from F:\myLibrary\MyApplication\umeng_community_demo_simplify\src\main\And
 		ADDED from F:\myLibrary\MyApplication\umeng_community_demo_simplify\src\main\AndroidManifest.xml:2:11-69
 uses-sdk
 ADDED from F:\myLibrary\MyApplication\umeng_community_demo_simplify\src\main\AndroidManifest.xml:8:5-10:41
-MERGED from [MyApplication:umeng_community_simplify_library_project:unspecified] F:\myLibrary\MyApplication\umeng_community_demo_simplify\build\intermediates\exploded-aar\MyApplication\umeng_community_simplify_library_project\unspecified\AndroidManifest.xml:7:5-9:41
+MERGED from [MyApplication:umeng_community_simplify_library_project:unspecified] F:\myLibrary\MyApplication\umeng_community_simplify_library_project\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
 	android:targetSdkVersion
 		ADDED from F:\myLibrary\MyApplication\umeng_community_demo_simplify\src\main\AndroidManifest.xml:10:9-38
 		INJECTED from F:\myLibrary\MyApplication\umeng_community_demo_simplify\src\main\AndroidManifest.xml
@@ -136,7 +136,7 @@ ADDED from F:\myLibrary\MyApplication\umeng_community_demo_simplify\src\main\And
 		ADDED from F:\myLibrary\MyApplication\umeng_community_demo_simplify\src\main\AndroidManifest.xml:67:22-64
 application
 ADDED from F:\myLibrary\MyApplication\umeng_community_demo_simplify\src\main\AndroidManifest.xml:69:5-185:19
-MERGED from [MyApplication:umeng_community_simplify_library_project:unspecified] F:\myLibrary\MyApplication\umeng_community_demo_simplify\build\intermediates\exploded-aar\MyApplication\umeng_community_simplify_library_project\unspecified\AndroidManifest.xml:11:5-12:19
+MERGED from [MyApplication:umeng_community_simplify_library_project:unspecified] F:\myLibrary\MyApplication\umeng_community_simplify_library_project\build\intermediates\bundles\default\AndroidManifest.xml:11:5-12:19
 	android:label
 		ADDED from F:\myLibrary\MyApplication\umeng_community_demo_simplify\src\main\AndroidManifest.xml:74:9-41
 	android:hardwareAccelerated
