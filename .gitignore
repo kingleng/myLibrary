@@ -1,0 +1,5 @@
+*.iml
+.gradle
+/MyApplication2/.idea
+/MyApplication2/build
+/MyApplication2/app/build
