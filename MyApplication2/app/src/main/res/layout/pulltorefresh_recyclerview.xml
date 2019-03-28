@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<android.support.v4.widget.SwipeRefreshLayout-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:id="@+id/swipe_container"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent" >-->
+
+        <!--&lt;!&ndash;<ScrollView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="wrap_content" >&ndash;&gt;-->
+
+                <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:id="@+id/textView1"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:gravity="center"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:paddingTop="10dp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:text="刷新中，请等待！"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:textSize="20sp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:textStyle="bold" />&ndash;&gt;-->
+
+        <!--&lt;!&ndash;</ScrollView>&ndash;&gt;-->
+
+        <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:id="@+id/swipe_recyclerView"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+
+        <!--</android.support.v7.widget.RecyclerView>-->
+
+<!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
+<com.example.leng.myapplication.view.myView.MySwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/swipe_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+</com.example.leng.myapplication.view.myView.MySwipeRefreshLayout>
+

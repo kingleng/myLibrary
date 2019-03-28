@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.leng.myapplication.view.activity.MainActivity"
+    android:background="#8b8a8a">
+
+    <com.example.leng.myapplication.view.myView.MyView2
+        android:id="@+id/myview2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true" />
+
+    <com.example.leng.myapplication.view.myView.MyView7
+        android:id="@+id/myview7"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/myview2"/>
+
+    <com.example.leng.myapplication.view.myView.MyView
+        android:id="@+id/myview"
+        android:layout_width="66.5dp"
+        android:layout_height="66.5dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/homepage_car_habit_background"/>
+
+    <TextView
+        android:id="@+id/myview_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="asdasdasdsadad"
+        android:layout_below="@+id/myview7"
+        android:layout_centerHorizontal="true"/>
+
+    <com.example.leng.myapplication.view.myView.MyView4
+        android:id="@+id/myview4"
+        android:layout_width="66.6dp"
+        android:layout_height="66.6dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/myview"
+        android:layout_marginTop="20dp"/>
+
+    <com.example.leng.myapplication.view.myView.MyView8
+        android:id="@+id/myview8"
+        android:layout_width="120dp"
+        android:layout_height="66dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/myview4"
+        android:layout_marginTop="10dp"
+        android:background="#2244aa"/>
+
+    <com.example.leng.myapplication.view.myView.MyView3
+        android:id="@+id/myview3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/myview"
+        android:layout_marginTop="10dp">
+
+        <com.example.leng.myapplication.view.myView.MyView4
+            android:id="@+id/ibtn1"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+
+        <com.example.leng.myapplication.view.myView.MyView4
+            android:id="@+id/ibtn2"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+
+        <com.example.leng.myapplication.view.myView.MyView4
+            android:id="@+id/ibtn3"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+
+    </com.example.leng.myapplication.view.myView.MyView3>
+
+
+</RelativeLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.leng.myapplication.view.activity.MusicActivity">
+
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/defult_bg"
+        android:scaleType="centerCrop"
+        android:background="@null"/>
+
+    <ImageView
+        android:id="@+id/imageview2"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/defult_bg"
+        android:scaleType="centerCrop"
+        android:background="@null"/>
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="start" />
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_start"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="stop" />
+
+    <com.example.leng.myapplication.view.myView.SnArVideoTab
+        android:id="@+id/video_tab"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/btn_stop"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tab1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="12dp"
+            android:paddingLeft="12dp"
+            android:text="单击拍摄" />
+
+        <TextView
+            android:id="@+id/tab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="12dp"
+            android:paddingLeft="12dp"
+            android:text="长按拍摄" />
+
+    </com.example.leng.myapplication.view.myView.SnArVideoTab>
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="10dp"
+        android:layout_below="@+id/video_tab"
+        android:layout_centerHorizontal="true"
+        android:background="@color/color_000000"/>
+
+
+    <!--<View-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="20dp"-->
+        <!--android:layout_below="@+id/video_tab"-->
+        <!--android:layout_marginTop="40dp"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:background="@color/color_000000"/>-->
+
+    <ImageButton
+        android:id="@+id/ccc_ib"
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/video_tab"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:background="@null"/>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?><!--suppress ALL -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:marqueeview="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.leng.myapplication.view.activity.MarQueeActivity">
+
+    <com.example.leng.myapplication.view.myView.MarqueeView
+        android:id="@+id/view1"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        marqueeview:text_anim_type="type_one"
+        marqueeview:text_color="@color/color_ffaaff"
+        marqueeview:text_repert_type="type_two"
+        marqueeview:text_size="16sp"
+        marqueeview:text_speed="2" />
+
+    <com.example.leng.myapplication.view.myView.MarqueeView
+        android:id="@+id/view2"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/view1"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        marqueeview:text_anim_type="type_two"
+        marqueeview:text_color="@color/color_ffaaff"
+        marqueeview:text_repert_type="type_two"
+        marqueeview:text_size="16sp"
+        marqueeview:text_speed="2" />
+
+    <com.example.leng.myapplication.view.myView.MarqueeView
+        android:id="@+id/view3"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/view1"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        marqueeview:text_anim_type="type_three"
+        marqueeview:text_color="@color/color_ffaaff"
+        marqueeview:text_repert_type="type_two"
+        marqueeview:text_size="16sp"
+        marqueeview:text_speed="2" />
+
+</RelativeLayout>

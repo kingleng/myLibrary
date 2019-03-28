@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Theme.DesignDemo" parent="AppThemeas">
+    </style>
+
+    <style name="AppThemeas" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- toolbar（actionbar）颜色 -->
+        <item name="colorPrimary">#673AB7</item>
+        <!-- 状态栏颜色 -->
+        <item name="colorPrimaryDark">#512DA8</item>
+        <item name="colorAccent">#FF4081</item>
+    </style>
+
+    <!-- item name="android:windowBackground"         设置背景透明度及其颜色值 -->
+    <!-- item name="android:windowIsTranslucent"      设置当前Activity是否透明-->
+    <!-- item name="android:windowAnimationStyle"     设置当前Activity进出方式-->
+    <style name="AppTheme.translucent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/translucent_background</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+
+    <style name="AppTheme.TranslucentTheme" parent="Theme.AppCompat.Light.NoActionBar"/>
+
+</resources>

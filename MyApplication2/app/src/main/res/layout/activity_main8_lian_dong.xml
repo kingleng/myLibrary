@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/color_ffffff"
+    android:cacheColorHint="#00000000"
+    android:fadingEdge="none"
+    android:fillViewport="false"
+    android:orientation="vertical"
+    android:scrollbars="none">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.example.leng.myapplication.view.behavior.AppBarHeaderBehavior">
+
+        <RelativeLayout
+            android:id="@+id/appbar_lin"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:minHeight="40dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp">
+
+                <ImageView
+                    android:id="@+id/title_layout_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop"
+                    android:src="@color/color_ffffff" />
+
+                <ImageView
+                    android:id="@+id/item_iv_pic"
+                    android:layout_width="120dp"
+                    android:layout_height="113dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginLeft="12.5dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@null"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/defult_bg" />
+
+                <TextView
+                    android:id="@+id/item_tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_toRightOf="@+id/item_iv_pic"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="王贰浪创作的原声"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="14.5sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/item_tv_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/item_tv_title"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_toRightOf="@+id/item_iv_pic"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="王贰浪"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/item_btn_select"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_alignBottom="@+id/item_iv_pic"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_toRightOf="@+id/item_iv_pic"
+                    android:enabled="true"
+                    android:gravity="center"
+                    android:text="拍同款"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="13sp" />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_ffffff"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <RelativeLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <ImageButton
+            android:id="@+id/title_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@null"
+            android:padding="5dp"
+            android:scaleType="center"
+            android:src="@drawable/umeng_socialize_title_back_bt" />
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

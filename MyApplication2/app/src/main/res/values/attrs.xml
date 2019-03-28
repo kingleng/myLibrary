@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="yibiaopan">
+        <attr name="textSize" format="dimension"/>
+        <attr name="textColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomBottomSheetBehavior">
+        <attr name="anchorPoint" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="marqueeview">
+        <attr name="text_color" format="color|reference"/>
+        <attr name="text_size" format="dimension"/>
+        <attr name="text_speed" format="float"/>
+        <attr name="text_repert_type" format="enum">
+            <enum name="type_one" value="0"/> <!-- 只播一次 -->
+            <enum name="type_two" value="1"/> <!-- 循环播放 -->
+        </attr>
+        <attr name="text_anim_type" format="enum">
+            <enum name="type_one" value="0"/> <!-- 从左往右 -->
+            <enum name="type_two" value="1"/> <!-- 从上往下 -->
+            <enum name="type_three" value="2"/> <!-- 从无到有（渐变） -->
+        </attr>
+    </declare-styleable>
+
+
+
+</resources>
