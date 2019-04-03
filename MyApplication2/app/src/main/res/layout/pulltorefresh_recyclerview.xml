@@ -30,7 +30,7 @@
 
 <!--</android.support.v4.widget.SwipeRefreshLayout>-->
 
-<com.example.leng.myapplication.view.myView.MySwipeRefreshLayout
+<com.example.leng.myapplication2.view.myView.MySwipeRefreshLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/swipe_container"
     android:layout_width="match_parent"
@@ -43,5 +43,5 @@
 
         </android.support.v7.widget.RecyclerView>
 
-</com.example.leng.myapplication.view.myView.MySwipeRefreshLayout>
+</com.example.leng.myapplication2.view.myView.MySwipeRefreshLayout>
 

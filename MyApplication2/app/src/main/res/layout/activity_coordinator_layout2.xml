@@ -5,7 +5,7 @@
     android:id="@+id/activity_coordinator_layout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.leng.myapplication.view.activity.CoordinatorLayout2Activity"
+    tools:context="com.example.leng.myapplication2.view.activity.CoordinatorLayout2Activity"
     android:fitsSystemWindows="true">
 
     <android.support.v4.view.ViewPager
@@ -15,7 +15,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:fitsSystemWindows="true"
-        app:layout_behavior="com.example.leng.myapplication.view.behavior.ViewPagerBehavior">
+        app:layout_behavior="com.example.leng.myapplication2.view.behavior.ViewPagerBehavior">
     </android.support.v4.view.ViewPager>
 
     <android.support.v4.widget.NestedScrollView
@@ -24,7 +24,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:fitsSystemWindows="true"
-        app:layout_behavior="com.example.leng.myapplication.view.behavior.MyBottomSheetBehavior">
+        app:layout_behavior="com.example.leng.myapplication2.view.behavior.MyBottomSheetBehavior">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

@@ -4,7 +4,7 @@
     android:id="@+id/activity_main4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.leng.myapplication.view.activity.Main4Activity">
+    tools:context="com.example.leng.myapplication2.view.activity.Main4Activity">
 
     <WebView
         android:id="@+id/webview"

@@ -36,7 +36,7 @@ public class MyGlide {
         Glide.with(context)
                 .load(url)
                 .placeholder(defultImage)//加载中显示的图片
-//                .error(defultImage)//加载失败时显示的图片
+                .error(defultImage)//加载失败时显示的图片
 //                .crossFade()//淡入显示,注意:如果设置了这个,则必须要去掉asBitmap
 //                .override(80,80)//设置最终显示的图片像素为80*80,注意:这个是像素,而不是控件的宽高
 //                .centerCrop()//中心裁剪,缩放填充至整个ImageView

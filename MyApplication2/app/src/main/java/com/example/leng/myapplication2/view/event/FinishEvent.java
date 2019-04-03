@@ -1,0 +1,12 @@
+package com.example.leng.myapplication2.view.event;
+
+/**
+ * Created by leng on 2017/1/11.
+ */
+
+public class FinishEvent {
+
+    public FinishEvent() {
+
+    }
+}
