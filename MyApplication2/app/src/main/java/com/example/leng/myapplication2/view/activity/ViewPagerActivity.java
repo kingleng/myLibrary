@@ -48,40 +48,9 @@ public class ViewPagerActivity extends AppCompatActivity {
         //设置item的间距
         viewPager.setPageMargin(DensityUtil.dip2px(this,10));
         viewPager.setAdapter(adapter);
-        //设置缓存数
-        viewPager.setOffscreenPageLimit(5);
-//        //设置滑动动效（缩放等）
-//        viewPager.setPageTransformer(true, new DepthPageTransformer());
-//        viewPager.startSrcoll();
+//        //设置缓存数
+//        viewPager.setOffscreenPageLimit(5);
 
-//        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-//            int position = 0;
-//
-//            @Override
-//            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-//
-//            }
-//
-//            @Override
-//            public void onPageSelected(int position) {
-//                this.position = position;
-//            }
-//
-//            @Override
-//            public void onPageScrollStateChanged(int state) {
-//                Log.e("asd","onPageScrollStateChanged"+state);
-//                if(state==0){
-//                    if(position == viewPager.getChildCount()-1){
-//                        viewPager.setCurrentItem(1,false);
-//                    }
-//
-//                    if(position == 0){
-//                        viewPager.setCurrentItem(viewPager.getChildCount()-2,false);
-//                    }
-//                }
-//
-//            }
-//        });
 
 
     }

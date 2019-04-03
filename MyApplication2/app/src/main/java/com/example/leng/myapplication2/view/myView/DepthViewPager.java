@@ -24,11 +24,13 @@ public class DepthViewPager extends ViewPager {
     public DepthViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);
         setPageTransformer(true, new DepthPageTransformer());
+
     }
 
 
     @Override
     public void setAdapter(PagerAdapter adapter) {
+        setOffscreenPageLimit(5);
         super.setAdapter(adapter);
         addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             int position = 0;
@@ -92,6 +94,9 @@ public class DepthViewPager extends ViewPager {
     Runnable mHandlerRunnable = new Runnable() {
         @Override
         public void run() {
+            if(getChildCount()<=1){
+                return;
+            }
             mHandler.sendEmptyMessage(0);
         }
     };
@@ -123,7 +128,7 @@ public class DepthViewPager extends ViewPager {
     public class DepthPageTransformer implements ViewPager.PageTransformer {
 
         public static final float MAX_SCALE = 1.0f;
-        public static final float MIN_SCALE = 0.7f;
+        public static final float MIN_SCALE = 0.85f;
 
         public DepthPageTransformer() {
         }

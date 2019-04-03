@@ -55,7 +55,10 @@ public class My2PagerAdapter extends PagerAdapter {
     @Override
     public int getCount() {
 //        return Integer.MAX_VALUE;
-        return datas.size()+2;
+        if(datas.size()>1){
+            return datas.size()+2;
+        }
+        return datas.size();
     }
 
     @Override
