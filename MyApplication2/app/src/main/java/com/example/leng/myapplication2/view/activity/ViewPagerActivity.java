@@ -1,12 +1,15 @@
 package com.example.leng.myapplication2.view.activity;
 
+import android.graphics.Color;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
 import com.example.leng.myapplication2.R;
@@ -15,6 +18,7 @@ import com.example.leng.myapplication2.view.adapter.My2PagerAdapter;
 import com.example.leng.myapplication2.view.adapter.MyPagerAdapter;
 import com.example.leng.myapplication2.view.myView.DepthViewPager;
 import com.example.leng.myapplication2.view.tools.DensityUtil;
+import com.example.leng.myapplication2.view.tools.ShapeBuilder;
 import com.example.leng.myapplication2.view.tools.WHUtil;
 import com.example.mylibrary.image.MyGlide;
 
@@ -24,6 +28,8 @@ import java.util.List;
 public class ViewPagerActivity extends AppCompatActivity {
 
     DepthViewPager viewPager;
+    LinearLayout dotLayout;
+    List<ImageView> dotLists = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +37,7 @@ public class ViewPagerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_pager);
 
         viewPager = (DepthViewPager)findViewById(R.id.viewpager);
+        dotLayout = (LinearLayout)findViewById(R.id.dot_layout);
 
         List<String> viewList = new ArrayList<>();
 //        for(int i=0;i<10;i++){
@@ -43,11 +50,41 @@ public class ViewPagerActivity extends AppCompatActivity {
         viewList.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554267220374&di=1dc47a38e7aa7aa7e23e07d01d6da744&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2F201501%2F27%2F2142443p3fmhhqaqpihqmn.jpg");
         viewList.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554267220374&di=7711c87c1c0f8d79c35df22184d0487b&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2F201302%2F17%2F095942v3x3a0lgf8zi3c37.jpg");
 
+        dotLayout.removeAllViews();
+        dotLists.clear();
+        for(int i=0;i<7;i++){
+            ImageView imageView = new ImageView(this);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(20,20);
+            lp.leftMargin = 20;
+            lp.rightMargin = 20;
+            imageView.setLayoutParams(lp);
+            if(i==0){
+                imageView.setImageDrawable(ShapeBuilder.create().Radius(10).Solid(Color.BLUE).build());
+            }else{
+                imageView.setImageDrawable(ShapeBuilder.create().Radius(10).Stroke(2,Color.WHITE).build());
+            }
+
+            dotLayout.addView(imageView);
+            dotLists.add(imageView);
+        }
+
 
         My2PagerAdapter adapter = new My2PagerAdapter(this.getBaseContext(),viewList);
         //设置item的间距
         viewPager.setPageMargin(DensityUtil.dip2px(this,10));
         viewPager.setAdapter(adapter);
+        viewPager.setListener(new DepthViewPager.OnItemChangeListener() {
+            @Override
+            public void onItemChang(int postion) {
+                for(int i=0;i<dotLists.size();i++){
+                    if(postion == i){
+                        dotLists.get(i).setImageDrawable(ShapeBuilder.create().Radius(10).Solid(Color.BLUE).build());
+                    }else{
+                        dotLists.get(i).setImageDrawable(ShapeBuilder.create().Radius(10).Stroke(2,Color.WHITE).build());
+                    }
+                }
+            }
+        });
 //        //设置缓存数
 //        viewPager.setOffscreenPageLimit(5);
 

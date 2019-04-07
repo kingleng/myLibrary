@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:marqueeview="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.leng.myapplication2.view.activity.XuanFuActivity">
+    <LinearLayout
+        android:id="@+id/share_layout"
+        android:layout_width="276px"
+        android:layout_height="424px"
+        android:orientation="vertical"
+        android:background="@drawable/phome_share_bg"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="900px"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/share_iv"
+            android:layout_width="136px"
+            android:layout_height="136px"
+            android:layout_marginTop="89px"
+            android:layout_marginLeft="47px"
+            android:background="@null"
+            android:scaleType="centerInside"
+            android:src="@color/color_000000"/>
+
+        <TextView
+            android:id="@+id/share_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22px"
+            android:layout_marginLeft="64px"
+            android:text="口袋阅读"
+            android:textColor="#ff4200"
+            android:textSize="24px"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

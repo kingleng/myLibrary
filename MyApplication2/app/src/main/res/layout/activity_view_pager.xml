@@ -19,4 +19,14 @@
         android:layout_marginRight="140dp"
         android:layout_marginLeft="140dp"/>
 
+    <LinearLayout
+        android:id="@+id/dot_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/viewpager"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:layout_marginBottom="20dp"/>
+
 </android.support.constraint.ConstraintLayout>

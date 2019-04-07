@@ -17,7 +17,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.DesignDemo">
-        <activity android:name=".view.activity.ViewPagerActivity"></activity>
+        <activity android:name=".view.activity.XuanFuActivity"></activity>
+        <activity android:name=".view.activity.ViewPagerActivity" />
         <activity android:name=".view.activity.ViewPager2Activity" />
         <activity
             android:name=".view.activity.HomeActivity"

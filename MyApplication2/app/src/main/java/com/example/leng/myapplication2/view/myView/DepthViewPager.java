@@ -17,6 +17,16 @@ import android.view.View;
  */
 public class DepthViewPager extends ViewPager {
 
+    OnItemChangeListener listener;
+
+    public OnItemChangeListener getListener() {
+        return listener;
+    }
+
+    public void setListener(OnItemChangeListener listener) {
+        this.listener = listener;
+    }
+
     public DepthViewPager(Context context) {
         super(context,null);
     }
@@ -43,17 +53,27 @@ public class DepthViewPager extends ViewPager {
             @Override
             public void onPageSelected(int position) {
                 this.position = position;
+
+                int currentItem = position -1;
+                if(currentItem == -1){
+                    currentItem = adapter.getCount()-1;
+                }else if(currentItem == adapter.getCount()){
+                    currentItem = 0;
+                }
+                if(listener!=null){
+                    listener.onItemChang(currentItem);
+                }
             }
 
             @Override
             public void onPageScrollStateChanged(int state) {
                 if(state==0){
-                    if(position == getChildCount()-1){
+                    if(position == getAdapter().getCount()-1){
                         setCurrentItem(1,false);
                     }
 
                     if(position == 0){
-                        setCurrentItem(getChildCount()-2,false);
+                        setCurrentItem(getAdapter().getCount()-2,false);
                     }
                 }
 
@@ -94,6 +114,7 @@ public class DepthViewPager extends ViewPager {
     Runnable mHandlerRunnable = new Runnable() {
         @Override
         public void run() {
+            Log.e("asd","run");
             if(getChildCount()<=1){
                 return;
             }
@@ -113,8 +134,13 @@ public class DepthViewPager extends ViewPager {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             if(!isTouch){
-                if(getCurrentItem()+1 < getChildCount()){
-                    setCurrentItem(getCurrentItem()+1);
+                int newItem = getCurrentItem()+1;
+                int childCount = getAdapter().getCount();
+                if(newItem < childCount){
+                    setCurrentItem(newItem);
+//                    if(listener!=null){
+//                        listener.onItemChang(newItem);
+//                    }
                 }
                 mHandler.postDelayed(mHandlerRunnable,3000);
             }
@@ -147,5 +173,9 @@ public class DepthViewPager extends ViewPager {
             page.setScaleX(scaleValue);
             page.setScaleY(scaleValue);
         }
+    }
+
+    public interface OnItemChangeListener{
+        void onItemChang(int postion);
     }
 }

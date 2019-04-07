@@ -163,6 +163,11 @@ public class HomeActivity extends Activity {
         classData15.className = ViewPagerActivity.class;
         datas.add(classData15);
 
+        ClassData classData16 = new ClassData();
+        classData16.name = "可收起的悬浮按钮";
+        classData16.className = XuanFuActivity.class;
+        datas.add(classData16);
+
     }
 
     public class ClassData{
