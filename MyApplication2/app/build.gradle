@@ -56,8 +56,6 @@ repositories {
 dependencies {
     compile project(':mylibrary')
     compile project(path: ':myloginlibrary')
-
-
     compile fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testCompile 'junit:junit:4.12'
@@ -66,36 +64,27 @@ dependencies {
     implementation 'com.android.support:design:26.1.0'
     implementation 'com.android.support:support-v4:26.1.0'
     implementation 'com.android.support:cardview-v7:26.1.0'
-
     //glide
     implementation 'com.github.bumptech.glide:glide:4.1.1'
-
     //rxjava
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.0.9'
-
     //eventbus
     implementation 'org.greenrobot:eventbus:3.1.1'
-
     //butterKnife
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-
     implementation 'com.mcxiaoke.volley:library:1.0.19'
     // okhttp:3.8.0 里面引用了 okio:1.13.0
-    implementation("com.squareup.okhttp3:okhttp:3.13.1")
-
+    implementation 'com.squareup.okhttp3:okhttp:3.13.1'
     compile('com.github.huburt-Hu:NewbieGuide:v2.0.0') {
         exclude group: 'com.android.support'
     }
-
     compile('com.alibaba.android:vlayout:1.2.6@aar') {
         transitive = true
     }
-
     //banner
     implementation 'com.youth.banner:banner:1.4.10'
-
     implementation 'rouchuan.viewpagerlayoutmanager:viewpagerlayoutmanager:2.0.2'
-
+    implementation project(':baselibrary')
 }

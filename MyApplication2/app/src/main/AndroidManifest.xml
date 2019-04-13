@@ -26,8 +26,11 @@
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+
+                <!--launcher配置 打开注释后该应用就是桌面app了-->
+                <!--<category android:name="android.intent.category.HOME" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
             </intent-filter>
         </activity>
         <activity android:name=".view.activity.MainActivity" />

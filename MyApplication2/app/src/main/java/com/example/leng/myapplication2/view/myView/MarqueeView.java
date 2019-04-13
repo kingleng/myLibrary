@@ -40,6 +40,19 @@ public class MarqueeView extends View implements Runnable {
 
 
     String text = "我来猜猜看，天上有一个太阳我来猜猜看，天上有一个太阳我来猜猜看，天上有一个太阳我来猜猜看，天上有一个太阳";
+    String mstring = text;
+    ArrayList<String> texts = new ArrayList<>();
+
+    public void setTexts(ArrayList<String> mTexts) {
+        this.texts = mTexts;
+        texts.clear();
+        texts.add("第一行");
+        texts.add("第2行");
+        texts.add("第3行");
+        texts.add("第4行");
+        texts.add("第5行");
+        texts.add("第6行");
+    }
 
     Thread mThread;
 
@@ -97,9 +110,6 @@ public class MarqueeView extends View implements Runnable {
         mThread = new Thread(this);
         mThread.start();
     }
-
-    String mstring = text;
-    ArrayList<String> texts = new ArrayList<>();
 
     @Override
     protected void onDraw(Canvas canvas) {

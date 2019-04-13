@@ -1,31 +1,28 @@
 package com.example.leng.myapplication2.view.activity;
 
 import android.graphics.Color;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.bumptech.glide.Glide;
 import com.example.leng.myapplication2.R;
-import com.example.leng.myapplication2.view.adapter.DepthPageTransformer;
 import com.example.leng.myapplication2.view.adapter.My2PagerAdapter;
-import com.example.leng.myapplication2.view.adapter.MyPagerAdapter;
 import com.example.leng.myapplication2.view.myView.DepthViewPager;
 import com.example.leng.myapplication2.view.tools.DensityUtil;
 import com.example.leng.myapplication2.view.tools.ShapeBuilder;
-import com.example.leng.myapplication2.view.tools.WHUtil;
-import com.example.mylibrary.image.MyGlide;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ViewPagerActivity extends AppCompatActivity {
+import ys.duodian.com.baselibrary.BaseAvtivity;
+import ys.duodian.com.baselibrary.net.NetworkCallBack;
+import ys.duodian.com.baselibrary.net.okhttp.OKHttpHelper;
+
+public class ViewPagerActivity extends BaseAvtivity {
 
     DepthViewPager viewPager;
     LinearLayout dotLayout;
@@ -89,6 +86,29 @@ public class ViewPagerActivity extends AppCompatActivity {
 //        viewPager.setOffscreenPageLimit(5);
 
 
+//        OKHttpHelper okHttpUtil = new OKHttpHelper();
+//        okHttpUtil.get(this,"http://imonitor.yu-qing.com/api/wechat/data/top_court?page=1&size=10", new NetworkCallBack() {
+//            @Override
+//            public void onSuccess(JSONObject jsonObject) {
+//                Log.e("asd","jsonObject = "+jsonObject);
+//            }
+//
+//            @Override
+//            public void onFailure() {
+//
+//            }
+//        });
+
+        execute("http://imonitor.yu-qing.com/api/wechat/data/top_court?page=1&size=10",null);
+    }
+
+    @Override
+    public void onSuccess(JSONObject jsonObject) {
+        Log.e("asd","onSuccess = "+jsonObject.toString());
+    }
+
+    @Override
+    public void onFailure() {
 
     }
 }

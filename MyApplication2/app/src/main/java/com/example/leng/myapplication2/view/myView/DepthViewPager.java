@@ -114,7 +114,7 @@ public class DepthViewPager extends ViewPager {
     Runnable mHandlerRunnable = new Runnable() {
         @Override
         public void run() {
-            Log.e("asd","run");
+//            Log.e("asd","run");
             if(getChildCount()<=1){
                 return;
             }
