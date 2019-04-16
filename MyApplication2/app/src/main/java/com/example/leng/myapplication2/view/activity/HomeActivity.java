@@ -8,19 +8,28 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListPopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.app.hubert.guide.NewbieGuide;
 import com.app.hubert.guide.model.GuidePage;
 import com.example.leng.myapplication2.R;
 import com.example.leng.myapplication2.view.adapter.QuickAdapter;
+import com.example.leng.myapplication2.view.myView.FloatDragView;
 import com.example.leng.myapplication2.view.tools.DensityUtil;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class HomeActivity extends Activity {
 
+    RelativeLayout rela_layout;
     RecyclerView recyclerView;
     ArrayList<ClassData> datas = new ArrayList<>();
 
@@ -75,10 +84,52 @@ public class HomeActivity extends Activity {
 
     }
 
+    List<String> strings;
+    ListPopupWindow popupWindow;
+    View mView;
+
     private void initView(){
 //        MyHorizontalScrollView myHorizontalScrollView = (MyHorizontalScrollView)findViewById(R.id.myHorizontalScrollView);
 //        recyclerView = myHorizontalScrollView.getContentView();
+
         recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
+
+        rela_layout = (RelativeLayout) findViewById(R.id.rela_layout);
+        FloatDragView.addFloatDragView(this, rela_layout, new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 点击事件
+//                mView = view;
+                popupWindow.setAnchorView(view);
+                popupWindow.show();
+            }
+        });
+
+
+        strings = new ArrayList<String>();
+        strings.add("item1");
+        strings.add("item2");
+        strings.add("item3");
+        strings.add("item4");
+        strings.add("item5");
+        strings.add("item6");
+
+        popupWindow = new ListPopupWindow(this);
+        popupWindow.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,strings));
+        popupWindow.setAnchorView(rela_layout);
+        popupWindow.setWidth(400);
+        popupWindow.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
+        popupWindow.setModal(true);
+        popupWindow.setBackgroundDrawable(null);
+        popupWindow.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+
+                popupWindow.dismiss();
+            }
+        });
     }
 
     private void initData(){
