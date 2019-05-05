@@ -16,8 +16,11 @@ import android.util.Log;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.app.hubert.guide.NewbieGuide;
 import com.app.hubert.guide.model.GuidePage;
@@ -45,6 +48,10 @@ public class TestActivity extends AppCompatActivity {
     LinearLayout txtView_content_pic_lin;
 
     TextView c_tv;
+
+    private RadioGroup sex_radiogroup;
+    private RadioButton radioButton1;
+    private RadioButton radioButton2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -233,6 +240,20 @@ public class TestActivity extends AppCompatActivity {
 //        c_tv.append(spanString);
 
 
+        sex_radiogroup = (RadioGroup) findViewById(R.id.sex_radiogroup);
+        radioButton1 = (RadioButton) findViewById(R.id.radioButton1);
+        radioButton2 = (RadioButton) findViewById(R.id.radioButton2);
+
+        sex_radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == radioButton1.getId()) {
+                    Toast.makeText(getBaseContext(),"男",Toast.LENGTH_SHORT).show();
+                } else if (checkedId == radioButton2.getId()) {
+                    Toast.makeText(getBaseContext(),"女",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
     }
 

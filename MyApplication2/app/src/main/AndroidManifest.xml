@@ -17,7 +17,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.DesignDemo">
-        <activity android:name=".view.activity.XuanFuActivity"></activity>
+        <activity android:name=".view.activity.VideoViewActivity"></activity>
+        <activity android:name=".view.activity.XuanFuActivity" />
         <activity android:name=".view.activity.ViewPagerActivity" />
         <activity android:name=".view.activity.ViewPager2Activity" />
         <activity
@@ -26,11 +27,12 @@
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
 
-                <!--launcher配置 打开注释后该应用就是桌面app了-->
-                <!--<category android:name="android.intent.category.HOME" />-->
-                <!--<category android:name="android.intent.category.DEFAULT" />-->
+                <!-- launcher配置 打开注释后该应用就是桌面app了 -->
+                <!-- <category android:name="android.intent.category.HOME" /> -->
+                <!-- <category android:name="android.intent.category.DEFAULT" /> -->
             </intent-filter>
         </activity>
         <activity android:name=".view.activity.MainActivity" />

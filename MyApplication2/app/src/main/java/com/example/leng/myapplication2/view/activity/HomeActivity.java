@@ -7,12 +7,19 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListPopupWindow;
+import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -99,12 +106,10 @@ public class HomeActivity extends Activity {
             @Override
             public void onClick(View view) {
                 // 点击事件
-//                mView = view;
                 popupWindow.setAnchorView(view);
                 popupWindow.show();
             }
         });
-
 
         strings = new ArrayList<String>();
         strings.add("item1");
@@ -115,10 +120,12 @@ public class HomeActivity extends Activity {
         strings.add("item6");
 
         popupWindow = new ListPopupWindow(this);
-        popupWindow.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,strings));
+//        popupWindow.setAdapter(new ArrayAdapter<String>(this,R.layout.item_popup_item,strings));
+        popupWindow.setAdapter(new MyListAdapter(this,strings));
         popupWindow.setAnchorView(rela_layout);
-        popupWindow.setWidth(400);
-        popupWindow.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
+        popupWindow.setWidth(300);
+        popupWindow.setHeight(600);
+//        popupWindow.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
         popupWindow.setModal(true);
         popupWindow.setBackgroundDrawable(null);
         popupWindow.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -130,6 +137,44 @@ public class HomeActivity extends Activity {
                 popupWindow.dismiss();
             }
         });
+    }
+
+    class MyListAdapter extends BaseAdapter{
+
+        List<String> mDatas;
+        Activity mActivity;
+
+        public MyListAdapter(Activity mActivity, List<String> mDatas) {
+            this.mActivity = mActivity;
+            this.mDatas = mDatas;
+        }
+
+        @Override
+        public int getCount() {
+            return mDatas.size();
+        }
+
+        @Override
+        public Object getItem(int i) {
+            return mDatas.get(i);
+        }
+
+        @Override
+        public long getItemId(int i) {
+            return i;
+        }
+
+        @Override
+        public View getView(int i, View view, ViewGroup viewGroup) {
+            if(view == null){
+                view = LayoutInflater.from(mActivity).inflate(R.layout.item_popup_item,viewGroup,false);
+            }
+
+            TextView textView = (TextView)view.findViewById(R.id.item_name);
+            textView.setText(mDatas.get(i));
+
+            return view;
+        }
     }
 
     private void initData(){
@@ -218,6 +263,11 @@ public class HomeActivity extends Activity {
         classData16.name = "可收起的悬浮按钮";
         classData16.className = XuanFuActivity.class;
         datas.add(classData16);
+
+        ClassData classData17 = new ClassData();
+        classData17.name = "视频播放";
+        classData17.className = VideoViewActivity.class;
+        datas.add(classData17);
 
     }
 

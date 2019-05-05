@@ -77,6 +77,33 @@
 
                         </LinearLayout>
 
+                        <RadioGroup
+                            android:id="@+id/sex_radiogroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <RadioButton
+                                android:id="@+id/radioButton1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="男"
+                                android:textColor="#ffffff"
+                                android:textSize="15sp" />
+
+                            <RadioButton
+                                android:id="@+id/radioButton2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:text="女"
+                                android:textColor="#ffffff"
+                                android:textSize="15sp" />
+
+                        </RadioGroup>
+
                     </LinearLayout>
 
                 </android.support.design.widget.CollapsingToolbarLayout>

@@ -15,12 +15,12 @@ import com.example.leng.myapplication2.view.tools.Utils;
 /**
  * @ClassName: FloatDragView
  * @Description: 可拖动的悬浮按钮
- * @Author: 阿荣
- * @Date：2016/3/18
+ * @Author: kingleng
+ * @Date：2019/4/16
  */
 public class FloatDragView {
- 
- 
+
+
     private Activity context; // 上下文
     private ImageView mImageView; // 可拖动按钮
     private static int mScreenWidth = -1; //屏幕的宽度
@@ -31,8 +31,8 @@ public class FloatDragView {
     private int startDownX; // 按下时的位置控件相对屏幕左上角的位置X
     private int startDownY; // 按下时的位置控件距离屏幕左上角的位置Y
     private static int[] lastPosition; // 用于记录上一次的位置(坐标0对应x,坐标1对应y)
- 
- 
+
+
     /**
      * @param context 上下文
      * @param mViewContainer 可拖动按钮要存放的对应的Layout
@@ -45,14 +45,14 @@ public class FloatDragView {
         mViewContainer.addView(imageView);
         return imageView;
     }
- 
+
     // 初始化实例
     private FloatDragView(Activity context) {
         setScreenHW(context);
         this.context = context;
         lastPosition = new int[]{0,0};
     }
- 
+
     // 获取可拖动按钮的实例
     private ImageView getFloatDragView(View.OnClickListener clickListener) {
         if (mImageView != null) {
@@ -67,12 +67,12 @@ public class FloatDragView {
             setFloatDragViewTouch(mImageView);
             return mImageView;
         }
- 
+
     }
- 
+
     // 设置可拖动按钮的位置参数
     private void setFloatDragViewParams(View floatDragView) {
- 
+
         // 记录最后图片在窗体的位置
         int moveX = lastPosition[0];
         int moveY = lastPosition[1];
@@ -90,17 +90,17 @@ public class FloatDragView {
             lpFeedback.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
             floatDragView.setLayoutParams(lpFeedback);
         }
- 
+
     }
- 
+
     // 可拖动按钮的touch事件
     private void setFloatDragViewTouch(final ImageView floatDragView) {
- 
+
         floatDragView.setOnTouchListener(new View.OnTouchListener() {
- 
+
             @Override
             public boolean onTouch(final View v, MotionEvent event) {
- 
+
                 int action = event.getAction();
                 switch (action) {
                     case MotionEvent.ACTION_DOWN:
@@ -111,7 +111,7 @@ public class FloatDragView {
                     case MotionEvent.ACTION_MOVE:
                         int dx = (int) event.getRawX() - relativeMoveX;
                         int dy = (int) event.getRawY() - relativeMoveY;
- 
+
                         int left = v.getLeft() + dx;
                         int top = v.getTop() + dy;
                         int right = v.getRight() + dx;
@@ -139,7 +139,7 @@ public class FloatDragView {
                     case MotionEvent.ACTION_UP:
                         int lastMoveDx = Math.abs((int) event.getRawX() - startDownX);
                         int lastMoveDy = Math.abs((int) event.getRawY() - startDownY);
- 
+
                         if (5 < lastMoveDx || 5 < lastMoveDy) {// 防止点击的时候稍微有点移动点击事件被拦截了
                             isIntercept = true;
                         } else {
@@ -150,7 +150,7 @@ public class FloatDragView {
                         RelativeLayout.LayoutParams lpFeedback = new RelativeLayout.LayoutParams(
                                 RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
                         lpFeedback.setMargins(v.getLeft(), v.getTop(), 0, 0);
- 
+
                         v.setLayoutParams(lpFeedback);
                         // preferenceUtil.saveInt("moveX", v.getLeft());
                         // preferenceUtil.saveInt("moveY", v.getTop());
@@ -162,79 +162,79 @@ public class FloatDragView {
             }
         });
     }
- 
+
     // 将拖动按钮移动到边沿
     private void setImageViewNearEdge(final View v) {
- 
+
         if (v.getLeft() < ((Utils.getScreenSize(context).x) / 2)) {
             // 设置位移动画 向左移动控件位置
-            final TranslateAnimation animation = new TranslateAnimation(0, -v.getLeft(), 0, 0);
+            final TranslateAnimation animation = new TranslateAnimation(0, 20-v.getLeft(), 0, 0);
             animation.setDuration(300);// 设置动画持续时间
             animation.setRepeatCount(0);// 设置重复次数
             animation.setFillAfter(true);
             animation.setRepeatMode(Animation.ABSOLUTE);
- 
+
             animation.setAnimationListener(new Animation.AnimationListener() {
- 
+
                 @Override
                 public void onAnimationStart(Animation arg0) {
-                    // TODO: 2017/3/1  
+                    // TODO: 2017/3/1
                 }
- 
+
                 @Override
                 public void onAnimationRepeat(Animation arg0) {
                     // TODO: 2017/3/1
                 }
- 
+
                 @Override
                 public void onAnimationEnd(Animation arg0) {
                     v.clearAnimation();
                     RelativeLayout.LayoutParams lpFeedback = new RelativeLayout.LayoutParams(
                             RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-                    lpFeedback.setMargins(0, v.getTop(), 0, 0);
+                    lpFeedback.setMargins(20, v.getTop(), 0, 0);
                     v.setLayoutParams(lpFeedback);
                     v.postInvalidateOnAnimation();
-                    lastPosition[0] = 0;
+                    lastPosition[0] = 20;
                     lastPosition[1] = v.getTop();
                 }
             });
             v.startAnimation(animation);
- 
+
         } else {
             final TranslateAnimation animation = new TranslateAnimation(0, (Utils.getScreenSize(context).x
-                    - v.getLeft() - v.getWidth()), 0, 0);
+                    - v.getLeft() - v.getWidth()-20), 0, 0);
             animation.setDuration(300);// 设置动画持续时间
             animation.setRepeatCount(0);// 设置重复次数
             animation.setRepeatMode(Animation.ABSOLUTE);
             animation.setFillAfter(true);
             animation.setAnimationListener(new Animation.AnimationListener() {
- 
+
                 @Override
                 public void onAnimationStart(Animation arg0) {
                     // TODO: 2017/3/1
                 }
- 
+
                 @Override
                 public void onAnimationRepeat(Animation arg0) {
                     // TODO Auto-generated method stub
                 }
- 
+
                 @Override
                 public void onAnimationEnd(Animation arg0) {
                     v.clearAnimation();
                     RelativeLayout.LayoutParams lpFeedback = new RelativeLayout.LayoutParams(
                             RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-                    lpFeedback.setMargins(Utils.getScreenSize(context).x - v.getWidth(), v.getTop(), 0, 0);
+                    lpFeedback.setMargins(Utils.getScreenSize(context).x - v.getWidth()-20, v.getTop(), 20, 0);
                     v.setLayoutParams(lpFeedback);
                     v.postInvalidateOnAnimation();
-                    lastPosition[0] =Utils.getScreenSize(context).x - v.getWidth();
+                    lastPosition[0] =Utils.getScreenSize(context).x - v.getWidth()-20;
                     lastPosition[1] = v.getTop();
                 }
             });
             v.startAnimation(animation);
         }
     }
- 
+
     // 计算屏幕的实际高宽
     private void setScreenHW(Activity context) {
         if (mScreenHeight < 0) {
@@ -244,5 +244,5 @@ public class FloatDragView {
             mScreenHeight = screen.y - Utils.getStatusBarHeight(context);
         }
     }
- 
+
 }

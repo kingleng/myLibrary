@@ -3,6 +3,7 @@ package com.example.leng.myapplication2.view.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,8 +18,6 @@ import com.example.leng.myapplication2.view.myView.yindaoye.GuidePage;
 import com.example.leng.myapplication2.view.myView.yindaoye.GuideUtil;
 import com.example.myloginlibrary.MyLogin;
 import com.example.myloginlibrary.Mylistener;
-import com.umeng.socialize.UMShareAPI;
-import com.umeng.socialize.utils.Log;
 
 import java.util.Map;
 
@@ -64,7 +63,7 @@ public class Main5Activity extends AppCompatActivity implements View.OnClickList
             @Override
             public void getData(Map<String, String> data) {
                 for (String key : data.keySet()) {
-                    com.umeng.socialize.utils.Log.e("mylistener::xxxxxx key = "+key+"    value= "+data.get(key));
+                    Log.e("asd","mylistener::xxxxxx key = "+key+"    value= "+data.get(key));
                 }
             }
         };
@@ -161,7 +160,7 @@ public class Main5Activity extends AppCompatActivity implements View.OnClickList
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         Log.e("kakaoxx", "requestCode="+requestCode);
         super.onActivityResult(requestCode, resultCode, data);
-        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+//        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
     }
 
 

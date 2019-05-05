@@ -99,7 +99,8 @@ public class ViewPagerActivity extends BaseAvtivity {
 //            }
 //        });
 
-        execute("http://imonitor.yu-qing.com/api/wechat/data/top_court?page=1&size=10",null);
+//        execute("http://imonitor.yu-qing.com/api/wechat/data/top_court?page=1&size=10",null);
+        execute("https://question.aegis-info.com/ssl/openApi/news/announcement?keyword=婚姻&type=开庭传票&start=25",null);
     }
 
     @Override
