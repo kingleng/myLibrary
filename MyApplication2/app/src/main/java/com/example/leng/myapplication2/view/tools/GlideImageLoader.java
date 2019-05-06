@@ -4,7 +4,7 @@ package com.example.leng.myapplication2.view.tools;
 import android.content.Context;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
+import com.example.mylibrary.image.MyGlide;
 import com.youth.banner.loader.ImageLoader;
 
 /**
@@ -25,7 +25,8 @@ public class GlideImageLoader extends ImageLoader {
 
 
         //Glide 加载图片简单用法
-        Glide.with(context).load(path).into(imageView);
+//        Glide.with(context).load(path).into(imageView);
+        MyGlide.ImageDownLoader(context,path.toString(),0,imageView);
 
         //Picasso 加载图片简单用法
 //        Picasso.with(context).load(path).into(imageView);

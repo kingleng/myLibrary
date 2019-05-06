@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.danikula.videocache.HttpProxyCacheServer;
+import com.example.leng.myapplication2.router.Router;
 import com.example.leng.myapplication2.view.tools.MyLog;
 
 /**
@@ -24,6 +25,9 @@ public class MyApplication extends Application {
         if (CONFIG == Constants.RELEASE) {
             MyLog.isDebug = false;
         }
+
+        //路由初始化
+        Router.init(getApplicationContext());
     }
 
     private HttpProxyCacheServer proxy;

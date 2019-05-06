@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.bumptech.glide.Glide;
 import com.example.leng.myapplication2.R;
 import com.example.leng.myapplication2.view.tools.DensityUtil;
+import com.example.mylibrary.image.MyGlide;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +41,8 @@ public class My2PagerAdapter extends PagerAdapter {
         }
 
         ImageView image=new ImageView(mContext);
-        Glide.with(mContext).load(datas.get(currentItem)).into(image);
+//        Glide.with(mContext).load(datas.get(currentItem)).into(image);
+        MyGlide.ImageDownLoader(mContext,datas.get(currentItem),0,image);
 //        image.setScaleType(ImageView.ScaleType.CENTER_CROP);
         ((ViewPager) container).addView(image);
         return image;
