@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">BaseLibrary</string>
+
+    <string name="trackig_mode">跟踪模式</string>
+    <string name="face_compare">人脸比对</string>
+    <string name="detect_face">检测人脸</string>
+
+    <string name="cancel">取消</string>
+    <string name="complete">确认</string>
+    <string name="min_value">最小值为</string>
+    <string name="max_value">最大值为</string>
+    <string name="number">请输入数字</string>
+    <string name="no_record">该分辨率不能录制视频</string>
+    <string name="camera_error">打开相机失败</string>
+    <string name="one_face_trackig_true">YES</string>
+    <string name="one_face_trackig_false">NO</string>
+    <string-array name="trackig_mode_array">
+        <item>Fast</item>
+        <item>Robust</item>
+        <item>Tracking_Rect</item>
+    </string-array>
+    <string name="modif_name">修改名称</string>
+    <string name="modif_name_fail">请输入名称</string>
+    <string name="face_compare_title">人脸比对设置</string>
 </resources>

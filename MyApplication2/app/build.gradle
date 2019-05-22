@@ -47,11 +47,11 @@ repositories {
 //    mavenCentral() // jcenter() works as well because it pulls from Maven Central
 }
 
-repositories {
-    flatDir {
-        dirs 'libs'
-    }
-}
+//repositories {
+//    flatDir {
+//        dirs 'libs'
+//    }
+//}
 
 dependencies {
     implementation project(':mylibrary')
@@ -90,4 +90,5 @@ dependencies {
 
     //videocache
     implementation 'com.danikula:videocache:2.7.1'
+
 }

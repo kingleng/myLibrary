@@ -279,6 +279,13 @@ public class HomeActivity extends Activity {
         classData17.adType = "100018";
         datas.add(classData17);
 
+        ClassData classData18 = new ClassData();
+        classData18.name = "摄像头预览";
+        classData18.className = CameraActivity.class;
+        classData18.adType = "100019";
+        datas.add(classData18);
+
+
     }
 
     public class ClassData{

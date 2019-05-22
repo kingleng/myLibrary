@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.widget.Toast;
 
+import com.example.leng.myapplication2.view.activity.CameraActivity;
 import com.example.leng.myapplication2.view.activity.CoordinatorLayoutActivity;
 import com.example.leng.myapplication2.view.activity.DemoActivity;
 import com.example.leng.myapplication2.view.activity.Main2Activity;
@@ -107,6 +108,9 @@ public class Router {
                 return;
             case TypeManager.MIAN_ITEM_18:
                 mContext.startActivity(new Intent(mContext, VideoViewActivity.class));
+                return;
+            case TypeManager.MIAN_ITEM_19:
+                mContext.startActivity(new Intent(mContext, CameraActivity.class));
                 return;
             default:
                 Toast.makeText(mContext, "页面找不到了！", Toast.LENGTH_SHORT).show();
