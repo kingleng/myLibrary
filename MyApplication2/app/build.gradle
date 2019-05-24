@@ -91,4 +91,10 @@ dependencies {
     //videocache
     implementation 'com.danikula:videocache:2.7.1'
 
+    //超长图
+    implementation 'com.davemorrissey.labs:subsampling-scale-image-view:3.10.0'
+
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'jp.wasabeef:glide-transformations:2.0.0'  //独立的图片处理库
+
 }
