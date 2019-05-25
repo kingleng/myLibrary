@@ -285,6 +285,12 @@ public class HomeActivity extends Activity {
         classData18.adType = "100019";
         datas.add(classData18);
 
+        ClassData classData19 = new ClassData();
+        classData19.name = "帧动画";
+        classData19.className = FrameAnimationActivity.class;
+        classData19.adType = "100020";
+        datas.add(classData19);
+
 
     }
 

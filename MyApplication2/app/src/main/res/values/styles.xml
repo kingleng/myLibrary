@@ -8,8 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="Theme.DesignDemo" parent="AppThemeas">
-    </style>
+    <style name="Theme.DesignDemo" parent="AppThemeas"></style>
 
     <style name="AppThemeas" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- toolbar（actionbar）颜色 -->
@@ -28,6 +27,15 @@
         <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
     </style>
 
-    <style name="AppTheme.TranslucentTheme" parent="Theme.AppCompat.Light.NoActionBar"/>
+    <style name="AppTheme.TranslucentTheme" parent="Theme.AppCompat.Light.NoActionBar" />
+
+    <style name="Theme.DesignDemo.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.DesignDemo.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.DesignDemo.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

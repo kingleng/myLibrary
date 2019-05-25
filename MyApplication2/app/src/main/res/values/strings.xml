@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">KL App</string>
+    <string name="title_activity_frame_animation">FrameAnimationActivity</string>
 </resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" android:oneshot="false">
+    <!-- 定义一个动画帧，Drawable为img0，持续时间50毫秒 -->
+    <item android:drawable="@drawable/listen_0" android:duration="5" />
+    <item android:drawable="@drawable/listen_1" android:duration="5" />
+    <item android:drawable="@drawable/listen_2" android:duration="5" />
+    <item android:drawable="@drawable/listen_3" android:duration="5" />
+    <item android:drawable="@drawable/listen_4" android:duration="5" />
+    <item android:drawable="@drawable/listen_5" android:duration="5" />
+    <item android:drawable="@drawable/listen_6" android:duration="5" />
+    <item android:drawable="@drawable/listen_7" android:duration="5" />
+    <item android:drawable="@drawable/listen_8" android:duration="5" />
+    <item android:drawable="@drawable/listen_9" android:duration="5" />
+
+    <item android:drawable="@drawable/listen_10" android:duration="5" />
+    <item android:drawable="@drawable/listen_11" android:duration="5" />
+    <item android:drawable="@drawable/listen_12" android:duration="5" />
+    <item android:drawable="@drawable/listen_13" android:duration="5" />
+    <item android:drawable="@drawable/listen_14" android:duration="5" />
+    <item android:drawable="@drawable/listen_15" android:duration="5" />
+    <item android:drawable="@drawable/listen_16" android:duration="5" />
+    <item android:drawable="@drawable/listen_17" android:duration="5" />
+    <item android:drawable="@drawable/listen_18" android:duration="5" />
+    <item android:drawable="@drawable/listen_19" android:duration="5" />
+
+    <item android:drawable="@drawable/listen_20" android:duration="5" />
+    <item android:drawable="@drawable/listen_21" android:duration="5" />
+    <item android:drawable="@drawable/listen_22" android:duration="5" />
+    <item android:drawable="@drawable/listen_23" android:duration="5" />
+    <item android:drawable="@drawable/listen_24" android:duration="5" />
+    <item android:drawable="@drawable/listen_25" android:duration="5" />
+    <item android:drawable="@drawable/listen_26" android:duration="5" />
+    <item android:drawable="@drawable/listen_27" android:duration="5" />
+    <item android:drawable="@drawable/listen_28" android:duration="5" />
+    <item android:drawable="@drawable/listen_29" android:duration="5" />
+
+    <item android:drawable="@drawable/listen_30" android:duration="5" />
+    <item android:drawable="@drawable/listen_31" android:duration="5" />
+    <item android:drawable="@drawable/listen_32" android:duration="5" />
+    <item android:drawable="@drawable/listen_33" android:duration="5" />
+    <item android:drawable="@drawable/listen_34" android:duration="5" />
+    <item android:drawable="@drawable/listen_35" android:duration="5" />
+    <item android:drawable="@drawable/listen_36" android:duration="5" />
+    <item android:drawable="@drawable/listen_37" android:duration="5" />
+    <item android:drawable="@drawable/listen_38" android:duration="5" />
+    <item android:drawable="@drawable/listen_39" android:duration="5" />
+
+    <item android:drawable="@drawable/listen_40" android:duration="50" />
+
+
+</animation-list>
