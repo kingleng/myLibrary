@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.leng.myapplication2.view.activity.FrameAnimationActivity"
-    tools:showIn="@layout/activity_frame_animation">
+    tools:showIn="@layout/activity_frame_animation"
+    android:background="#536AE0">
 
     <RelativeLayout
         android:layout_width="match_parent"

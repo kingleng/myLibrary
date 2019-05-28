@@ -24,6 +24,8 @@ public class FrameAnimationActivity extends AppCompatActivity {
     private AnimationDrawable frameAnim0;
     private AnimationDrawable frameAnim;
 
+    int position = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,8 +48,8 @@ public class FrameAnimationActivity extends AppCompatActivity {
         stop = (Button) findViewById(R.id.stop);
 
         // 通过逐帧动画的资源文件获得AnimationDrawable示例
-        frameAnim0 = (AnimationDrawable) getResources().getDrawable(R.drawable.voice_anim3);
-        frameAnim = (AnimationDrawable) getResources().getDrawable(R.drawable.voice_anim4);
+        frameAnim0 = (AnimationDrawable) getResources().getDrawable(R.drawable.voice_anim);
+        frameAnim = (AnimationDrawable) getResources().getDrawable(R.drawable.voice_anim3);
         // 把AnimationDrawable设置为ImageView的背景
         imageView0.setBackgroundDrawable(frameAnim0);
         imageView.setBackgroundDrawable(frameAnim);
@@ -55,7 +57,25 @@ public class FrameAnimationActivity extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                stop();
+                position = position%4;
+                if(position == 0){
+                    frameAnim0 = (AnimationDrawable) getResources().getDrawable(R.drawable.voice_anim);
+                    imageView0.setBackgroundDrawable(frameAnim0);
+                }else if(position == 1){
+                    frameAnim0 = (AnimationDrawable) getResources().getDrawable(R.drawable.voice_anim2);
+                    imageView0.setBackgroundDrawable(frameAnim0);
+                }else if(position == 2){
+                    frameAnim0 = (AnimationDrawable) getResources().getDrawable(R.drawable.voice_anim3);
+                    imageView0.setBackgroundDrawable(frameAnim0);
+                }else{
+                    frameAnim0 = (AnimationDrawable) getResources().getDrawable(R.drawable.voice_anim4);
+                    imageView0.setBackgroundDrawable(frameAnim0);
+                }
+
                 start();
+
+                position++;
             }
         });
         stop.setOnClickListener(new View.OnClickListener() {
