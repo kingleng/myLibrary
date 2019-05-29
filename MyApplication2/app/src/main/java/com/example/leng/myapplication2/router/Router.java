@@ -57,64 +57,65 @@ public class Router {
         String adType = params.split("&")[0].replace("adType=","");
         switch (adType){
             case TypeManager.MIAN_ITEM_1:
-                mContext.startActivity(new Intent(mContext, TestActivity.class));
+                mContext.startActivity(new Intent(mContext, TestActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 return;
             case TypeManager.MIAN_ITEM_2:
-                mContext.startActivity(new Intent(mContext, MainActivity.class));
+                mContext.startActivity(new Intent(mContext, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 return;
             case TypeManager.MIAN_ITEM_3:
-                mContext.startActivity(new Intent(mContext, DemoActivity.class));
+                mContext.startActivity(new Intent(mContext, DemoActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 return;
             case TypeManager.MIAN_ITEM_4:
-                mContext.startActivity(new Intent(mContext, RefreshActivity.class));
+                mContext.startActivity(new Intent(mContext, RefreshActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 return;
             case TypeManager.MIAN_ITEM_5:
-                mContext.startActivity(new Intent(mContext, CoordinatorLayoutActivity.class));
+                mContext.startActivity(new Intent(mContext, CoordinatorLayoutActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+
                 return;
             case TypeManager.MIAN_ITEM_6:
-                mContext.startActivity(new Intent(mContext, MyGameActivity.class));
+                mContext.startActivity(new Intent(mContext, MyGameActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 return;
             case TypeManager.MIAN_ITEM_7:
-                mContext.startActivity(new Intent(mContext, MyTextNewActivity.class));
+                mContext.startActivity(new Intent(mContext, MyTextNewActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 return;
             case TypeManager.MIAN_ITEM_8:
-                mContext.startActivity(new Intent(mContext, Main2Activity.class));
+                mContext.startActivity(new Intent(mContext, Main2Activity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 return;
             case TypeManager.MIAN_ITEM_9:
-                mContext.startActivity(new Intent(mContext, MarQueeActivity.class));
+                mContext.startActivity(new Intent(mContext, MarQueeActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 return;
             case TypeManager.MIAN_ITEM_10:
-                mContext.startActivity(new Intent(mContext, Main6Activity.class));
+                mContext.startActivity(new Intent(mContext, Main6Activity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 return;
             case TypeManager.MIAN_ITEM_11:
-                mContext.startActivity(new Intent(mContext, Main7Activity.class));
+                mContext.startActivity(new Intent(mContext, Main7Activity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 return;
             case TypeManager.MIAN_ITEM_12:
-                mContext.startActivity(new Intent(mContext, Main8Activity_LianDong.class));
+                mContext.startActivity(new Intent(mContext, Main8Activity_LianDong.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 return;
             case TypeManager.MIAN_ITEM_13:
-                mContext.startActivity(new Intent(mContext, MusicActivity.class));
+                mContext.startActivity(new Intent(mContext, MusicActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 return;
             case TypeManager.MIAN_ITEM_14:
-                mContext.startActivity(new Intent(mContext, VlayoutActivity.class));
+                mContext.startActivity(new Intent(mContext, VlayoutActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 return;
             case TypeManager.MIAN_ITEM_15:
-                mContext.startActivity(new Intent(mContext, ViewPager2Activity.class));
+                mContext.startActivity(new Intent(mContext, ViewPager2Activity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 return;
             case TypeManager.MIAN_ITEM_16:
-                mContext.startActivity(new Intent(mContext, ViewPagerActivity.class));
+                mContext.startActivity(new Intent(mContext, ViewPagerActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 return;
             case TypeManager.MIAN_ITEM_17:
-                mContext.startActivity(new Intent(mContext, XuanFuActivity.class));
+                mContext.startActivity(new Intent(mContext, XuanFuActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 return;
             case TypeManager.MIAN_ITEM_18:
-                mContext.startActivity(new Intent(mContext, VideoViewActivity.class));
+                mContext.startActivity(new Intent(mContext, VideoViewActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 return;
             case TypeManager.MIAN_ITEM_19:
-                mContext.startActivity(new Intent(mContext, CameraActivity.class));
+                mContext.startActivity(new Intent(mContext, CameraActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 return;
             case TypeManager.MIAN_ITEM_20:
-                mContext.startActivity(new Intent(mContext, FrameAnimationActivity.class));
+                mContext.startActivity(new Intent(mContext, FrameAnimationActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 return;
             default:
                 Toast.makeText(mContext, "页面找不到了！", Toast.LENGTH_SHORT).show();
