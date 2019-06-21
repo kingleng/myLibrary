@@ -32,7 +32,7 @@ public class VideoViewActivity extends Activity {
 //        String url = "http://newspaper-management.aegis-info.com/file/download?name=admin_6672149472645786031.MP4";
 //        String url = "https://media.w3.org/2010/05/sintel/trailer.mp4";
 //        String url = "http://newspaper-management.aegis-info.com/file/download?name=admin_213421.mp4";
-        String url = "http://newspaper-management.aegis-info.com/file/download?name=admin_213421.mp4";
+        String url = "http://v.videoincloud.com/sgy/20190614/oQMpsG/oQMpsG.m3u8";
 //        HttpProxyCacheServer proxy = MyApplication.getProxy(this);
 //        String proxyUrl = proxy.getProxyUrl(url);
         videoView.setVideoURI(Uri.parse(url));//播放网络视频

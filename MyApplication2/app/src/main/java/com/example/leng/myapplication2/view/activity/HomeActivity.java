@@ -5,6 +5,7 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,7 +67,12 @@ public class HomeActivity extends Activity {
                     public void onClick(View v) {
 //                        Intent intent = new Intent(HomeActivity.this,data.className);
 //                        startActivity(intent);
-                        BaseModule.startActivityByUrl("www.kingleng.com?adType="+data.adType);
+                        if(!TextUtils.isEmpty(data.adType)){
+                            BaseModule.startActivityByUrl("www.kingleng.com?adType="+data.adType);
+                        }else{
+                            BaseModule.startActivityByUrl(data.url);
+                        }
+
                     }
                 });
             }
@@ -291,6 +297,18 @@ public class HomeActivity extends Activity {
         classData19.adType = "100020";
         datas.add(classData19);
 
+        ClassData classData20 = new ClassData();
+        classData20.name = "网页";
+        classData20.url = "http://player.videoincloud.com/vod/3827568?src=gkw&cc=1";
+        datas.add(classData20);
+
+
+        ClassData classData21 = new ClassData();
+        classData21.name = "jsoup爬虫（小说）";
+        classData21.className = JsoupActivity.class;
+        classData21.adType = "100021";
+        datas.add(classData21);
+
 
     }
 
@@ -299,5 +317,6 @@ public class HomeActivity extends Activity {
         public String name;
         public Class className;
         public String adType;
+        public String url;
     }
 }

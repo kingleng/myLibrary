@@ -26,10 +26,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DesignDemo"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".view.activity.JsoupActivity"></activity>
         <activity
             android:name=".view.activity.FrameAnimationActivity"
             android:label="@string/title_activity_frame_animation"
-            android:theme="@style/Theme.DesignDemo.NoActionBar"></activity>
+            android:theme="@style/Theme.DesignDemo.NoActionBar" />
         <activity android:name=".view.activity.CameraActivity" />
         <activity android:name=".view.activity.WebviewActivity" />
         <activity android:name=".view.activity.VideoViewActivity" />
