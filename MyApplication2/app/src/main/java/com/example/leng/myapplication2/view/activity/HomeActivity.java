@@ -309,6 +309,12 @@ public class HomeActivity extends Activity {
         classData21.adType = "100021";
         datas.add(classData21);
 
+        ClassData classData22 = new ClassData();
+        classData22.name = "RxHttp 断点下载";
+        classData22.className = JsoupActivity.class;
+        classData22.adType = "100022";
+        datas.add(classData22);
+
 
     }
 

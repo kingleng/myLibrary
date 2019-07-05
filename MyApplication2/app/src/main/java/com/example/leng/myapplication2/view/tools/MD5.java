@@ -1,8 +1,18 @@
 package com.example.leng.myapplication2.view.tools;
 
+import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.codec.digest.DigestUtils;
 
 public class MD5 {
+
+    public static String md5(String text) throws Exception {
+        //加密后的字符串
+//        String encodeStr= DigestUtils.md5Hex(text);
+        String encodeStr= new String(Hex.encodeHex(DigestUtils.sha(text)));
+        System.out.println("MD5加密后的字符串为:encodeStr="+encodeStr);
+        return encodeStr;
+    }
+
     /**
      * MD5方法
      *
