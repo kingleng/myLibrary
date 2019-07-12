@@ -1,5 +1,6 @@
 package com.example.leng.myapplication2.router;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.widget.Toast;
@@ -53,7 +54,9 @@ public class Router {
         if(!url.contains("adType")){
             Intent intent = new Intent(mContext, WebviewActivity.class);
             intent.putExtra("url",url);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             mContext.startActivity(intent);
+            return;
         }
         String params = url.split("\\?")[1];
         String adType = params.split("&")[0].replace("adType=","");

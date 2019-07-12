@@ -299,7 +299,7 @@ public class HomeActivity extends Activity {
 
         ClassData classData20 = new ClassData();
         classData20.name = "网页";
-        classData20.url = "http://player.videoincloud.com/vod/3827568?src=gkw&cc=1";
+        classData20.url = "https://tech.163.com/";
         datas.add(classData20);
 
 

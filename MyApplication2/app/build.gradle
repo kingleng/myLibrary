@@ -7,10 +7,14 @@ android {
     defaultConfig {
         applicationId "com.example.leng.myapplication2"
         minSdkVersion 15
-        targetSdkVersion 26
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk{
+            abiFilters "armeabi"
+        }
     }
     buildTypes {
         debug {
