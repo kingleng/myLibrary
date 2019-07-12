@@ -4,15 +4,15 @@
     android:id="@+id/activity_demo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.leng.myapplication2.view.activity.DemoActivity"
+    tools:context="com.example.leng.myapplication2.ui.activity.DemoActivity"
     android:background="@drawable/defult_bg">
 
-    <com.example.leng.myapplication2.view.myView.yibiaopan
+    <com.example.leng.myapplication2.ui.myView.yibiaopan
         android:id="@+id/yibiaopan"
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:background="#393939"/>
-    <com.example.leng.myapplication2.view.myView.yibiaopan2
+    <com.example.leng.myapplication2.ui.myView.yibiaopan2
         android:id="@+id/yibiaopan2"
         android:layout_width="match_parent"
         android:layout_height="400dp"/>
@@ -29,7 +29,7 @@
 
 
 
-    <com.example.leng.myapplication2.view.myView.SnArMusicSeekBar2
+    <com.example.leng.myapplication2.ui.myView.SnArMusicSeekBar2
         android:id="@+id/sn_ar_music_seekbar"
         android:layout_width="match_parent"
         android:layout_height="50dp"

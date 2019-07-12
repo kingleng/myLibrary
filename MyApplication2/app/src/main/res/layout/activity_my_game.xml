@@ -8,9 +8,9 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    tools:context="com.example.leng.myapplication2.view.activity.MyGameActivity">
+    tools:context="com.example.leng.myapplication2.ui.activity.MyGameActivity">
 
-    <com.example.leng.myapplication2.view.myView.MyGameView
+    <com.example.leng.myapplication2.ui.myView.MyGameView
         android:id="@+id/mygameview"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

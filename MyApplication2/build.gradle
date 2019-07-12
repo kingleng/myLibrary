@@ -5,6 +5,10 @@ buildscript {
 
         maven { url 'https://jitpack.io' }
 
+        maven {
+            url "http://maven.aliyun.com/nexus/content/repositories/releases"
+        }
+
         jcenter()
         google()
     }
@@ -19,6 +23,11 @@ buildscript {
 allprojects {
     repositories {
         maven { url 'https://jitpack.io' }
+
+        maven {
+            url "http://maven.aliyun.com/nexus/content/repositories/releases"
+        }
+
         jcenter()
         google()
     }

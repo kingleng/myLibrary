@@ -8,10 +8,10 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    tools:context="com.example.leng.myapplication2.view.activity.Main3Activity"
+    tools:context="com.example.leng.myapplication2.ui.activity.Main3Activity"
     android:background="#ffffff">
 
-    <com.example.leng.myapplication2.view.myView.MyView6
+    <com.example.leng.myapplication2.ui.myView.MyView6
         android:id="@+id/myview6"
         android:layout_width="300dp"
         android:layout_height="300dp"

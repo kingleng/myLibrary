@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.leng.myapplication2.view.activity.ViewPagerActivity"
+    tools:context="com.example.leng.myapplication2.ui.activity.ViewPagerActivity"
     android:clipChildren="false">
 
-    <com.example.leng.myapplication2.view.myView.DepthViewPager
+    <com.example.leng.myapplication2.ui.myView.DepthViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="300dp"

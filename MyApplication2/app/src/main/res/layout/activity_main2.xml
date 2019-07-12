@@ -8,13 +8,13 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    tools:context="com.example.leng.myapplication2.view.activity.Main2Activity">
+    tools:context="com.example.leng.myapplication2.ui.activity.Main2Activity">
 
-    <com.example.leng.myapplication2.view.myView.MyView5
+    <com.example.leng.myapplication2.ui.myView.MyView5
         android:id="@+id/myview5"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </com.example.leng.myapplication2.view.myView.MyView5>
+    </com.example.leng.myapplication2.ui.myView.MyView5>
 
 </RelativeLayout>

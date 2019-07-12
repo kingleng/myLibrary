@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.leng.myapplication2.view.activity.MusicActivity">
+    tools:context="com.example.leng.myapplication2.ui.activity.MusicActivity">
 
     <ImageView
         android:id="@+id/imageview"
@@ -42,7 +42,7 @@
         android:layout_marginTop="20dp"
         android:text="stop" />
 
-    <com.example.leng.myapplication2.view.myView.SnArVideoTab
+    <com.example.leng.myapplication2.ui.myView.SnArVideoTab
         android:id="@+id/video_tab"
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -67,7 +67,7 @@
             android:paddingLeft="12dp"
             android:text="长按拍摄" />
 
-    </com.example.leng.myapplication2.view.myView.SnArVideoTab>
+    </com.example.leng.myapplication2.ui.myView.SnArVideoTab>
 
     <View
         android:layout_width="2dp"

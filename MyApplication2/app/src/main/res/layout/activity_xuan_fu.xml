@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:marqueeview="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.leng.myapplication2.view.activity.XuanFuActivity">
+    tools:context="com.example.leng.myapplication2.ui.activity.XuanFuActivity">
 
     <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
         android:id="@+id/imageView"

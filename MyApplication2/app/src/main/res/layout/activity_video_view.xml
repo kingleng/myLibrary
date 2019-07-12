@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.leng.myapplication2.view.activity.VideoViewActivity">
+    tools:context="com.example.leng.myapplication2.ui.activity.VideoViewActivity">
 
-    <com.example.leng.myapplication2.view.myView.CustomVideoView
+    <com.example.leng.myapplication2.ui.myView.CustomVideoView
         android:id="@+id/videoview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

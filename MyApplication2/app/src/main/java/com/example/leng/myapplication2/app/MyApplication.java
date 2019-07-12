@@ -6,7 +6,7 @@ import android.util.Log;
 
 import com.danikula.videocache.HttpProxyCacheServer;
 import com.example.leng.myapplication2.router.Router;
-import com.example.leng.myapplication2.view.tools.MyLog;
+import com.example.leng.myapplication2.ui.tools.MyLog;
 
 import io.reactivex.functions.Function;
 import io.reactivex.plugins.RxJavaPlugins;

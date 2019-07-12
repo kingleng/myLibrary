@@ -8,23 +8,23 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    tools:context="com.example.leng.myapplication2.view.activity.MainActivity"
+    tools:context="com.example.leng.myapplication2.ui.activity.MainActivity"
     android:background="#8b8a8a">
 
-    <com.example.leng.myapplication2.view.myView.MyView2
+    <com.example.leng.myapplication2.ui.myView.MyView2
         android:id="@+id/myview2"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true" />
 
-    <com.example.leng.myapplication2.view.myView.MyView7
+    <com.example.leng.myapplication2.ui.myView.MyView7
         android:id="@+id/myview7"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/myview2"/>
 
-    <com.example.leng.myapplication2.view.myView.MyView
+    <com.example.leng.myapplication2.ui.myView.MyView
         android:id="@+id/myview"
         android:layout_width="66.5dp"
         android:layout_height="66.5dp"
@@ -40,7 +40,7 @@
         android:layout_below="@+id/myview7"
         android:layout_centerHorizontal="true"/>
 
-    <com.example.leng.myapplication2.view.myView.MyView4
+    <com.example.leng.myapplication2.ui.myView.MyView4
         android:id="@+id/myview4"
         android:layout_width="66.6dp"
         android:layout_height="66.6dp"
@@ -48,7 +48,7 @@
         android:layout_below="@+id/myview"
         android:layout_marginTop="20dp"/>
 
-    <com.example.leng.myapplication2.view.myView.MyView8
+    <com.example.leng.myapplication2.ui.myView.MyView8
         android:id="@+id/myview8"
         android:layout_width="120dp"
         android:layout_height="66dp"
@@ -57,29 +57,29 @@
         android:layout_marginTop="10dp"
         android:background="#2244aa"/>
 
-    <com.example.leng.myapplication2.view.myView.MyView3
+    <com.example.leng.myapplication2.ui.myView.MyView3
         android:id="@+id/myview3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/myview"
         android:layout_marginTop="10dp">
 
-        <com.example.leng.myapplication2.view.myView.MyView4
+        <com.example.leng.myapplication2.ui.myView.MyView4
             android:id="@+id/ibtn1"
             android:layout_width="40dp"
             android:layout_height="40dp" />
 
-        <com.example.leng.myapplication2.view.myView.MyView4
+        <com.example.leng.myapplication2.ui.myView.MyView4
             android:id="@+id/ibtn2"
             android:layout_width="40dp"
             android:layout_height="40dp" />
 
-        <com.example.leng.myapplication2.view.myView.MyView4
+        <com.example.leng.myapplication2.ui.myView.MyView4
             android:id="@+id/ibtn3"
             android:layout_width="40dp"
             android:layout_height="40dp" />
 
-    </com.example.leng.myapplication2.view.myView.MyView3>
+    </com.example.leng.myapplication2.ui.myView.MyView3>
 
 
 </RelativeLayout>

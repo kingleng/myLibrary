@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.leng.myapplication2.view.activity.RxHttpActivity">
+    tools:context="com.example.leng.myapplication2.ui.activity.RxHttpActivity">
 
     <TextView
         android:id="@+id/progress_tv"

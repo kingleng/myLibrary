@@ -26,20 +26,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DesignDemo"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".view.activity.RxHttpActivity"></activity>
-        <activity android:name=".view.activity.JsoupActivity" />
+
+        <meta-data
+            android:name="com.taobao.android.hotfix.IDSECRET"
+            android:value="27681711" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.APPSECRET"
+            android:value="ae8b217bc8222794af3620255d73a06e" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.RSASECRET"
+            android:value="MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCVNaXfPdXgctJmY6u0Un74tIA/YEZOl8BXvSqu67z/OByogAeWO0OWxhmPZwgBbxXVUs1BeO7RwOrfVMNzHPaoIGm9kGuSiWbAd7H0qHeNBSw9kIAUKLPFdAnWWRJNy3Al97GH3wTxLDtEEVWVszslFP9YyxaSb8wnz1NEcc9ze3UJzpMo/3RhjxvSVXveA34kjXJa6dNhJBVRE4f4U++rRx6dhl2yBzasVYzH5XEEjISt7Lhl44GsQ/yeJjLm9182FmNtbagDJJqrflhV81jwEdOVRVReFFzMgNPFDR6S4dzFKuJLwodU/2dNTDrJRQl/V6hSD812GLaG8xqKMMK5AgMBAAECggEBAIeDRteesF19ywsE4NAP0JOOU5+7j38Xoa/N9TMSlP7ydkyuorVVs8f+uP4dpA6xVhH9dr9M1xGXdXlJ4YzttDLz5TUuMhTPR4vr6ap7SsC//vMXBsvIP6VIAxsyoEYZSwygjhMJgNKMynLCj4k7U68VB+gb4q8ybCeHy2cxOij1hyiC5U1EAWr8p+NYY0JBFiB9kuxecB11kGomlpQ7qbZF/8N6pNbUAXKReK2N148H2Qn5doexT+Va0MhOPXr/rAOixdRh/FTH648WwXyfbqNmL8eppp6KjIa3L5vnz4Y5navJbthc4P1uCs3Z89OQ5x58dYhr5E27CJpc7lheYeUCgYEAyTpr8DdpT2BvOxva0s5YtgiPeyXd3TtzcAiVwTNiovnI9fPnZOZElBJBAecyBvRdOph1UlwlpmuectjJ7PU02t2iiZPH9zdiXH/Xcmchu5xYbfOd5qZm0CKI9FiE9q0kM+oymUkz5jY68c/WxQGKYcrQcIZlcRmYyISOOyV+pKsCgYEAvdKRW+3cSnzXsdCOEF0+KZoclSy5BNXpfzC+1sCqlS2sMCGhT2uf/C9cHDD6EP+kLW1SIe08OdrB0itQzI94//fJ1aol0rFxs2g/Vye4r1CHgSz8yhSpHEyRpAxXqQJTIOUFVx9ZaEFbH0BJZc7vOSrw4FXOvE0WeNTERkE9TisCgYABehVKuQ1j0MBgPa8Ydv09sMhkzf1X31TUkKuQtHDX419vNrAPFIWSVKP3gJvkYyy//lh2F0kLdKTAEQlCXPZbWN8VhWklTlnBdgq9wzYDK32WqQASrkv44RgCOxgWu2SVoPVoHJpt6R37olvgLEe4ugVXnhTmhJqTdi2ZD4hjawKBgHy+MAA1pBrfR+/2miVu4Tb9q+LsbPociUGoiwEdw/wc85b9wsAqfgyAIwvzs6IQHZgsy1i4SmfKtqyjAoorjtzHvb/H/Osk6Q95Zoaj995eEW52Xfl+8lNCjkM8SS8r8+0eFBBY7axxpqw21wUspFDxQzJpsV5VWns1d3aj0OHZAoGBAKXJcI2a85SKJGmcETBPHaJ14L494+2hsQRX9fU3UhIbFT7paA9GRfLLjS/Oz9YlJ9RlQU1edCIA2wRnXftXpgebbzHHxDJT3xrBsTLo1Uaa7v9K5re5pAX1YomAi8rPtA9YF9p/JfBIMUT91DxeIUNsMklG4Jm8pNpnd1Z3K0Se" />
+
+        <activity android:name=".ui.activity.RxHttpActivity"></activity>
+        <activity android:name=".ui.activity.JsoupActivity" />
         <activity
-            android:name=".view.activity.FrameAnimationActivity"
+            android:name=".ui.activity.FrameAnimationActivity"
             android:label="@string/title_activity_frame_animation"
             android:theme="@style/Theme.DesignDemo.NoActionBar" />
-        <activity android:name=".view.activity.CameraActivity" />
-        <activity android:name=".view.activity.WebviewActivity" />
-        <activity android:name=".view.activity.VideoViewActivity" />
-        <activity android:name=".view.activity.XuanFuActivity" />
-        <activity android:name=".view.activity.ViewPagerActivity" />
-        <activity android:name=".view.activity.ViewPager2Activity" />
+        <activity android:name=".ui.activity.CameraActivity" />
+        <activity android:name=".ui.activity.WebviewActivity" />
+        <activity android:name=".ui.activity.VideoViewActivity" />
+        <activity android:name=".ui.activity.XuanFuActivity" />
+        <activity android:name=".ui.activity.ViewPagerActivity" />
+        <activity android:name=".ui.activity.ViewPager2Activity" />
         <activity
-            android:name=".view.activity.HomeActivity"
+            android:name=".ui.activity.HomeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
             <intent-filter>
@@ -52,45 +63,45 @@
                 <!-- <category android:name="android.intent.category.DEFAULT" /> -->
             </intent-filter>
         </activity>
-        <activity android:name=".view.activity.MainActivity" />
-        <activity android:name=".view.activity.Main2Activity" />
-        <activity android:name=".view.activity.Main3Activity" />
-        <activity android:name=".view.activity.Main4Activity" />
-        <activity android:name=".view.activity.Main5Activity" />
-        <activity android:name=".view.activity.DemoActivity" />
-        <activity android:name=".view.activity.MyTextNewActivity" />
+        <activity android:name=".ui.activity.MainActivity" />
+        <activity android:name=".ui.activity.Main2Activity" />
+        <activity android:name=".ui.activity.Main3Activity" />
+        <activity android:name=".ui.activity.Main4Activity" />
+        <activity android:name=".ui.activity.Main5Activity" />
+        <activity android:name=".ui.activity.DemoActivity" />
+        <activity android:name=".ui.activity.MyTextNewActivity" />
         <activity
-            android:name=".view.activity.RefreshActivity"
+            android:name=".ui.activity.RefreshActivity"
             android:label="mytest!!!" />
         <activity
-            android:name=".view.activity.CoordinatorLayoutActivity"
+            android:name=".ui.activity.CoordinatorLayoutActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.activity.CoordinatorLayout2Activity"
+            android:name=".ui.activity.CoordinatorLayout2Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.translucent" />
         <activity
-            android:name=".view.activity.MyGameActivity"
+            android:name=".ui.activity.MyGameActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.activity.MarQueeActivity"
+            android:name=".ui.activity.MarQueeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.activity.Main6Activity"
+            android:name=".ui.activity.Main6Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.activity.Main7Activity"
+            android:name=".ui.activity.Main7Activity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.DesignDemo" />
-        <activity android:name=".view.activity.TestActivity" />
+        <activity android:name=".ui.activity.TestActivity" />
         <activity
-            android:name=".view.activity.Main8Activity_LianDong"
+            android:name=".ui.activity.Main8Activity_LianDong"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat" />
-        <activity android:name=".view.activity.Main9Activity_chenjingshi" />
-        <activity android:name=".view.activity.MusicActivity" />
-        <activity android:name=".view.activity.VlayoutActivity" />
-        <activity android:name=".view.activity.SVGActivity" />
+        <activity android:name=".ui.activity.Main9Activity_chenjingshi" />
+        <activity android:name=".ui.activity.MusicActivity" />
+        <activity android:name=".ui.activity.VlayoutActivity" />
+        <activity android:name=".ui.activity.SVGActivity" />
     </application>
 
 </manifest>
