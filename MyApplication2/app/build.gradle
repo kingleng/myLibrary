@@ -8,11 +8,11 @@ android {
         applicationId "com.example.leng.myapplication2"
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.0.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        ndk{
+        ndk {
             abiFilters "armeabi"
         }
     }
@@ -23,7 +23,7 @@ android {
 
         release {
             // 是否进行混淆
-            minifyEnabled true
+            minifyEnabled false
             // 混淆文件的位置
             signingConfig signingConfigs.debug
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'

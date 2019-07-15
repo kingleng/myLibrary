@@ -31,3 +31,9 @@
 -dontwarn com.alibaba.sdk.android.utils.**
 #防止inline
 -dontoptimize
+
+-keepclassmembers class com.my.pkg.MyRealApplication {
+    public <init>();
+}
+# 如果不使用android.support.annotation.Keep则需加上此行
+# -keep class com.my.pkg.SophixStubApplication$RealApplicationStub

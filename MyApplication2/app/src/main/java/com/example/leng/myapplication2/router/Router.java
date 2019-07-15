@@ -9,6 +9,7 @@ import com.example.leng.myapplication2.ui.activity.CameraActivity;
 import com.example.leng.myapplication2.ui.activity.CoordinatorLayoutActivity;
 import com.example.leng.myapplication2.ui.activity.DemoActivity;
 import com.example.leng.myapplication2.ui.activity.FrameAnimationActivity;
+import com.example.leng.myapplication2.ui.activity.HotfixActivity;
 import com.example.leng.myapplication2.ui.activity.JsoupActivity;
 import com.example.leng.myapplication2.ui.activity.Main2Activity;
 import com.example.leng.myapplication2.ui.activity.Main6Activity;
@@ -127,6 +128,9 @@ public class Router {
                 return;
             case TypeManager.MIAN_ITEM_22:
                 mContext.startActivity(new Intent(mContext, RxHttpActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                return;
+            case TypeManager.MIAN_ITEM_23:
+                mContext.startActivity(new Intent(mContext, HotfixActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 return;
             default:
                 Toast.makeText(mContext, "页面找不到了！", Toast.LENGTH_SHORT).show();

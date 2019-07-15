@@ -40,6 +40,8 @@ public class WebviewActivity extends AppCompatActivity {
 
         String url = getIntent().getStringExtra("url");
 
+//        url = "https://www.taobao.com/";
+
 //        //原生webview
 //        webview = findViewById(R.id.webview);
 //        webview.getSettings().setJavaScriptEnabled(true);
@@ -52,19 +54,7 @@ public class WebviewActivity extends AppCompatActivity {
 //        });
 //        webview.loadUrl(url);
 
-        RelativeLayout rela_layout = (RelativeLayout) findViewById(R.id.rela_layout);
-        FloatDragView.addFloatDragView(this, rela_layout, new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // 点击事件
-                if (txWebview.canGoBack()) { // 表示按返回键
-                    // 网页可以后退时的操作
-                    txWebview.goBack(); // 后退
-                }else{
-                    finish();
-                }
-            }
-        });
+//        initView();
 
         txWebview = findViewById(R.id.webview_x5);
 
@@ -128,6 +118,22 @@ public class WebviewActivity extends AppCompatActivity {
         txWebview.loadUrl(url);
 
     }
+
+//    public void initView(){
+//        RelativeLayout rela_layout = (RelativeLayout) findViewById(R.id.rela_layout);
+//        FloatDragView.addFloatDragView(this, rela_layout, new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                // 点击事件
+//                if (txWebview.canGoBack()) { // 表示按返回键
+//                    // 网页可以后退时的操作
+//                    txWebview.goBack(); // 后退
+//                }else{
+//                    finish();
+//                }
+//            }
+//        });
+//    }
 
     private void initX5() {
         Log.e("asd","1 --- 准备加载浏览器插件");

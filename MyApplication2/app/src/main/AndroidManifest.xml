@@ -16,18 +16,15 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-
-    <!-- 硬件加速对X5视频播放非常重要，建议开启 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 硬件加速对X5视频播放非常重要，建议开启 -->
     <uses-permission android:name="android.permission.GET_TASKS" />
 
     <application
-        android:name=".app.MyApplication"
+        android:name=".app.SophixStubApplication"
         android:allowBackup="false"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
@@ -35,6 +32,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DesignDemo"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".ui.activity.HotfixActivity"></activity>
 
         <meta-data
             android:name="com.taobao.android.hotfix.IDSECRET"
@@ -46,7 +44,7 @@
             android:name="com.taobao.android.hotfix.RSASECRET"
             android:value="MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCVNaXfPdXgctJmY6u0Un74tIA/YEZOl8BXvSqu67z/OByogAeWO0OWxhmPZwgBbxXVUs1BeO7RwOrfVMNzHPaoIGm9kGuSiWbAd7H0qHeNBSw9kIAUKLPFdAnWWRJNy3Al97GH3wTxLDtEEVWVszslFP9YyxaSb8wnz1NEcc9ze3UJzpMo/3RhjxvSVXveA34kjXJa6dNhJBVRE4f4U++rRx6dhl2yBzasVYzH5XEEjISt7Lhl44GsQ/yeJjLm9182FmNtbagDJJqrflhV81jwEdOVRVReFFzMgNPFDR6S4dzFKuJLwodU/2dNTDrJRQl/V6hSD812GLaG8xqKMMK5AgMBAAECggEBAIeDRteesF19ywsE4NAP0JOOU5+7j38Xoa/N9TMSlP7ydkyuorVVs8f+uP4dpA6xVhH9dr9M1xGXdXlJ4YzttDLz5TUuMhTPR4vr6ap7SsC//vMXBsvIP6VIAxsyoEYZSwygjhMJgNKMynLCj4k7U68VB+gb4q8ybCeHy2cxOij1hyiC5U1EAWr8p+NYY0JBFiB9kuxecB11kGomlpQ7qbZF/8N6pNbUAXKReK2N148H2Qn5doexT+Va0MhOPXr/rAOixdRh/FTH648WwXyfbqNmL8eppp6KjIa3L5vnz4Y5navJbthc4P1uCs3Z89OQ5x58dYhr5E27CJpc7lheYeUCgYEAyTpr8DdpT2BvOxva0s5YtgiPeyXd3TtzcAiVwTNiovnI9fPnZOZElBJBAecyBvRdOph1UlwlpmuectjJ7PU02t2iiZPH9zdiXH/Xcmchu5xYbfOd5qZm0CKI9FiE9q0kM+oymUkz5jY68c/WxQGKYcrQcIZlcRmYyISOOyV+pKsCgYEAvdKRW+3cSnzXsdCOEF0+KZoclSy5BNXpfzC+1sCqlS2sMCGhT2uf/C9cHDD6EP+kLW1SIe08OdrB0itQzI94//fJ1aol0rFxs2g/Vye4r1CHgSz8yhSpHEyRpAxXqQJTIOUFVx9ZaEFbH0BJZc7vOSrw4FXOvE0WeNTERkE9TisCgYABehVKuQ1j0MBgPa8Ydv09sMhkzf1X31TUkKuQtHDX419vNrAPFIWSVKP3gJvkYyy//lh2F0kLdKTAEQlCXPZbWN8VhWklTlnBdgq9wzYDK32WqQASrkv44RgCOxgWu2SVoPVoHJpt6R37olvgLEe4ugVXnhTmhJqTdi2ZD4hjawKBgHy+MAA1pBrfR+/2miVu4Tb9q+LsbPociUGoiwEdw/wc85b9wsAqfgyAIwvzs6IQHZgsy1i4SmfKtqyjAoorjtzHvb/H/Osk6Q95Zoaj995eEW52Xfl+8lNCjkM8SS8r8+0eFBBY7axxpqw21wUspFDxQzJpsV5VWns1d3aj0OHZAoGBAKXJcI2a85SKJGmcETBPHaJ14L494+2hsQRX9fU3UhIbFT7paA9GRfLLjS/Oz9YlJ9RlQU1edCIA2wRnXftXpgebbzHHxDJT3xrBsTLo1Uaa7v9K5re5pAX1YomAi8rPtA9YF9p/JfBIMUT91DxeIUNsMklG4Jm8pNpnd1Z3K0Se" />
 
-        <activity android:name=".ui.activity.RxHttpActivity"></activity>
+        <activity android:name=".ui.activity.RxHttpActivity" />
         <activity android:name=".ui.activity.JsoupActivity" />
         <activity
             android:name=".ui.activity.FrameAnimationActivity"

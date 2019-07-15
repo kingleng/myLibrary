@@ -315,6 +315,12 @@ public class HomeActivity extends Activity {
         classData22.adType = "100022";
         datas.add(classData22);
 
+        ClassData classData23 = new ClassData();
+        classData23.name = "hotfix 热修复测试";
+        classData23.className = HotfixActivity.class;
+        classData23.adType = "100023";
+        datas.add(classData23);
+
 
     }
 
