@@ -2,6 +2,7 @@ package com.example.leng.myapplication2.app;
 
 import android.content.Context;
 import android.support.annotation.Keep;
+import android.support.multidex.MultiDex;
 import android.util.Log;
 
 import com.taobao.sophix.PatchStatus;
@@ -28,7 +29,7 @@ public class SophixStubApplication extends SophixApplication {
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
 //         如果需要使用MultiDex，需要在此处调用。
-//         MultiDex.install(this);
+         MultiDex.install(this);
         initSophix();
     }
     private void initSophix() {

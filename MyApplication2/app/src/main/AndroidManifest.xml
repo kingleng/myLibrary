@@ -21,7 +21,14 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 硬件加速对X5视频播放非常重要，建议开启 -->
-    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.GET_TASKS" /> <!-- 广告投放需要权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" /> <!-- 如果是国内版本SDK ，则此条权限必须加上 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.SEND_SMS"/>
 
     <application
         android:name=".app.SophixStubApplication"
@@ -32,7 +39,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DesignDemo"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ui.activity.HotfixActivity"></activity>
+        <activity android:name=".ui.activity.SendSMSActivity"></activity>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity android:name=".ui.activity.HotfixActivity" />
 
         <meta-data
             android:name="com.taobao.android.hotfix.IDSECRET"
@@ -109,6 +122,26 @@
         <activity android:name=".ui.activity.MusicActivity" />
         <activity android:name=".ui.activity.VlayoutActivity" />
         <activity android:name=".ui.activity.SVGActivity" />
+        <activity
+            android:name="com.mintegral.msdk.activity.MTGCommonActivity"
+            android:configChanges="keyboard|orientation"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
+
+        <receiver android:name="com.mintegral.msdk.click.AppReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.mintegral.msdk.shell.MTGService">
+            <intent-filter>
+                <action android:name="com.mintegral.msdk.download.action" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

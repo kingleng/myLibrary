@@ -1,6 +1,7 @@
 package com.example.leng.myapplication2.ui.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -21,15 +22,19 @@ import com.example.leng.myapplication2.router.BaseModule;
 import com.example.leng.myapplication2.ui.adapter.QuickAdapter;
 import com.example.leng.myapplication2.ui.myView.FloatDragView;
 import com.example.leng.myapplication2.ui.tools.DensityUtil;
+import com.mintegral.msdk.out.MtgBidNativeHandler;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class HomeActivity extends Activity {
 
     RelativeLayout rela_layout;
     RecyclerView recyclerView;
     ArrayList<ClassData> datas = new ArrayList<>();
+
+    private MtgBidNativeHandler mNativeHandle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -320,6 +325,13 @@ public class HomeActivity extends Activity {
         classData23.className = HotfixActivity.class;
         classData23.adType = "100023";
         datas.add(classData23);
+
+        ClassData classData24 = new ClassData();
+        classData24.name = "短信测试";
+        classData24.className = SendSMSActivity.class;
+        classData24.adType = "100024";
+        datas.add(classData24);
+
 
 
     }

@@ -4,6 +4,8 @@ android {
     compileSdkVersion 26
     buildToolsVersion "27.0.3"
 
+    useLibrary 'org.apache.http.legacy'
+
     defaultConfig {
         applicationId "com.example.leng.myapplication2"
         minSdkVersion 15
@@ -11,6 +13,7 @@ android {
         versionCode 3
         versionName "1.0.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled = true
 
         ndk {
             abiFilters "armeabi"
@@ -53,13 +56,16 @@ repositories {
 //    mavenCentral() // jcenter() works as well because it pulls from Maven Central
 }
 
-//repositories {
-//    flatDir {
-//        dirs 'libs'
-//    }
-//}
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
 
 dependencies {
+    //dex 分包
+    implementation 'com.android.support:multidex:1.0.1'
+
     implementation project(':mylibrary')
     implementation project(path: ':myloginlibrary')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -70,6 +76,7 @@ dependencies {
     implementation 'com.android.support:design:26.1.0'
     implementation 'com.android.support:support-v4:26.1.0'
     implementation 'com.android.support:cardview-v7:26.1.0'
+
 //    //glide
 //    implementation 'com.github.bumptech.glide:glide:4.1.1'
     //rxjava
@@ -110,6 +117,25 @@ dependencies {
     annotationProcessor 'com.rxjava.rxhttp:rxhttp-compiler:1.1.0'
 //管理RxJava及生命周期，Activity/Fragment 销毁，自动关闭未完成的请求
     api 'com.rxjava.rxlife:rxlife:1.0.8'
+
+    implementation(name: 'mintegral_alphab', ext: 'aar')
+    implementation(name: 'mintegral_appwall', ext: 'aar')
+    implementation(name: 'mintegral_appwallext', ext: 'aar')
+    implementation(name: 'mintegral_chinacommon', ext: 'aar')
+    implementation(name: 'mintegral_interstitial', ext: 'aar')
+    implementation(name: 'mintegral_interstitialvideo', ext: 'aar')
+    implementation(name: 'mintegral_mtgdownloads', ext: 'aar')
+    implementation(name: 'mintegral_mtgjscommon', ext: 'aar')
+    implementation(name: 'mintegral_mtgnative', ext: 'aar')
+    implementation(name: 'mintegral_nativeex', ext: 'aar')
+    implementation(name: 'mintegral_offerwall', ext: 'aar')
+    implementation(name: 'mintegral_playercommon', ext: 'aar')
+    implementation(name: 'mintegral_reward', ext: 'aar')
+    implementation(name: 'mintegral_videocommon', ext: 'aar')
+    implementation(name: 'mintegral_videofeeds', ext: 'aar')
+    implementation(name: 'mintegral_videojs', ext: 'aar')
+    implementation(name: 'mintegral_interactiveads', ext: 'aar')
+    implementation(name: 'mintegral_mtgbid', ext: 'aar')
 
 
 }
