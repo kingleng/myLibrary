@@ -37,5 +37,12 @@
         android:layout_centerHorizontal="true"
         android:text="下一步"/>
 
+    <ImageView
+        android:id="@+id/circle_imageview"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/next_btn"
+        android:layout_centerHorizontal="true"/>
+
 
 </RelativeLayout>

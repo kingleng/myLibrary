@@ -27,5 +27,29 @@
     </com.example.leng.myapplication2.ui.myView.MyRelativeLayout>
 
 
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/defult_bg"
+        android:scaleType="centerInside"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/defult_pic_new"
+        android:scaleType="centerInside"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/defult_pic_new"
+        android:scaleType="centerInside"/>
+
+
 
 </RelativeLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+</resources>
+    <!--资源压缩 自定义要保留的资源-->
+<!--<resources xmlns:tools="http://schemas.android.com/tools"-->
+<!--tools:keep="@layout/activity_video*,@layout/dialog_update_v2"-->
+<!--tools:discard="@layout/unused_layout,@drawable/unused_selector" />-->

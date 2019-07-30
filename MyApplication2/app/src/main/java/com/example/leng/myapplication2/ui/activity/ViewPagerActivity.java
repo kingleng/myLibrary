@@ -17,7 +17,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import ys.duodian.com.baselibrary.BaseAvtivity;
+import com.kingleng.baselibrary.BaseAvtivity;
 
 public class ViewPagerActivity extends BaseAvtivity {
 

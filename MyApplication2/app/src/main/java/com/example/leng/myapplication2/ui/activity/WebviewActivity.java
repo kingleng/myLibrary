@@ -10,6 +10,7 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 //import android.webkit.WebView;
 //import android.webkit.WebViewClient;
 
@@ -117,6 +118,11 @@ public class WebviewActivity extends AppCompatActivity {
 
         txWebview.loadUrl(url);
 
+        myToast(url);
+    }
+
+    private void myToast(String url){
+        Toast.makeText(this,url,Toast.LENGTH_SHORT).show();
     }
 
     public void initView(){

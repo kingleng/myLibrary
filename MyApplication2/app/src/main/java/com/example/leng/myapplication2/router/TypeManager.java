@@ -5,7 +5,11 @@ package com.example.leng.myapplication2.router;
  */
 public class TypeManager {
 
+    //网页
+    public final static String MIAN_ITEM_0 = "100000";
+    //默认页面
     public final static String MIAN_ITEM_1 = "100001";
+
     public final static String MIAN_ITEM_2 = "100002";
     public final static String MIAN_ITEM_3 = "100003";
     public final static String MIAN_ITEM_4 = "100004";

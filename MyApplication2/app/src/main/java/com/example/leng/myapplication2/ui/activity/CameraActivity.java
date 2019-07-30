@@ -21,13 +21,13 @@ import java.util.HashMap;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-import ys.duodian.com.baselibrary.face.CameraMatrix;
-import ys.duodian.com.baselibrary.face.ConUtil;
-import ys.duodian.com.baselibrary.face.DialogUtil;
-import ys.duodian.com.baselibrary.face.ICamera;
-import ys.duodian.com.baselibrary.face.OpenGLUtil;
-import ys.duodian.com.baselibrary.face.Screen;
-import ys.duodian.com.baselibrary.face.bean.FaceActionInfo;
+import com.kingleng.baselibrary.face.CameraMatrix;
+import com.kingleng.baselibrary.face.ConUtil;
+import com.kingleng.baselibrary.face.DialogUtil;
+import com.kingleng.baselibrary.face.ICamera;
+import com.kingleng.baselibrary.face.OpenGLUtil;
+import com.kingleng.baselibrary.face.Screen;
+import com.kingleng.baselibrary.face.bean.FaceActionInfo;
 
 import static android.os.Build.VERSION_CODES.M;
 

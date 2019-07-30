@@ -5,7 +5,7 @@ import android.content.Context;
 import android.util.Log;
 
 import com.danikula.videocache.HttpProxyCacheServer;
-import com.example.leng.myapplication2.router.Router;
+import com.example.leng.myapplication2.router.RouterManager;
 import com.example.leng.myapplication2.ui.tools.MyLog;
 import com.mintegral.msdk.MIntegralConstans;
 import com.mintegral.msdk.MIntegralSDK;
@@ -48,14 +48,15 @@ public class MyApplication extends Application {
         MIntegralSDK sdk = MIntegralSDKFactory.getMIntegralSDK();
         Map<String, String> map = sdk.getMTGConfigurationMap("117025", "fbb32ee37dfae7794d0db7cf7a21a0b7");
         sdk.init(map, this);
-        Map<String, Object> preloadMap = new HashMap<String, Object>();
-        preloadMap.put(MIntegralConstans.PROPERTIES_LAYOUT_TYPE, MIntegralConstans.LAYOUT_NATIVE);//设置广告形式为native，其中AppWall为LAYOUT_APPWALL
-        preloadMap.put(MIntegralConstans.PROPERTIES_UNIT_ID,"your unitId");
-        preloadMap.put(MIntegralConstans.PROPERTIES_AD_NUM, 1);
-        sdk.preload(preloadMap);
+//        Map<String, Object> preloadMap = new HashMap<String, Object>();
+//        preloadMap.put(MIntegralConstans.PROPERTIES_LAYOUT_TYPE, MIntegralConstans.LAYOUT_NATIVE);//设置广告形式为native，其中AppWall为LAYOUT_APPWALL
+//        preloadMap.put(MIntegralConstans.PROPERTIES_UNIT_ID,"121132");
+//        preloadMap.put(MIntegralConstans.PROPERTIES_AD_NUM, 1);
+//        sdk.preload(preloadMap);
 
         //路由初始化
-        Router.init(getApplicationContext());
+        RouterManager.getInstance().init();
+
 
         httpSenderInit();
 

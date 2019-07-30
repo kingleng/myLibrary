@@ -1,49 +1,64 @@
 package com.example.leng.myapplication2.ui.activity;
 
 import android.app.Activity;
-import android.content.Context;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListPopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.leng.myapplication2.R;
-import com.example.leng.myapplication2.router.BaseModule;
+import com.example.leng.myapplication2.router.AppModule;
 import com.example.leng.myapplication2.ui.adapter.QuickAdapter;
 import com.example.leng.myapplication2.ui.myView.FloatDragView;
 import com.example.leng.myapplication2.ui.tools.DensityUtil;
-import com.mintegral.msdk.out.MtgBidNativeHandler;
+import com.example.mylibrary.image.MyGlide;
+import com.mintegral.msdk.MIntegralConstans;
+import com.mintegral.msdk.MIntegralSDK;
+import com.mintegral.msdk.out.Campaign;
+import com.mintegral.msdk.out.Frame;
+import com.mintegral.msdk.out.MIntegralSDKFactory;
+import com.mintegral.msdk.out.MtgNativeHandler;
+import com.mintegral.msdk.out.NativeListener;
+import com.mintegral.msdk.widget.MTGAdChoice;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class HomeActivity extends Activity {
 
+    private FrameLayout mFlAdHolder;
+
     RelativeLayout rela_layout;
     RecyclerView recyclerView;
     ArrayList<ClassData> datas = new ArrayList<>();
-
-    private MtgBidNativeHandler mNativeHandle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        String toast = getIntent().getStringExtra("toast");
+        if(!TextUtils.isEmpty(toast)){
+            Toast.makeText(this,toast,Toast.LENGTH_SHORT).show();
+        }
+
         initView();
         initData();
-
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
 //        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
@@ -73,9 +88,13 @@ public class HomeActivity extends Activity {
 //                        Intent intent = new Intent(HomeActivity.this,data.className);
 //                        startActivity(intent);
                         if(!TextUtils.isEmpty(data.adType)){
-                            BaseModule.startActivityByUrl("www.kingleng.com?adType="+data.adType);
+                            AppModule.startActivityByUrl(HomeActivity.this,"www.kingleng.com?adType="+data.adType);
                         }else{
-                            BaseModule.startActivityByUrl(data.url);
+//                            BaseModule.startActivityByUrl(data.url);
+
+//                            loadNative();
+
+                            AppModule.startActivityByTypeCode(HomeActivity.this,"110001");
                         }
 
                     }
@@ -83,13 +102,6 @@ public class HomeActivity extends Activity {
             }
 
         });
-
-//        float sum = 0;
-//        for(int i=1;i<31;i++){
-//            sum += 10;
-//            sum *= 1.14f;
-//            Log.e("asd","year = "+i+": sum = "+sum);
-//        }
 
     }
 
@@ -100,6 +112,8 @@ public class HomeActivity extends Activity {
     private void initView(){
 //        MyHorizontalScrollView myHorizontalScrollView = (MyHorizontalScrollView)findViewById(R.id.myHorizontalScrollView);
 //        recyclerView = myHorizontalScrollView.getContentView();
+
+        mFlAdHolder = (FrameLayout) findViewById(R.id.fl_adplaceholder);
 
         recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
 
@@ -135,7 +149,7 @@ public class HomeActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                BaseModule.startActivityByUrl("http://www.baidu.com");
+                AppModule.startActivityByUrl(HomeActivity.this,"http://www.baidu.com");
                 popupWindow.dismiss();
             }
         });
@@ -332,8 +346,6 @@ public class HomeActivity extends Activity {
         classData24.adType = "100024";
         datas.add(classData24);
 
-
-
     }
 
     public class ClassData{
@@ -343,4 +355,168 @@ public class HomeActivity extends Activity {
         public String adType;
         public String url;
     }
+
+
+    public static final String TAG = "HomeActivity_001";
+//    private String mCurrentUnitId = "121432";
+    private String mCurrentUnitId = "";
+    private MtgNativeHandler mNativeHandle;
+    public int AD_NUM = 1;
+    private Campaign mCampaign;
+
+    public void preloadNative() {
+
+        MIntegralSDK sdk = MIntegralSDKFactory.getMIntegralSDK();
+        Map<String, Object> preloadMap = new HashMap<String, Object>();
+        preloadMap.put(MIntegralConstans.PROPERTIES_LAYOUT_TYPE, MIntegralConstans.LAYOUT_NATIVE);
+        // preloadMap.put(MIntegralConstans.ID_FACE_BOOK_PLACEMENT,
+        // "1611993839047594_1614040148842963");
+        // preloadMap.put(MIntegralConstans.ID_MY_TARGET_AD_UNITID, "6590");
+        preloadMap.put(MIntegralConstans.PROPERTIES_UNIT_ID, mCurrentUnitId);
+
+        preloadMap.put(MIntegralConstans.PROPERTIES_AD_NUM, AD_NUM);
+        preloadMap.put(MIntegralConstans.PREIMAGE, true);
+        // sdk.setAdMobClickListener(new AdMobClickListener() {
+        //
+        // @Override
+        // public void onAdMobClickListener(Campaign campaign) {
+        // Log.e("mintegral_demo", "admob is clicked");
+        //
+        // }
+        // });
+        sdk.preload(preloadMap);
+
+    }
+
+    public void loadNative() {
+        Map<String, Object> properties = MtgNativeHandler.getNativeProperties(mCurrentUnitId);
+        properties.put(MIntegralConstans.PROPERTIES_AD_NUM, AD_NUM);
+        mNativeHandle = new MtgNativeHandler(properties, HomeActivity.this);
+        mNativeHandle.setAdListener(new NativeListener.NativeAdListener() {
+
+            @Override
+            public void onAdLoaded(List<Campaign> campaigns, int template) {
+                Log.e(TAG, "onAdLoaded");
+                if (campaigns != null && campaigns.size() > 0) {
+                    mCampaign = campaigns.get(0);
+                    for (Campaign campaign : campaigns) {
+                        Log.i(TAG, campaign.getAppName());
+                    }
+//					if (mCampaign.getType() == MIntegralConstans.AD_TYPE_ADMOB) {
+//						fillAdMobAdLayout();
+//					} else if (mCampaign.getType() == MIntegralConstans.AD_TYPE_MYTARGET) {
+//						fillMyTargetAdLayout();
+//					} else {
+                    fillMTGAdLayout();
+//					}
+                    preloadNative();
+                }
+
+            }
+
+            private void fillMTGAdLayout() {
+                final View view = LayoutInflater.from(HomeActivity.this)
+                        .inflate(R.layout.mintegral_demo_mul_big_ad_content, null);
+                final ImageView iv = (ImageView) view.findViewById(R.id.mintegral_demo_iv_image);
+                if (!TextUtils.isEmpty(mCampaign.getImageUrl())) {
+                    MyGlide.ImageDownLoader(HomeActivity.this,mCampaign.getImageUrl(),0,iv);
+                    mNativeHandle.registerView(view, mCampaign);
+                }
+                TextView tvAppName = (TextView) view.findViewById(R.id.mintegral_demo_bt_app_name);
+                MTGAdChoice mtgAdChoice = view.findViewById(R.id.mintegral_demo_native_adchoice);
+                int height = mCampaign.getAdchoiceSizeHeight();
+                int width = mCampaign.getAdchoiceSizeWidth();
+                ViewGroup.LayoutParams layoutParams = mtgAdChoice.getLayoutParams();
+                layoutParams.width =width;
+                layoutParams.height=height;
+                mtgAdChoice.setLayoutParams(layoutParams);
+                mtgAdChoice.setCampaign(mCampaign);
+                tvAppName.setText(mCampaign.getAppName());
+                mFlAdHolder.removeAllViews();
+                mFlAdHolder.addView(view);
+
+            }
+
+            @Override
+            public void onAdLoadError(String message) {
+                Log.e(TAG, "onAdLoadError" + message);
+            }
+
+            @Override
+            public void onAdClick(Campaign campaign) {
+                Log.e(TAG, "onAdClick");
+            }
+
+            @Override
+            public void onAdFramesLoaded(final List<Frame> list) {
+                Log.e(TAG, "onAdFramesLoaded");
+            }
+
+            @Override
+            public void onLoggingImpression(int adsourceType) {
+                Log.e(TAG, "onLoggingImpression adsourceType:" + adsourceType);
+            }
+
+        });
+        mNativeHandle.setTrackingListener(new NativeListener.NativeTrackingListener() {
+
+            @Override
+            public void onStartRedirection(Campaign campaign, String url) {
+                Log.e("pro", "onStartRedirection---");
+            }
+
+            @Override
+            public void onRedirectionFailed(Campaign campaign, String url) {
+                // TODO Auto-generated method stub
+                Log.e("pro", "onRedirectionFailed---");
+            }
+
+            @Override
+            public void onFinishRedirection(Campaign campaign, String url) {
+                Log.e("pro", "onFinishRedirection---"+url);
+            }
+
+            @Override
+            public void onDownloadStart(Campaign campaign) {
+                Log.e("pro", "start---");
+            }
+
+            @Override
+            public void onDownloadFinish(Campaign campaign) {
+                Log.e("pro", "finish---");
+            }
+
+            @Override
+            public void onDownloadProgress(int progress) {
+                Log.e("pro", "progress----" + progress);
+            }
+
+            @Override
+            public boolean onInterceptDefaultLoadingDialog() {
+                return false;
+            }
+
+            @Override
+            public void onShowLoading(Campaign campaign) {
+
+            }
+
+            @Override
+            public void onDismissLoading(Campaign campaign) {
+
+            }
+        });
+
+        mNativeHandle.load();
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mNativeHandle != null) {
+            mNativeHandle.release();
+        }
+    }
+
 }

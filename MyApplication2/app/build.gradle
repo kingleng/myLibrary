@@ -1,17 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+
     compileSdkVersion 26
     buildToolsVersion "27.0.3"
-
     useLibrary 'org.apache.http.legacy'
-
     defaultConfig {
         applicationId "com.example.leng.myapplication2"
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 3
-        versionName "1.0.3"
+        versionCode 4
+        versionName "1.0.4"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled = true
 
@@ -19,26 +18,31 @@ android {
             abiFilters "armeabi"
         }
     }
+
+
+    signingConfigs {
+        release {
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+            storeFile file('debug.keystore')
+            storePassword 'android'
+        }
+    }
+
     buildTypes {
         debug {
-            applicationIdSuffix ".debug"
+            minifyEnabled false
         }
 
         release {
             // 是否进行混淆
             minifyEnabled false
+            // 开启资源的压缩
+            shrinkResources false
             // 混淆文件的位置
-            signingConfig signingConfigs.debug
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
 
-    signingConfigs {
-        debug {
-            storeFile file('debug.keystore')
-            storePassword "android"
-            keyAlias "androiddebugkey"
-            keyPassword "android"
+            signingConfig signingConfigs.release
         }
     }
 
@@ -47,7 +51,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
 }
 
 
@@ -65,7 +68,6 @@ repositories {
 dependencies {
     //dex 分包
     implementation 'com.android.support:multidex:1.0.1'
-
     implementation project(':mylibrary')
     implementation project(path: ':myloginlibrary')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -76,9 +78,8 @@ dependencies {
     implementation 'com.android.support:design:26.1.0'
     implementation 'com.android.support:support-v4:26.1.0'
     implementation 'com.android.support:cardview-v7:26.1.0'
-
-//    //glide
-//    implementation 'com.github.bumptech.glide:glide:4.1.1'
+    //    //glide
+    //    implementation 'com.github.bumptech.glide:glide:4.1.1'
     //rxjava
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.0.9'
@@ -100,24 +101,19 @@ dependencies {
     implementation 'com.youth.banner:banner:1.4.10'
     implementation 'rouchuan.viewpagerlayoutmanager:viewpagerlayoutmanager:2.0.2'
     implementation project(':baselibrary')
-
     //videocache
     implementation 'com.danikula:videocache:2.7.1'
-
     //超长图
     implementation 'com.davemorrissey.labs:subsampling-scale-image-view:3.10.0'
-
     implementation 'com.github.bumptech.glide:glide:3.7.0'
-    implementation 'jp.wasabeef:glide-transformations:2.0.0'  //独立的图片处理库
-
+    implementation 'jp.wasabeef:glide-transformations:2.0.0'
+    //独立的图片处理库
     implementation 'org.jsoup:jsoup:1.12.1'
-
     api 'com.rxjava.rxhttp:rxhttp:1.1.0'
-//注解处理器，生成RxHttp类，即可一条链发送请求
+    //注解处理器，生成RxHttp类，即可一条链发送请求
     annotationProcessor 'com.rxjava.rxhttp:rxhttp-compiler:1.1.0'
-//管理RxJava及生命周期，Activity/Fragment 销毁，自动关闭未完成的请求
+    //管理RxJava及生命周期，Activity/Fragment 销毁，自动关闭未完成的请求
     api 'com.rxjava.rxlife:rxlife:1.0.8'
-
     implementation(name: 'mintegral_alphab', ext: 'aar')
     implementation(name: 'mintegral_appwall', ext: 'aar')
     implementation(name: 'mintegral_appwallext', ext: 'aar')
@@ -136,6 +132,7 @@ dependencies {
     implementation(name: 'mintegral_videojs', ext: 'aar')
     implementation(name: 'mintegral_interactiveads', ext: 'aar')
     implementation(name: 'mintegral_mtgbid', ext: 'aar')
+    implementation project(':app2library')
 
-
+    implementation 'com.aliyun.ams:alicloud-android-hotfix:3.2.8'
 }

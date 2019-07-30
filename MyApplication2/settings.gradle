@@ -1,1 +1,1 @@
-include ':app', ':myloginlibrary',  ':mylibrary', ':baselibrary'
+include ':app', ':myloginlibrary',  ':mylibrary', ':baselibrary', ':app2library'

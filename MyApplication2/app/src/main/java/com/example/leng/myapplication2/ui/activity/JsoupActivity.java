@@ -2,7 +2,6 @@ package com.example.leng.myapplication2.ui.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +19,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.kingleng.baselibrary.base.BaseModule;
 
 public class JsoupActivity extends AppCompatActivity {
 
@@ -50,19 +51,21 @@ public class JsoupActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                new Thread(){
-                    @Override
-                    public void run() {
-                        super.run();
-                        try {
-                            String url = getNovelUrl(id_edit.getText().toString());
-                            List<Map<String, String>> mapList = getNovelIndex(url);
-                            Log.e("asd",mapList.toString());
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }.start();
+//                new Thread(){
+//                    @Override
+//                    public void run() {
+//                        super.run();
+//                        try {
+//                            String url = getNovelUrl(id_edit.getText().toString());
+//                            List<Map<String, String>> mapList = getNovelIndex(url);
+//                            Log.e("asd",mapList.toString());
+//                        } catch (IOException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                }.start();
+
+                BaseModule.startActivityByTypeCode(JsoupActivity.this,"130020");
 
             }
         });
