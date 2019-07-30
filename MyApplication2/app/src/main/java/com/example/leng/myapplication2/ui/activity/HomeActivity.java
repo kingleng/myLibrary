@@ -149,7 +149,8 @@ public class HomeActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                AppModule.startActivityByUrl(HomeActivity.this,"http://www.baidu.com");
+//                AppModule.startActivityByUrl(HomeActivity.this,"http://www.baidu.com");
+                AppModule.startActivityByUrl(HomeActivity.this,"https://fszy.ai-risk-v.aegis-info.com/home?debug=1");
                 popupWindow.dismiss();
             }
         });

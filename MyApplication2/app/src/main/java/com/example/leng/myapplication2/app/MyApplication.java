@@ -2,6 +2,7 @@ package com.example.leng.myapplication2.app;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 
 import com.danikula.videocache.HttpProxyCacheServer;
@@ -29,7 +30,7 @@ import rxhttp.wrapper.param.PutRequest;
  * Created by leng on 2017/3/2.
  */
 
-public class MyApplication extends Application {
+public class MyApplication extends MultiDexApplication {
 
     /**
      * 当前运行环境
