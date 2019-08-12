@@ -22,6 +22,8 @@ import android.widget.Toast;
 import com.example.leng.myapplication2.R;
 import com.example.leng.myapplication2.router.AppModule;
 import com.example.leng.myapplication2.ui.adapter.QuickAdapter;
+import com.example.leng.myapplication2.ui.customWidget.NameBean;
+import com.example.leng.myapplication2.ui.customWidget.SectionDecoration;
 import com.example.leng.myapplication2.ui.myView.FloatDragView;
 import com.example.leng.myapplication2.ui.tools.DensityUtil;
 import com.example.mylibrary.image.MyGlide;
@@ -59,16 +61,35 @@ public class HomeActivity extends Activity {
 
         initView();
         initData();
+        setPullAction(datas);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
 //        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
+//        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
+//            @Override
+//            public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+//                outRect.set(DensityUtil.dip2px(HomeActivity.this, 5), DensityUtil.dip2px(HomeActivity.this, 5), DensityUtil.dip2px(HomeActivity.this, 5), 0);
+//            }
+//        });
+        recyclerView.addItemDecoration(new SectionDecoration(dataList, this, new SectionDecoration.DecorationCallback() {
             @Override
-            public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-                outRect.set(DensityUtil.dip2px(HomeActivity.this, 5), DensityUtil.dip2px(HomeActivity.this, 5), DensityUtil.dip2px(HomeActivity.this, 5), 0);
+            public String getGroupId(int position) {
+                if(dataList.get(position).getName()!=null) {
+                    return dataList.get(position).getName();
+                }
+                return "-1";
             }
-        });
+
+            @Override
+            public String getGroupFirstLine(int position) {
+                if(dataList.get(position).getName()!=null) {
+                    return dataList.get(position).getName();
+                }
+                return "";
+            }
+        }));
+
         recyclerView.setAdapter(new QuickAdapter<ClassData>(datas) {
             @Override
             public int getLayoutId(int viewType) {
@@ -104,6 +125,19 @@ public class HomeActivity extends Activity {
         });
 
     }
+
+    List<NameBean> dataList;
+    private void setPullAction(List<ClassData> classDataList) {
+        dataList = new ArrayList<>();
+
+        for (int i = 0; i < classDataList.size(); i++) {
+            NameBean nameBean = new NameBean();
+            String name0 = classDataList.get(i).name;
+            nameBean.setName(name0);
+            dataList.add(nameBean);
+        }
+    }
+
 
     List<String> strings;
     ListPopupWindow popupWindow;
