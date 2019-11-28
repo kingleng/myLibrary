@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rela_layout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/pxh1550">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/pxh140"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/image_bg"
+            android:layout_width="@dimen/px1080"
+            android:layout_height="@dimen/pxh1427"
+            android:layout_centerInParent="true"
+            android:background="@drawable/phome_haibao_bg" />
+
+        <ImageView
+            android:id="@+id/image_iv_bg2"
+            android:layout_width="@dimen/px915"
+            android:layout_height="@dimen/pxh1312"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_home_ffffff"
+            android:scaleType="centerCrop"/>
+
+        <ImageView
+            android:id="@+id/image_iv"
+            android:layout_width="@dimen/px913"
+            android:layout_height="@dimen/pxh1310"
+            android:layout_centerInParent="true"
+            android:background="@null"
+            android:scaleType="centerInside"/>
+
+        <TextView
+            android:id="@+id/image_iv_tag"
+            android:layout_width="@dimen/px311"
+            android:layout_height="@dimen/pxh61"
+            android:layout_alignBottom="@+id/image_iv"
+            android:layout_alignLeft="@+id/image_iv"
+            android:layout_marginBottom="@dimen/pxh1280"
+            android:background="@drawable/p_home_haibao_icon"
+            android:gravity="center"
+            android:text="学习新时代"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/px33"/>
+
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

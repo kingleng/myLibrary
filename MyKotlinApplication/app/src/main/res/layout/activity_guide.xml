@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <VideoView
+        android:id="@+id/id_video"
+        android:layout_width="@dimen/px840"
+        android:layout_height="@dimen/pxh510"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/pxh200"/>
+
+    <TextView
+        android:id="@+id/id_next_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_below="@+id/id_video"
+        android:layout_marginTop="@dimen/pxh70"
+        android:textSize="@dimen/px36"
+        android:paddingLeft="@dimen/px60"
+        android:paddingTop="@dimen/px30"
+        android:paddingRight="@dimen/px60"
+        android:paddingBottom="@dimen/px30"
+        android:text="立即体验"
+        android:textColor="#00fafb"
+        android:background="@drawable/rectangle_circle_shape_guide_activity"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/id_toast"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/pxh50"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/id_video"
+        android:layout_marginTop="@dimen/pxh20"
+        android:text="设备未激活，请先激活设备！"
+        android:textSize="@dimen/pxh30"
+        android:textColor="#00fafb"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/id_device_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/id_next_activity"
+        android:layout_marginTop="20dp"
+        android:textSize="12sp"
+        android:textColor="#00fafb"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/id_qr_img"
+        android:layout_width="@dimen/px500"
+        android:layout_height="@dimen/px500"
+        android:layout_below="@+id/id_device_id"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:visibility="visible"/>
+
+    <ImageView
+        android:id="@+id/id_set"
+        android:layout_width="@dimen/px100"
+        android:layout_height="@dimen/px100"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/home_setting_normal" />
+
+</RelativeLayout>

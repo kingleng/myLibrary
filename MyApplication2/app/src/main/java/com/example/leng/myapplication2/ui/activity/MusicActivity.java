@@ -2,6 +2,7 @@ package com.example.leng.myapplication2.ui.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -31,6 +32,12 @@ public class MusicActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
+
+        String aa = getIntent().getStringExtra("url");
+        if(!TextUtils.isEmpty(aa)){
+            url = aa;
+        }
+
 
         ImageView imageview = (ImageView) findViewById(R.id.imageview);
         ImageButton ccc_ib = (ImageButton) findViewById(R.id.ccc_ib);
@@ -87,9 +94,9 @@ public class MusicActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-//                mediaServer.startMusic(15000);
+                mediaServer.startMusic(15000);
 
-                videoTab.setCurrentItem(new Random().nextInt(3));
+//                videoTab.setCurrentItem(new Random().nextInt(3));
 //                videoTab.setCurrentItem(0);
             }
         });

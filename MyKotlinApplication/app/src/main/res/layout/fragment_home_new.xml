@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rela_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.cpsdna.app.mykotlinapplication.ui.widget.DepthViewPager
+        android:id="@+id/id_depthViewPager"
+        android:layout_width="@dimen/px1080"
+        android:layout_height="@dimen/pxh1550"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:id="@+id/tab_left"
+        android:layout_width="@dimen/px127"
+        android:layout_height="@dimen/pxh127"
+        android:layout_centerVertical="true"
+        android:background="@null"
+        android:scaleType="centerInside"
+        android:src="@drawable/home_left_btn" />
+
+    <ImageButton
+        android:id="@+id/tab_right"
+        android:layout_width="@dimen/px127"
+        android:layout_height="@dimen/pxh127"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@null"
+        android:scaleType="centerInside"
+        android:src="@drawable/home_right_btn" />
+
+
+    <LinearLayout
+        android:id="@+id/dot_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_depthViewPager"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal" />
+
+    <LinearLayout
+        android:id="@+id/btn_layout"
+        android:layout_width="@dimen/px188"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:background="#55ffffff"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/tab_btn0"
+        android:layout_width="@dimen/px81"
+        android:layout_height="@dimen/pxh259"
+        android:layout_marginTop="@dimen/pxh333"
+        android:background="@null"
+        android:scaleType="centerInside"
+        android:src="@drawable/home_btn0" />
+
+
+</RelativeLayout>

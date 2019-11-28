@@ -1,12 +1,10 @@
 package com.example.leng.myapplication2.ui.activity;
 
 import android.app.Activity;
-import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,21 +23,12 @@ import com.example.leng.myapplication2.ui.adapter.QuickAdapter;
 import com.example.leng.myapplication2.ui.customWidget.NameBean;
 import com.example.leng.myapplication2.ui.customWidget.SectionDecoration;
 import com.example.leng.myapplication2.ui.myView.FloatDragView;
-import com.example.leng.myapplication2.ui.tools.DensityUtil;
-import com.example.mylibrary.image.MyGlide;
-import com.mintegral.msdk.MIntegralConstans;
-import com.mintegral.msdk.MIntegralSDK;
-import com.mintegral.msdk.out.Campaign;
-import com.mintegral.msdk.out.Frame;
-import com.mintegral.msdk.out.MIntegralSDKFactory;
-import com.mintegral.msdk.out.MtgNativeHandler;
-import com.mintegral.msdk.out.NativeListener;
-import com.mintegral.msdk.widget.MTGAdChoice;
+import com.example.leng.myapplication2.ui.observer.AndroidObervable;
+import com.example.leng.myapplication2.ui.observer.PersonObserver;
+import com.plattysoft.leonids.ParticleSystem;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class HomeActivity extends Activity {
 
@@ -111,11 +100,11 @@ public class HomeActivity extends Activity {
                         if(!TextUtils.isEmpty(data.adType)){
                             AppModule.startActivityByUrl(HomeActivity.this,"www.kingleng.com?adType="+data.adType);
                         }else{
-//                            BaseModule.startActivityByUrl(data.url);
+                            AppModule.startActivityByUrl(HomeActivity.this,data.url);
 
 //                            loadNative();
 
-                            AppModule.startActivityByTypeCode(HomeActivity.this,"110001");
+//                            AppModule.startActivityByTypeCode(HomeActivity.this,"110001");
                         }
 
                     }
@@ -123,6 +112,27 @@ public class HomeActivity extends Activity {
             }
 
         });
+
+        new ParticleSystem(this, 1000, R.mipmap.timg, 3000)
+                .setSpeedModuleAndAngleRange(0.05f, 0.2f, 0, 360)
+                .setRotationSpeed(30)
+                .setAcceleration(0, 90)
+                .oneShot(recyclerView, 200);
+
+        PersonObserver p1 = new PersonObserver("小一");
+        PersonObserver p2 = new PersonObserver("小二");
+        PersonObserver p3 = new PersonObserver("小三");
+        PersonObserver p4 = new PersonObserver("小四");
+
+        AndroidObervable androidObervable = new AndroidObervable();
+
+        androidObervable.addObserver(p1);
+        androidObervable.addObserver(p2);
+        androidObervable.addObserver(p3);
+        androidObervable.addObserver(p4);
+
+        androidObervable.postNewInfo("吃饭了");
+        androidObervable.postNewInfo("吃过了");
 
     }
 
@@ -143,6 +153,8 @@ public class HomeActivity extends Activity {
     ListPopupWindow popupWindow;
     View mView;
 
+    int i=0;
+
     private void initView(){
 //        MyHorizontalScrollView myHorizontalScrollView = (MyHorizontalScrollView)findViewById(R.id.myHorizontalScrollView);
 //        recyclerView = myHorizontalScrollView.getContentView();
@@ -152,12 +164,16 @@ public class HomeActivity extends Activity {
         recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
 
         rela_layout = (RelativeLayout) findViewById(R.id.rela_layout);
+
+
         FloatDragView.addFloatDragView(this, rela_layout, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // 点击事件
-                popupWindow.setAnchorView(view);
-                popupWindow.show();
+//                popupWindow.setAnchorView(view);
+//                popupWindow.show();
+                i++;
+                Toast.makeText(HomeActivity.this,"the i is = "+i,Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -353,7 +369,8 @@ public class HomeActivity extends Activity {
 
         ClassData classData20 = new ClassData();
         classData20.name = "网页";
-        classData20.url = "https://tech.163.com/";
+//        classData20.url = "http://player.videoincloud.com/vod/5193433?src=gkw&cc=1";
+        classData20.url = "debugtbs.qq.com";
         datas.add(classData20);
 
 
@@ -381,6 +398,12 @@ public class HomeActivity extends Activity {
         classData24.adType = "100024";
         datas.add(classData24);
 
+        ClassData classData25 = new ClassData();
+        classData25.name = "录音功能";
+        classData25.className = AudioActivity.class;
+        classData25.adType = "100025";
+        datas.add(classData25);
+
     }
 
     public class ClassData{
@@ -389,169 +412,6 @@ public class HomeActivity extends Activity {
         public Class className;
         public String adType;
         public String url;
-    }
-
-
-    public static final String TAG = "HomeActivity_001";
-//    private String mCurrentUnitId = "121432";
-    private String mCurrentUnitId = "";
-    private MtgNativeHandler mNativeHandle;
-    public int AD_NUM = 1;
-    private Campaign mCampaign;
-
-    public void preloadNative() {
-
-        MIntegralSDK sdk = MIntegralSDKFactory.getMIntegralSDK();
-        Map<String, Object> preloadMap = new HashMap<String, Object>();
-        preloadMap.put(MIntegralConstans.PROPERTIES_LAYOUT_TYPE, MIntegralConstans.LAYOUT_NATIVE);
-        // preloadMap.put(MIntegralConstans.ID_FACE_BOOK_PLACEMENT,
-        // "1611993839047594_1614040148842963");
-        // preloadMap.put(MIntegralConstans.ID_MY_TARGET_AD_UNITID, "6590");
-        preloadMap.put(MIntegralConstans.PROPERTIES_UNIT_ID, mCurrentUnitId);
-
-        preloadMap.put(MIntegralConstans.PROPERTIES_AD_NUM, AD_NUM);
-        preloadMap.put(MIntegralConstans.PREIMAGE, true);
-        // sdk.setAdMobClickListener(new AdMobClickListener() {
-        //
-        // @Override
-        // public void onAdMobClickListener(Campaign campaign) {
-        // Log.e("mintegral_demo", "admob is clicked");
-        //
-        // }
-        // });
-        sdk.preload(preloadMap);
-
-    }
-
-    public void loadNative() {
-        Map<String, Object> properties = MtgNativeHandler.getNativeProperties(mCurrentUnitId);
-        properties.put(MIntegralConstans.PROPERTIES_AD_NUM, AD_NUM);
-        mNativeHandle = new MtgNativeHandler(properties, HomeActivity.this);
-        mNativeHandle.setAdListener(new NativeListener.NativeAdListener() {
-
-            @Override
-            public void onAdLoaded(List<Campaign> campaigns, int template) {
-                Log.e(TAG, "onAdLoaded");
-                if (campaigns != null && campaigns.size() > 0) {
-                    mCampaign = campaigns.get(0);
-                    for (Campaign campaign : campaigns) {
-                        Log.i(TAG, campaign.getAppName());
-                    }
-//					if (mCampaign.getType() == MIntegralConstans.AD_TYPE_ADMOB) {
-//						fillAdMobAdLayout();
-//					} else if (mCampaign.getType() == MIntegralConstans.AD_TYPE_MYTARGET) {
-//						fillMyTargetAdLayout();
-//					} else {
-                    fillMTGAdLayout();
-//					}
-                    preloadNative();
-                }
-
-            }
-
-            private void fillMTGAdLayout() {
-                final View view = LayoutInflater.from(HomeActivity.this)
-                        .inflate(R.layout.mintegral_demo_mul_big_ad_content, null);
-                final ImageView iv = (ImageView) view.findViewById(R.id.mintegral_demo_iv_image);
-                if (!TextUtils.isEmpty(mCampaign.getImageUrl())) {
-                    MyGlide.ImageDownLoader(HomeActivity.this,mCampaign.getImageUrl(),0,iv);
-                    mNativeHandle.registerView(view, mCampaign);
-                }
-                TextView tvAppName = (TextView) view.findViewById(R.id.mintegral_demo_bt_app_name);
-                MTGAdChoice mtgAdChoice = view.findViewById(R.id.mintegral_demo_native_adchoice);
-                int height = mCampaign.getAdchoiceSizeHeight();
-                int width = mCampaign.getAdchoiceSizeWidth();
-                ViewGroup.LayoutParams layoutParams = mtgAdChoice.getLayoutParams();
-                layoutParams.width =width;
-                layoutParams.height=height;
-                mtgAdChoice.setLayoutParams(layoutParams);
-                mtgAdChoice.setCampaign(mCampaign);
-                tvAppName.setText(mCampaign.getAppName());
-                mFlAdHolder.removeAllViews();
-                mFlAdHolder.addView(view);
-
-            }
-
-            @Override
-            public void onAdLoadError(String message) {
-                Log.e(TAG, "onAdLoadError" + message);
-            }
-
-            @Override
-            public void onAdClick(Campaign campaign) {
-                Log.e(TAG, "onAdClick");
-            }
-
-            @Override
-            public void onAdFramesLoaded(final List<Frame> list) {
-                Log.e(TAG, "onAdFramesLoaded");
-            }
-
-            @Override
-            public void onLoggingImpression(int adsourceType) {
-                Log.e(TAG, "onLoggingImpression adsourceType:" + adsourceType);
-            }
-
-        });
-        mNativeHandle.setTrackingListener(new NativeListener.NativeTrackingListener() {
-
-            @Override
-            public void onStartRedirection(Campaign campaign, String url) {
-                Log.e("pro", "onStartRedirection---");
-            }
-
-            @Override
-            public void onRedirectionFailed(Campaign campaign, String url) {
-                // TODO Auto-generated method stub
-                Log.e("pro", "onRedirectionFailed---");
-            }
-
-            @Override
-            public void onFinishRedirection(Campaign campaign, String url) {
-                Log.e("pro", "onFinishRedirection---"+url);
-            }
-
-            @Override
-            public void onDownloadStart(Campaign campaign) {
-                Log.e("pro", "start---");
-            }
-
-            @Override
-            public void onDownloadFinish(Campaign campaign) {
-                Log.e("pro", "finish---");
-            }
-
-            @Override
-            public void onDownloadProgress(int progress) {
-                Log.e("pro", "progress----" + progress);
-            }
-
-            @Override
-            public boolean onInterceptDefaultLoadingDialog() {
-                return false;
-            }
-
-            @Override
-            public void onShowLoading(Campaign campaign) {
-
-            }
-
-            @Override
-            public void onDismissLoading(Campaign campaign) {
-
-            }
-        });
-
-        mNativeHandle.load();
-
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (mNativeHandle != null) {
-            mNativeHandle.release();
-        }
     }
 
 }

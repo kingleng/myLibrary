@@ -43,15 +43,19 @@ public class MarqueeView extends View implements Runnable {
     String mstring = text;
     ArrayList<String> texts = new ArrayList<>();
 
+    public void setTexts(String mText) {
+        this.text = mText;
+    }
+
     public void setTexts(ArrayList<String> mTexts) {
         this.texts = mTexts;
-        texts.clear();
-        texts.add("第一行");
-        texts.add("第2行");
-        texts.add("第3行");
-        texts.add("第4行");
-        texts.add("第5行");
-        texts.add("第6行");
+//        texts.clear();
+//        texts.add("第一行");
+//        texts.add("第2行");
+//        texts.add("第3行");
+//        texts.add("第4行");
+//        texts.add("第5行");
+//        texts.add("第6行");
     }
 
     Thread mThread;
@@ -125,7 +129,7 @@ public class MarqueeView extends View implements Runnable {
                     resetInit = false;
                 }
                 if (repert_type == REPERT_TYPE_ONE) {
-                    if ((Math.abs(fx) - oneBlack_width) > Math.max(getWidth(), textWidth)) {
+                    if ((Math.abs(fx) - oneBlack_width*5) > Math.max(getWidth(), textWidth)) {
                         isRepert = false;
                     }
 
@@ -133,11 +137,11 @@ public class MarqueeView extends View implements Runnable {
                     texts.clear();
                     texts.add(mstring);
                 } else {
-                    if ((Math.abs(fx) - oneBlack_width) > Math.max(getWidth(), textWidth)) {
+                    if ((Math.abs(fx) - oneBlack_width*5) > Math.max(getWidth(), textWidth)) {
                         fx = 0;
                     }
                     if (getWidth() - fx > textWidth) {
-                        mstring = text + " " + text;
+                        mstring = text + "     " + text;
                         texts.clear();
                         texts.add(mstring);
                     } else {

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>htmlTest</title>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        function start() {
+            JSTest.startrecord();
+        }
+
+        function stop() {
+            var key = JSTest.stoprecord();
+            document.getElementById("startRecord").innerText = key
+        }
+    </script>
+
+</head>
+<body>
+
+<h1 align="center"> 报修 </h1>
+
+<div id="main_div">
+
+    <form name="aaa" action="/test" method="post">
+
+        <div class="title" style="margin: 20px">机构名称:南京擎盾</div>
+        <div class="title" style="margin: 20px">设备id:1234567890</div>
+        <div>
+            <div class="title" style="margin: 20px; display: inline-block">联系人</div>
+            <input id="persion" type="text" value="sss">
+        </div>
+        <div>
+            <div class="title" style="margin: 20px; display: inline-block">联系电话</div>
+            <input id="persion2" type="text" value="18856236985">
+        </div>
+
+        <div>
+            <div class="title" style="margin: 20px; display: inline-block">开始录音</div>
+            <button id="startRecord" type="button" onclick="start()">Click Me!</button>
+        </div>
+
+        <div>
+            <div class="title" style="margin: 20px; display: inline-block">停止录音</div>
+            <button id="stopRecord" type="button" onclick="stop()" >Click Me!</button>
+        </div>
+
+        <div>
+            <object height="100" width="100" data="file:///storage/emulated/0/audiorecordertest.mp3"></object>
+        </div>
+
+
+
+    </form>
+
+</div>
+
+</body>
+</html>

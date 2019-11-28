@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.leng.myapplication2.ui.activity.AudioActivity;
 import com.example.leng.myapplication2.ui.activity.CameraActivity;
 import com.example.leng.myapplication2.ui.activity.CoordinatorLayoutActivity;
 import com.example.leng.myapplication2.ui.activity.DemoActivity;
@@ -131,6 +132,9 @@ public class AppRouter extends BaseRouter {
                 break;
             case TypeManager.MIAN_ITEM_24:
                 context.startActivity(new Intent(context, SendSMSActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                break;
+            case TypeManager.MIAN_ITEM_25:
+                context.startActivity(new Intent(context, AudioActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 break;
             default:
                 isUsed = false;

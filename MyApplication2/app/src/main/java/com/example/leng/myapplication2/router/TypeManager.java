@@ -33,4 +33,5 @@ public class TypeManager {
     public final static String MIAN_ITEM_22 = "100022";
     public final static String MIAN_ITEM_23 = "100023";
     public final static String MIAN_ITEM_24 = "100024";
+    public final static String MIAN_ITEM_25 = "100025";
 }

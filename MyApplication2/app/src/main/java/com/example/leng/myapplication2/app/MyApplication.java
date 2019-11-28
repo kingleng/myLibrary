@@ -8,17 +8,15 @@ import android.util.Log;
 import com.danikula.videocache.HttpProxyCacheServer;
 import com.example.leng.myapplication2.router.RouterManager;
 import com.example.leng.myapplication2.ui.tools.MyLog;
-import com.mintegral.msdk.MIntegralConstans;
-import com.mintegral.msdk.MIntegralSDK;
-import com.mintegral.msdk.out.MIntegralSDKFactory;
+import com.rxjava.rxhttp.BuildConfig;
 import com.tencent.smtt.sdk.QbSdk;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import cc.rome753.activitytaskview.ActivityTask;
 import io.reactivex.functions.Function;
 import io.reactivex.plugins.RxJavaPlugins;
-import rxhttp.BuildConfig;
 import rxhttp.HttpSender;
 import rxhttp.wrapper.param.DeleteRequest;
 import rxhttp.wrapper.param.GetRequest;
@@ -45,16 +43,6 @@ public class MyApplication extends MultiDexApplication {
             MyLog.isDebug = false;
         }
 
-        //广告
-        MIntegralSDK sdk = MIntegralSDKFactory.getMIntegralSDK();
-        Map<String, String> map = sdk.getMTGConfigurationMap("117025", "fbb32ee37dfae7794d0db7cf7a21a0b7");
-        sdk.init(map, this);
-//        Map<String, Object> preloadMap = new HashMap<String, Object>();
-//        preloadMap.put(MIntegralConstans.PROPERTIES_LAYOUT_TYPE, MIntegralConstans.LAYOUT_NATIVE);//设置广告形式为native，其中AppWall为LAYOUT_APPWALL
-//        preloadMap.put(MIntegralConstans.PROPERTIES_UNIT_ID,"121132");
-//        preloadMap.put(MIntegralConstans.PROPERTIES_AD_NUM, 1);
-//        sdk.preload(preloadMap);
-
         //路由初始化
         RouterManager.getInstance().init();
 
@@ -77,6 +65,8 @@ public class MyApplication extends MultiDexApplication {
         };
         //x5内核初始化接口
         QbSdk.initX5Environment(getApplicationContext(), cb);
+
+        ActivityTask.init(this, true);
     }
 
     private HttpProxyCacheServer proxy;

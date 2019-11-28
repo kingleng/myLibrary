@@ -15,7 +15,7 @@
         marqueeview:text_color="@color/color_ffaaff"
         marqueeview:text_repert_type="type_two"
         marqueeview:text_size="16sp"
-        marqueeview:text_speed="2" />
+        marqueeview:text_speed="0.5" />
 
     <com.example.leng.myapplication2.ui.myView.MarqueeView
         android:id="@+id/view2"
@@ -28,7 +28,7 @@
         marqueeview:text_color="@color/color_ffaaff"
         marqueeview:text_repert_type="type_two"
         marqueeview:text_size="16sp"
-        marqueeview:text_speed="2" />
+        marqueeview:text_speed="1" />
 
     <com.example.leng.myapplication2.ui.myView.MarqueeView
         android:id="@+id/view3"
