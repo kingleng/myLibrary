@@ -82,7 +82,7 @@ uploadArchives {
             }
             pom.project {
                 name 'kl-app-base'
-                version '1.0.2'
+                version '1.0.3'
                 artifactId 'kl-app-base'
                 groupId 'com.kingleng.demo'
                 packaging 'aar'

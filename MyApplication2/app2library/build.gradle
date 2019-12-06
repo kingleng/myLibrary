@@ -33,7 +33,7 @@ dependencies {
 
 
 //    implementation project(':baselibrary')
-    implementation 'com.kingleng.demo:kl-app-base:1.0.2'
+    implementation 'com.kingleng.demo:kl-app-base:1.0.3'
 
 //    implementation(name:'baselibrary-release', ext:'aar')
 

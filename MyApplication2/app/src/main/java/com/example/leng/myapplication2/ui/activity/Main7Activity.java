@@ -1,5 +1,6 @@
 package com.example.leng.myapplication2.ui.activity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Path;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +13,7 @@ import com.example.leng.myapplication2.ui.myView.PathView;
 import com.example.leng.myapplication2.ui.tools.DensityUtil;
 import com.example.leng.myapplication2.ui.tools.TranslucentBarUtil;
 
-public class Main7Activity extends AppCompatActivity {
+public class Main7Activity extends Activity {
 
     PathView pathView1;
     PathView pathView2;

@@ -11,15 +11,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
-//import android.webkit.WebView;
-//import android.webkit.WebViewClient;
-
 import com.example.leng.myapplication2.R;
 import com.example.leng.myapplication2.ui.myView.FloatDragView;
 import com.tencent.smtt.export.external.interfaces.SslError;
 import com.tencent.smtt.export.external.interfaces.SslErrorHandler;
 import com.tencent.smtt.export.external.interfaces.WebResourceRequest;
-import com.tencent.smtt.export.external.interfaces.WebResourceResponse;
 import com.tencent.smtt.sdk.QbSdk;
 import com.tencent.smtt.sdk.TbsListener;
 import com.tencent.smtt.sdk.WebChromeClient;
@@ -34,26 +30,14 @@ public class WebviewActivity extends AppCompatActivity {
 
     WebView txWebview;
 
+    String url;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webview);
 
-        String url = getIntent().getStringExtra("url");
-
-//        url = "https://www.taobao.com/";
-
-//        //原生webview
-//        webview = findViewById(R.id.webview);
-//        webview.getSettings().setJavaScriptEnabled(true);
-//        webview.setWebViewClient(new WebViewClient(){
-//            @Override
-//            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-//                view.loadUrl(url);
-//                return true;
-//            }
-//        });
-//        webview.loadUrl(url);
+        url = getIntent().getStringExtra("url");
 
         initView();
 
@@ -75,9 +59,10 @@ public class WebviewActivity extends AppCompatActivity {
         txWebview.setWebViewClient(new WebViewClient() {
 
             @Override
-            public boolean shouldOverrideUrlLoading(WebView webView, String s) {
-                webView.loadUrl(s);
+            public boolean shouldOverrideUrlLoading(WebView webView, WebResourceRequest webResourceRequest) {
+                webView.loadUrl(url);
                 return true;
+//                return super.shouldOverrideUrlLoading(webView, webResourceRequest);
             }
 
             @Override
@@ -111,14 +96,16 @@ public class WebviewActivity extends AppCompatActivity {
 
         if(txWebview.getX5WebViewExtension()!=null){
             Log.e("asd","x5 core");
+            myToast("x5 core");
         }else{
             Log.e("asd","sys core");
+            myToast("sys core");
             initX5();
         }
 
         txWebview.loadUrl(url);
 
-        myToast(url);
+//        myToast(url);
     }
 
     private void myToast(String url){

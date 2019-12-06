@@ -169,11 +169,11 @@ public class HomeActivity extends Activity {
         FloatDragView.addFloatDragView(this, rela_layout, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // 点击事件
-//                popupWindow.setAnchorView(view);
-//                popupWindow.show();
-                i++;
-                Toast.makeText(HomeActivity.this,"the i is = "+i,Toast.LENGTH_SHORT).show();
+//                 点击事件
+                popupWindow.setAnchorView(view);
+                popupWindow.show();
+//                i++;
+//                Toast.makeText(HomeActivity.this,"the i is = "+i,Toast.LENGTH_SHORT).show();
             }
         });
 

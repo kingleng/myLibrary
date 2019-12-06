@@ -47,7 +47,7 @@ public class Router {
 
         boolean isUsed = false;
         for(String key:keys){
-            if(adType.contains(key)){
+            if(adType.startsWith(key)){
                 BaseModule module = baseModules.get(key);
                 Bundle bundle = new Bundle();
                 isUsed = module.startActivity(mContext,adType,bundle);

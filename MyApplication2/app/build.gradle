@@ -51,6 +51,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
 }
 
 
@@ -117,8 +124,8 @@ dependencies {
 
     implementation 'com.aliyun.ams:alicloud-android-hotfix:3.2.8'
 
-    //    implementation project(':baselibrary')
-    implementation 'com.kingleng.demo:kl-app-base:1.0.2'
+//    implementation project(':baselibrary')
+    implementation 'com.kingleng.demo:kl-app-base:1.0.3'
     implementation project(':app2library')
 //    implementation 'com.kingleng.demo:kl-app-module2:1.0.1'
 
