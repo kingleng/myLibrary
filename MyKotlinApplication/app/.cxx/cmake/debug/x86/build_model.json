@@ -1,0 +1,72 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "C:\\workspaces\\myLibrary\\MyKotlinApplication",
+      "sdkFolder": "D:\\Android\\sdk",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\build\\intermediates",
+      "gradleModulePathName": ":app",
+      "moduleRootFolder": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app",
+      "makeFile": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\.cxx",
+      "cxxFolder": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\.cxx",
+      "ndkFolder": "D:\\Android\\sdk\\ndk-bundle",
+      "ndkVersion": "19.2.5345600",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [],
+    "cFlagList": [],
+    "cppFlagsList": [
+      ""
+    ],
+    "variantName": "debug",
+    "soFolder": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\build\\intermediates\\cmake\\debug\\lib",
+    "objFolder": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\build\\intermediates\\cmake\\debug\\obj",
+    "jsonFolder": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\.cxx\\cmake\\debug",
+    "gradleBuildOutputFolder": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\.cxx\\cxx\\debug",
+    "isDebuggableEnabled": true,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "X86",
+  "abiPlatformVersion": 16,
+  "cxxBuildFolder": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\.cxx\\cmake\\debug\\x86",
+  "jsonFile": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\.cxx\\cmake\\debug\\x86\\android_gradle_build.json",
+  "gradleBuildOutputFolder": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\.cxx\\cxx\\debug\\x86",
+  "objFolder": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\build\\intermediates\\cmake\\debug\\obj\\x86",
+  "buildCommandFile": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\.cxx\\cmake\\debug\\x86\\build_command.txt",
+  "buildOutputFile": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\.cxx\\cmake\\debug\\x86\\build_output.txt",
+  "modelOutputFile": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\.cxx\\cmake\\debug\\x86\\build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\.cxx\\cxx\\debug\\x86\\CMakeLists.txt",
+    "toolchainWrapperFile": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\.cxx\\cxx\\debug\\x86\\android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\.cxx\\cxx\\debug\\x86\\build_generation_state.json",
+    "cacheKeyFile": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\.cxx\\cxx\\debug\\x86\\compiler_cache_key.json",
+    "compilerCacheUseFile": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\.cxx\\cxx\\debug\\x86\\compiler_cache_use.json",
+    "compilerCacheWriteFile": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\.cxx\\cxx\\debug\\x86\\compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\.cxx\\cxx\\debug\\x86\\compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\.cxx\\cmake\\debug\\x86\\json_generation_record.json",
+  "compileCommandsJsonFile": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\.cxx\\cmake\\debug\\x86\\compile_commands.json"
+}

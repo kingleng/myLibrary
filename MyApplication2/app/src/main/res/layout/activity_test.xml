@@ -7,31 +7,31 @@
     android:fitsSystemWindows="true"
     tools:context="com.example.leng.myapplication2.ui.activity.RefreshActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:minHeight="?attr/actionBarSize"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:titleTextColor="#0940f2"
-        android:background="?attr/colorPrimary">
-    </android.support.v7.widget.Toolbar>
+<!--    <android.support.v7.widget.Toolbar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:minHeight="?attr/actionBarSize"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:titleTextColor="#0940f2"-->
+<!--        android:background="?attr/colorPrimary">-->
+<!--    </android.support.v7.widget.Toolbar>-->
 
-    <com.example.leng.myapplication2.ui.myView.PullToRefreshRecyclerview
-        android:id="@+id/pulltorefreshRecyclerView0"
+<!--    <com.example.leng.myapplication2.ui.myView.PullToRefreshRecyclerview-->
+<!--        android:id="@+id/pulltorefreshRecyclerView0"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_below="@+id/toolbar"/>-->
+
+    <ImageView
+        android:id="@+id/test_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"/>
+        android:src="@drawable/default_pic" />
 
-    <!--<ImageView-->
-        <!--android:id="@+id/test_image"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:src="@drawable/default_pic" />-->
-
-    <!--<com.example.leng.myapplication.view.myView.MyImageView-->
-        <!--android:id="@+id/test_image"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:src="@drawable/default_pic"/>-->
+<!--    <com.example.leng.myapplication2.ui.myView.MyImageView-->
+<!--        android:id="@+id/test_image"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:src="@drawable/default_pic"/>-->
 
 </RelativeLayout>

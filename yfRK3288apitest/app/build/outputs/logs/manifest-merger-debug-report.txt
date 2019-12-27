@@ -1,0 +1,70 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:2:1-24:12
+MERGED from [com.android.support:appcompat-v7:19.1.0] C:\Users\sj\.gradle\caches\transforms-2\files-2.1\f99cba70cafad19e85600c77230f76a7\AndroidManifest.xml:16:1-20:12
+INJECTED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:2:1-24:12
+	package
+		ADDED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:3:5-34
+		INJECTED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml
+		INJECTED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml
+	android:sharedUserId
+		ADDED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:6:5-46
+	android:versionName
+		ADDED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:5:5-30
+		INJECTED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml
+		INJECTED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:4:5-28
+		INJECTED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml
+		INJECTED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml
+application
+ADDED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:8:5-22:19
+MERGED from [com.android.support:appcompat-v7:19.1.0] C:\Users\sj\.gradle\caches\transforms-2\files-2.1\f99cba70cafad19e85600c77230f76a7\AndroidManifest.xml:19:5-20
+MERGED from [com.android.support:appcompat-v7:19.1.0] C:\Users\sj\.gradle\caches\transforms-2\files-2.1\f99cba70cafad19e85600c77230f76a7\AndroidManifest.xml:19:5-20
+	android:label
+		ADDED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:11:9-41
+	android:icon
+		ADDED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:10:9-45
+	android:allowBackup
+		ADDED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:9:9-35
+	android:theme
+		ADDED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:12:9-40
+activity#com.yf.yfa64apitest.MainActivity
+ADDED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:13:9-21:20
+	android:label
+		ADDED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:15:13-45
+	android:name
+		ADDED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:14:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:16:13-20:29
+action#android.intent.action.MAIN
+ADDED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:17:17-69
+	android:name
+		ADDED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:17:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:19:17-77
+	android:name
+		ADDED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml:19:27-74
+uses-sdk
+INJECTED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml
+INJECTED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:19.1.0] C:\Users\sj\.gradle\caches\transforms-2\files-2.1\f99cba70cafad19e85600c77230f76a7\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:appcompat-v7:19.1.0] C:\Users\sj\.gradle\caches\transforms-2\files-2.1\f99cba70cafad19e85600c77230f76a7\AndroidManifest.xml:18:5-42
+INJECTED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml
+INJECTED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml
+		ADDED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml
+		INJECTED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml
+		ADDED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml
+		INJECTED from C:\workspaces\myLibrary\yfRK3288apitest\app\src\main\AndroidManifest.xml

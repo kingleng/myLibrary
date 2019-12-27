@@ -1,0 +1,16 @@
+{
+  "buildFiles": [
+    "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "D:\\Android\\sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\.cxx\\cmake\\release\\arm64-v8a --target clean"
+  ],
+  "libraries": {
+    "native-lib-Release-arm64-v8a": {
+      "artifactName": "native-lib",
+      "buildCommand": "D:\\Android\\sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\.cxx\\cmake\\release\\arm64-v8a --target native-lib",
+      "abi": "arm64-v8a",
+      "output": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a\\libnative-lib.so"
+    }
+  }
+}

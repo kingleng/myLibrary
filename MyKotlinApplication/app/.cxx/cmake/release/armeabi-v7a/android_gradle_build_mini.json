@@ -1,0 +1,16 @@
+{
+  "buildFiles": [
+    "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "D:\\Android\\sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\.cxx\\cmake\\release\\armeabi-v7a --target clean"
+  ],
+  "libraries": {
+    "native-lib-Release-armeabi-v7a": {
+      "artifactName": "native-lib",
+      "buildCommand": "D:\\Android\\sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\.cxx\\cmake\\release\\armeabi-v7a --target native-lib",
+      "abi": "armeabi-v7a",
+      "output": "C:\\workspaces\\myLibrary\\MyKotlinApplication\\app\\build\\intermediates\\cmake\\release\\obj\\armeabi-v7a\\libnative-lib.so"
+    }
+  }
+}

@@ -30,6 +30,10 @@ import com.plattysoft.leonids.ParticleSystem;
 import java.util.ArrayList;
 import java.util.List;
 
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
 public class HomeActivity extends Activity {
 
     private FrameLayout mFlAdHolder;
@@ -101,10 +105,6 @@ public class HomeActivity extends Activity {
                             AppModule.startActivityByUrl(HomeActivity.this,"www.kingleng.com?adType="+data.adType);
                         }else{
                             AppModule.startActivityByUrl(HomeActivity.this,data.url);
-
-//                            loadNative();
-
-//                            AppModule.startActivityByTypeCode(HomeActivity.this,"110001");
                         }
 
                     }
@@ -112,12 +112,6 @@ public class HomeActivity extends Activity {
             }
 
         });
-
-        new ParticleSystem(this, 1000, R.mipmap.timg, 3000)
-                .setSpeedModuleAndAngleRange(0.05f, 0.2f, 0, 360)
-                .setRotationSpeed(30)
-                .setAcceleration(0, 90)
-                .oneShot(recyclerView, 200);
 
         PersonObserver p1 = new PersonObserver("小一");
         PersonObserver p2 = new PersonObserver("小二");
@@ -169,9 +163,15 @@ public class HomeActivity extends Activity {
         FloatDragView.addFloatDragView(this, rela_layout, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                 点击事件
-                popupWindow.setAnchorView(view);
-                popupWindow.show();
+                new ParticleSystem(HomeActivity.this, 1000, R.drawable.p_weather_sun, 3000)
+                        .setSpeedModuleAndAngleRange(0.05f, 0.2f, 0, 360)
+                        .setRotationSpeed(30)
+                        .setScaleRange(0.1f,0.3f)
+                        .setAcceleration(0, 360)
+                        .oneShot(recyclerView, 200);
+////                 点击事件
+//                popupWindow.setAnchorView(view);
+//                popupWindow.show();
 //                i++;
 //                Toast.makeText(HomeActivity.this,"the i is = "+i,Toast.LENGTH_SHORT).show();
             }
@@ -403,6 +403,18 @@ public class HomeActivity extends Activity {
         classData25.className = AudioActivity.class;
         classData25.adType = "100025";
         datas.add(classData25);
+
+        ClassData classData26 = new ClassData();
+        classData26.name = "图片转ascii码字符图";
+        classData26.className = Pic2AsciiActivity.class;
+        classData26.adType = "100026";
+        datas.add(classData26);
+
+        ClassData classData27 = new ClassData();
+        classData27.name = "图片区块点击";
+        classData27.className = ImageMapActivity.class;
+        classData27.adType = "100027";
+        datas.add(classData27);
 
     }
 

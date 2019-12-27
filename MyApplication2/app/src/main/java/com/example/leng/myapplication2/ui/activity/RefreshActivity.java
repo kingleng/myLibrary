@@ -1,5 +1,6 @@
 package com.example.leng.myapplication2.ui.activity;
 
+import android.content.Context;
 import android.graphics.Matrix;
 import android.graphics.PointF;
 import android.graphics.RectF;
@@ -11,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -20,9 +22,9 @@ import com.example.leng.myapplication2.ui.myView.PullToRefreshRecyclerview;
 
 public class RefreshActivity extends AppCompatActivity {
 
-    PullToRefreshRecyclerview pullToRefreshRecyclerview;
+//    PullToRefreshRecyclerview pullToRefreshRecyclerview;
 
-    MyImageView imageView;
+    ImageView imageView;
     int width;
     int height;
 
@@ -41,30 +43,30 @@ public class RefreshActivity extends AppCompatActivity {
 //        getSupportActionBar().setDisplayUseLogoEnabled(true);
 
         // Find the toolbar view inside the activity layout
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         // Sets the Toolbar to act as the ActionBar for this Activity window.
         // Make sure the toolbar exists in the activity and is not null
-        setSupportActionBar(toolbar);
+//        setSupportActionBar(toolbar);
 
-        pullToRefreshRecyclerview = (PullToRefreshRecyclerview)findViewById(R.id.pulltorefreshRecyclerView0);
+//        pullToRefreshRecyclerview = (PullToRefreshRecyclerview)findViewById(R.id.pulltorefreshRecyclerView0);
 
-//        WindowManager wm = (WindowManager)getSystemService(Context.WINDOW_SERVICE);
-//        width = wm.getDefaultDisplay().getWidth();
-//        height = wm.getDefaultDisplay().getHeight();
+        WindowManager wm = (WindowManager)getSystemService(Context.WINDOW_SERVICE);
+        width = wm.getDefaultDisplay().getWidth();
+        height = wm.getDefaultDisplay().getHeight();
 
-//        imageView = (MyImageView)findViewById(R.id.test_image);
+        imageView = findViewById(R.id.test_image);
 
-//        //获得ImageView中Image的变换矩阵
-//        Matrix m = imageView.getImageMatrix();
-//        float[] values = new float[10];
-//        m.getValues(values);
-//
-//        //Image在绘制过程中的变换矩阵，从中获得x和y方向的缩放系数
-//        float sx = values[0];
-//        currentScale = sx;
-//        Log.e("lxy", "currentScale = " + currentScale);
+        //获得ImageView中Image的变换矩阵
+        Matrix m = imageView.getImageMatrix();
+        float[] values = new float[10];
+        m.getValues(values);
 
-//        imageView.setOnTouchListener(new TouchListener());
+        //Image在绘制过程中的变换矩阵，从中获得x和y方向的缩放系数
+        float sx = values[0];
+        currentScale = sx;
+        Log.e("lxy", "currentScale = " + currentScale);
+
+        imageView.setOnTouchListener(new TouchListener());
 
     }
 

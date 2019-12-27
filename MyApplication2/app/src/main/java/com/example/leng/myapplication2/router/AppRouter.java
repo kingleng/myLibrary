@@ -12,6 +12,7 @@ import com.example.leng.myapplication2.ui.activity.DemoActivity;
 import com.example.leng.myapplication2.ui.activity.FrameAnimationActivity;
 import com.example.leng.myapplication2.ui.activity.HomeActivity;
 import com.example.leng.myapplication2.ui.activity.HotfixActivity;
+import com.example.leng.myapplication2.ui.activity.ImageMapActivity;
 import com.example.leng.myapplication2.ui.activity.JsoupActivity;
 import com.example.leng.myapplication2.ui.activity.Main2Activity;
 import com.example.leng.myapplication2.ui.activity.Main6Activity;
@@ -22,6 +23,7 @@ import com.example.leng.myapplication2.ui.activity.MarQueeActivity;
 import com.example.leng.myapplication2.ui.activity.MusicActivity;
 import com.example.leng.myapplication2.ui.activity.MyGameActivity;
 import com.example.leng.myapplication2.ui.activity.MyTextNewActivity;
+import com.example.leng.myapplication2.ui.activity.Pic2AsciiActivity;
 import com.example.leng.myapplication2.ui.activity.RefreshActivity;
 import com.example.leng.myapplication2.ui.activity.RxHttpActivity;
 import com.example.leng.myapplication2.ui.activity.SendSMSActivity;
@@ -136,104 +138,16 @@ public class AppRouter extends BaseRouter {
             case TypeManager.MIAN_ITEM_25:
                 context.startActivity(new Intent(context, AudioActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 break;
+            case TypeManager.MIAN_ITEM_26:
+                context.startActivity(new Intent(context, Pic2AsciiActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                break;
+            case TypeManager.MIAN_ITEM_27:
+                context.startActivity(new Intent(context, ImageMapActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                break;
             default:
                 isUsed = false;
         }
 
         return isUsed;
     }
-
-
-
-//    public void startActivity(Context mContext, String url){
-//
-//        if(!url.contains("adType")){
-//            Intent intent = new Intent(mContext, WebviewActivity.class);
-//            intent.putExtra("url",url);
-//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//            mContext.startActivity(intent);
-//            return;
-//        }
-//        String params = url.split("\\?")[1];
-//        String adType = params.split("&")[0].replace("adType=","");
-//
-//        switch (adType){
-//            case TypeManager.MIAN_ITEM_1:
-//                mContext.startActivity(new Intent(mContext, TestActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//                return;
-//            case TypeManager.MIAN_ITEM_2:
-//                mContext.startActivity(new Intent(mContext, com.example.leng.myapplication2.ui.activity.MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//                return;
-//            case TypeManager.MIAN_ITEM_3:
-//                mContext.startActivity(new Intent(mContext, DemoActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//                return;
-//            case TypeManager.MIAN_ITEM_4:
-//                mContext.startActivity(new Intent(mContext, RefreshActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//                return;
-//            case TypeManager.MIAN_ITEM_5:
-//                mContext.startActivity(new Intent(mContext, CoordinatorLayoutActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//
-//                return;
-//            case TypeManager.MIAN_ITEM_6:
-//                mContext.startActivity(new Intent(mContext, MyGameActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//                return;
-//            case TypeManager.MIAN_ITEM_7:
-//                mContext.startActivity(new Intent(mContext, MyTextNewActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//                return;
-//            case TypeManager.MIAN_ITEM_8:
-//                mContext.startActivity(new Intent(mContext, Main2Activity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//                return;
-//            case TypeManager.MIAN_ITEM_9:
-//                mContext.startActivity(new Intent(mContext, MarQueeActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//                return;
-//            case TypeManager.MIAN_ITEM_10:
-//                mContext.startActivity(new Intent(mContext, Main6Activity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//                return;
-//            case TypeManager.MIAN_ITEM_11:
-//                mContext.startActivity(new Intent(mContext, Main7Activity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//                return;
-//            case TypeManager.MIAN_ITEM_12:
-//                mContext.startActivity(new Intent(mContext, Main8Activity_LianDong.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//                return;
-//            case TypeManager.MIAN_ITEM_13:
-//                mContext.startActivity(new Intent(mContext, MusicActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//                return;
-//            case TypeManager.MIAN_ITEM_14:
-//                mContext.startActivity(new Intent(mContext, VlayoutActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//                return;
-//            case TypeManager.MIAN_ITEM_15:
-//                mContext.startActivity(new Intent(mContext, ViewPager2Activity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//                return;
-//            case TypeManager.MIAN_ITEM_16:
-//                mContext.startActivity(new Intent(mContext, ViewPagerActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//                return;
-//            case TypeManager.MIAN_ITEM_17:
-//                mContext.startActivity(new Intent(mContext, XuanFuActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//                return;
-//            case TypeManager.MIAN_ITEM_18:
-//                mContext.startActivity(new Intent(mContext, VideoViewActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//                return;
-//            case TypeManager.MIAN_ITEM_19:
-//                mContext.startActivity(new Intent(mContext, CameraActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//                return;
-//            case TypeManager.MIAN_ITEM_20:
-//                mContext.startActivity(new Intent(mContext, FrameAnimationActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//                return;
-//            case TypeManager.MIAN_ITEM_21:
-//                mContext.startActivity(new Intent(mContext, JsoupActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//                return;
-//            case TypeManager.MIAN_ITEM_22:
-//                mContext.startActivity(new Intent(mContext, RxHttpActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//                return;
-//            case TypeManager.MIAN_ITEM_23:
-//                mContext.startActivity(new Intent(mContext, HotfixActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//                return;
-//            case TypeManager.MIAN_ITEM_24:
-//                mContext.startActivity(new Intent(mContext, SendSMSActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-//                return;
-//            default:
-//                Toast.makeText(mContext, "页面找不到了！", Toast.LENGTH_SHORT).show();
-//        }
-//
-//    }
 }
