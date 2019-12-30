@@ -8,8 +8,9 @@
 
     <com.example.leng.myapplication2.ui.myView.ImageMapView
         android:id="@+id/imagemapview"
-        android:layout_width="@dimen/qb_px_350"
-        android:layout_height="@dimen/qb_px_550"
+        android:layout_width="@dimen/qb_px_700"
+        android:layout_height="@dimen/qb_px_1100"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

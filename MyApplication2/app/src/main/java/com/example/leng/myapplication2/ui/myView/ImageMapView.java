@@ -23,6 +23,7 @@ public class ImageMapView extends AppCompatImageView {
 
     private int widthSize;
     private int heightSize;
+    private float scale = 1f;
 
     Paint mPaint;
 
@@ -44,11 +45,23 @@ public class ImageMapView extends AppCompatImageView {
         this.items = items;
     }
 
+
+    /**
+     * 图片展示大小与坐标系大小的缩放系数
+     * @param scale
+     */
+    public void setScale(float scale) {
+        this.scale = scale;
+    }
+
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         init();
+
     }
+
+
 
     private void init() {
 
@@ -76,16 +89,16 @@ public class ImageMapView extends AppCompatImageView {
 
         if (TextUtils.equals(touchItem.shape, "circ")) {
             int[] values = touchItem.values;
-            int cx = values[0];
-            int cy = values[1];
-            int radius = values[2];
+            int cx = (int)(values[0] * scale);
+            int cy = (int)(values[1] * scale);
+            int radius = (int)(values[2] * scale);
             canvas.drawCircle(cx,cy,radius,mPaint);
         }else if (TextUtils.equals(touchItem.shape, "rect")) {
             int[] values = touchItem.values;
-            int left = values[0];
-            int top = values[1];
-            int right = values[2];
-            int bottom = values[3];
+            int left = (int)(values[0] * scale);
+            int top = (int)(values[1] * scale);
+            int right = (int)(values[2] * scale);
+            int bottom = (int)(values[3] * scale);
             canvas.drawRect(left,top,right,bottom,mPaint);
         } else {
             int[] values = touchItem.values;
@@ -93,11 +106,11 @@ public class ImageMapView extends AppCompatImageView {
             for(int i=0;i<values.length;i=i+2){
                 if(i==0){
                     if(i+1<values.length){
-                        mPath.moveTo(values[i], values[i+1]);
+                        mPath.moveTo(values[i]*scale, values[i+1]*scale);
                     }
                 }else{
                     if(i+1<values.length){
-                        mPath.lineTo(values[i], values[i+1]);
+                        mPath.lineTo(values[i]*scale, values[i+1]*scale);
                     }
                 }
             }
@@ -126,11 +139,11 @@ public class ImageMapView extends AppCompatImageView {
                 int y = (int) event.getY();
                 for (int i = 0; i < items.size(); i++) {
                     ItemType itemType = items.get(i);
-                    int[] values = touchItem.values;
+                    int[] values = itemType.values;
                     if (TextUtils.equals(itemType.shape, "circ")) {
-                        int cx = values[0];
-                        int cy = values[1];
-                        int radius = values[2];
+                        int cx = (int)(values[0]*scale);
+                        int cy = (int)(values[1]*scale);
+                        int radius = (int)(values[2]*scale);
 
                         int dx = Math.abs(cx-x);
                         int dy = Math.abs(cy-y);
@@ -142,10 +155,10 @@ public class ImageMapView extends AppCompatImageView {
                             return true;
                         }
                     }else if (TextUtils.equals(itemType.shape, "rect")) {
-                        int left = values[0];
-                        int top = values[1];
-                        int right = values[2];
-                        int bottom = values[3];
+                        int left = (int)(values[0]*scale);
+                        int top = (int)(values[1]*scale);
+                        int right = (int)(values[2]*scale);
+                        int bottom = (int)(values[3]*scale);
 
                         if(x>left && x<right && y>top && y<bottom){
                             itemType.listener.onClick();
@@ -157,8 +170,8 @@ public class ImageMapView extends AppCompatImageView {
                         int[] valueXs = new int[values.length/2];
                         int[] valueYs = new int[values.length/2];
                         for(int j=0;j<values.length;j+=2){
-                            valueXs[j/2] = values[j];
-                            valueYs[j/2] = values[j+1];
+                            valueXs[j/2] = (int)(values[j]*scale);
+                            valueYs[j/2] = (int)(values[j+1]*scale);
                         }
                         if (pnpoly(values.length / 2, valueXs, valueYs, x, y)) {
                             itemType.listener.onClick();

@@ -76,7 +76,40 @@ public class ImageMapActivity extends AppCompatActivity {
         });
         items.add(itemType6);
 
+        ImageMapView.ItemType itemType7 = new ImageMapView.ItemType("poly", new int[]{6,325,233,325,233,383,6,383}, new ImageMapView.ItemListener() {
+            @Override
+            public void onClick() {
+                Toast.makeText(getApplicationContext(), "77", Toast.LENGTH_SHORT).show();
+            }
+        });
+        items.add(itemType7);
+
+        ImageMapView.ItemType itemType8 = new ImageMapView.ItemType("poly", new int[]{239,380,325,380,325,439,239,439}, new ImageMapView.ItemListener() {
+            @Override
+            public void onClick() {
+                Toast.makeText(getApplicationContext(), "88", Toast.LENGTH_SHORT).show();
+            }
+        });
+        items.add(itemType8);
+
+        ImageMapView.ItemType itemType9 = new ImageMapView.ItemType("poly", new int[]{6,393,233,393,233,438,6,438}, new ImageMapView.ItemListener() {
+            @Override
+            public void onClick() {
+                Toast.makeText(getApplicationContext(), "99", Toast.LENGTH_SHORT).show();
+            }
+        });
+        items.add(itemType9);
+
+        ImageMapView.ItemType itemType10 = new ImageMapView.ItemType("poly", new int[]{125,451,341,451,341,539,125,539}, new ImageMapView.ItemListener() {
+            @Override
+            public void onClick() {
+                Toast.makeText(getApplicationContext(), "1010", Toast.LENGTH_SHORT).show();
+            }
+        });
+        items.add(itemType10);
+
         imageMapView.setImageResource(R.drawable.pager_bg);
         imageMapView.setItems(items);
+        imageMapView.setScale(2.0f);
     }
 }
