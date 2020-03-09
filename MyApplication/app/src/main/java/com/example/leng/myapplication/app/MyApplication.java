@@ -2,6 +2,7 @@ package com.example.leng.myapplication.app;
 
 import android.app.Application;
 
+import com.example.leng.myapplication.base.plugIn.Hookhelper;
 import com.example.leng.myapplication.view.tools.MyLog;
 
 /**
@@ -22,5 +23,7 @@ public class MyApplication extends Application {
         if (CONFIG == Constants.RELEASE) {
             MyLog.isDebug = false;
         }
+
+
     }
 }

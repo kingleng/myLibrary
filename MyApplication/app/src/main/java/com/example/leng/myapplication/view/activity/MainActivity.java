@@ -12,6 +12,9 @@ import android.view.animation.LinearInterpolator;
 import android.widget.TextView;
 
 import com.example.leng.myapplication.R;
+import com.example.leng.myapplication.base.hook.test.HookUtils;
+import com.example.leng.myapplication.base.plugIn.Hookhelper;
+import com.example.leng.myapplication.base.plugIn.TargetActivity;
 import com.example.leng.myapplication.view.myView.MyView;
 import com.example.leng.myapplication.view.myView.MyView2;
 import com.example.leng.myapplication.view.myView.MyView3;
@@ -49,6 +52,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        try {
+            Hookhelper.hookAMS();
+            Hookhelper.hookHandler();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+//        HookUtils.replaceActivityInstrumentation(this);
+//        HookUtils.replaceContextInstrumentation();
+
         myView = (MyView)findViewById(R.id.myview);
         myView2 = (MyView2)findViewById(R.id.myview2);
         myView3 = (MyView3)findViewById(R.id.myview3);
@@ -61,7 +74,8 @@ public class MainActivity extends AppCompatActivity {
         myView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,Main4Activity.class));
+//                startActivity(new Intent(MainActivity.this,Main4Activity.class));
+                startActivity(new Intent(MainActivity.this, TargetActivity.class));
             }
         });
 
@@ -71,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,Main5Activity.class));
+//                getApplicationContext().startActivity(new Intent(MainActivity.this,Main5Activity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
             }
         });
 

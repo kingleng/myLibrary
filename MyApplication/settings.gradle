@@ -1,2 +1,1 @@
-include ':app', ':myloginlibrary', ':umeng_community_simplify_library_project', ':mylibrary'
-include ':umeng_community_demo_simplify'
+include ':app', ':mylibrary'

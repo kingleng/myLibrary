@@ -138,4 +138,7 @@ dependencies {
     //二维码的扫描功能
     api 'com.google.zxing:android-core:3.3.0'
     api 'com.google.zxing:core:3.3.2'
+
+    //可定制化阴影的万能阴影布局ShadowLayout  https://github.com/lihangleo2/ShadowLayout?utm_source=androidweekly.io&utm_medium=website
+    implementation 'com.github.lihangleo2:ShadowLayout:2.1.6'
 }
