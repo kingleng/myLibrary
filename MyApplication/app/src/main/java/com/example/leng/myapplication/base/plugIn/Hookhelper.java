@@ -1,5 +1,7 @@
 package com.example.leng.myapplication.base.plugIn;
 
+import android.app.Instrumentation;
+import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
 
@@ -11,6 +13,7 @@ import java.lang.reflect.Proxy;
  */
 public class Hookhelper {
     public static final String TARGET_INTENT = "target_intent";
+    public static final String TARGET_INTENT_NAME = "target_intent_name";
 
     public static void hookAMS() throws Exception{
         Object defaultSingleton = null;
@@ -40,6 +43,17 @@ public class Hookhelper {
         Handler mH = (Handler)mHField.get(currentActivityThread);
         FieldUtil.setField(Handler.class,mH,"mCallback",new HCallback(mH));
 
+    }
+
+    public static void hookInstrumentation(Context context) throws Exception{
+        Class<?> contextImplClass = Class.forName("android.app.ContextImpl");
+        Field mMainThreadField  =FieldUtil.getField(contextImplClass,"mMainThread");
+        Object activityThread = mMainThreadField.get(context);
+
+        Class<?> activityThreadClass = Class.forName("android.app.ActivityThread");
+        Field mInstrumentationField = FieldUtil.getField(activityThreadClass,"mInstrumentation");
+        InstrumentationProxy proxy = new InstrumentationProxy((Instrumentation)mInstrumentationField.get(activityThread),context.getPackageManager());
+        FieldUtil.setField(activityThreadClass,activityThread,"mInstrumentation",proxy);
     }
 
 }

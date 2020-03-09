@@ -52,12 +52,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        try {
-            Hookhelper.hookAMS();
-            Hookhelper.hookHandler();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
 
 //        HookUtils.replaceActivityInstrumentation(this);
 //        HookUtils.replaceContextInstrumentation();

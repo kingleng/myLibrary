@@ -1,6 +1,7 @@
 package com.example.leng.myapplication.app;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.example.leng.myapplication.base.plugIn.Hookhelper;
 import com.example.leng.myapplication.view.tools.MyLog;
@@ -25,5 +26,17 @@ public class MyApplication extends Application {
         }
 
 
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        try {
+//            Hookhelper.hookAMS();
+//            Hookhelper.hookHandler();
+            Hookhelper.hookInstrumentation(base);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
