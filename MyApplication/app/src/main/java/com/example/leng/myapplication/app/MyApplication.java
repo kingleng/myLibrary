@@ -2,9 +2,14 @@ package com.example.leng.myapplication.app;
 
 import android.app.Application;
 import android.content.Context;
+import android.os.Environment;
+import android.widget.Toast;
 
 import com.example.leng.myapplication.base.plugIn.Hookhelper;
+import com.example.leng.myapplication.base.plugIn.manager.PluginManager;
 import com.example.leng.myapplication.view.tools.MyLog;
+
+import java.io.File;
 
 /**
  * Created by leng on 2017/3/2.
@@ -25,7 +30,6 @@ public class MyApplication extends Application {
             MyLog.isDebug = false;
         }
 
-
     }
 
     @Override
@@ -34,9 +38,13 @@ public class MyApplication extends Application {
         try {
 //            Hookhelper.hookAMS();
 //            Hookhelper.hookHandler();
+
             Hookhelper.hookInstrumentation(base);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+
 }

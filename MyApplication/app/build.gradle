@@ -1,15 +1,17 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
     defaultConfig {
         applicationId "com.example.leng.myapplication"
         minSdkVersion 14
-        targetSdkVersion 25
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -29,6 +31,22 @@ android {
             keyPassword "android"
         }
     }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+    dexOptions {
+        javaMaxHeapSize "1g"
+        preDexLibraries = false
+        additionalParameters = [    //配置multidex参数
+                                    '--multi-dex',//多dex分包
+                                    '--set-max-idx-number=30000',//每个包内方法数上限
+                                    '--main-dex-list='+projectDir+'/main-dex-rule', //打包到主classes.dex的文件列表
+                                    '--minimal-main-dex'
+        ]
+    }
 }
 
 repositories {
@@ -40,12 +58,15 @@ dependencies {
     implementation project(':mylibrary')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit:4.12'
-    implementation 'com.android.support:appcompat-v7:25.1.0'
-    implementation 'com.android.support:recyclerview-v7:25.1.0'
-    implementation 'com.android.support:design:25.1.0'
-    implementation 'com.android.support:support-v4:25.1.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.github.bumptech.glide:glide:3.7.0'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.0.1'
     implementation 'org.greenrobot:eventbus:3.0.0'
+
+    //multidex支持依赖
+    implementation 'com.android.support:multidex:1.0.0'
 }

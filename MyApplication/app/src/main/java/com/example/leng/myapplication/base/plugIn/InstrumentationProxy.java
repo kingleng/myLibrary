@@ -10,8 +10,13 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.text.TextUtils;
 
+import com.example.leng.myapplication.base.plugIn.manager.PlugInfo;
+import com.example.leng.myapplication.base.plugIn.manager.PluginManager;
+
 import java.lang.reflect.Method;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by leng on 2020/3/9.
@@ -46,7 +51,24 @@ public class InstrumentationProxy extends Instrumentation {
             throws InstantiationException, IllegalAccessException, ClassNotFoundException {
         String intentName = intent.getStringExtra(Hookhelper.TARGET_INTENT_NAME);
         if(!TextUtils.isEmpty(intentName)){
-            return super.newActivity(cl,intentName,intent);
+            Set<String> keys = PluginManager.getInstance().getPluginPkgToInfoMap().keySet();
+            Iterator iterator = keys.iterator();
+            if(iterator.hasNext()){
+                PlugInfo plugInfo = PluginManager.getInstance().getPluginPkgToInfoMap().get(iterator.next());
+                Iterator acs = plugInfo.getActivities().iterator();
+                if(acs.hasNext()){
+                    for(;acs.hasNext();){
+                        ResolveInfo resolveInfo = (ResolveInfo)acs.next();
+//                        if(resolveInfo.activityInfo.name.contains("GuideActivity")){
+//                            intent.setClassName(plugInfo.getPackageName(),resolveInfo.activityInfo.name);
+//                            return super.newActivity(plugInfo.getClassLoader(),resolveInfo.activityInfo.name,intent);
+//                        }
+                        intent.setClassName(plugInfo.getPackageName(),resolveInfo.activityInfo.name);
+                        return super.newActivity(plugInfo.getClassLoader(),resolveInfo.activityInfo.name,intent);
+                    }
+                }
+            }
+//            return super.newActivity(cl,intentName,intent);
         }
         return super.newActivity(cl,className,intent);
     }

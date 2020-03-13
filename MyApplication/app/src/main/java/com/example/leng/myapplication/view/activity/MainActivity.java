@@ -10,18 +10,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.leng.myapplication.R;
 import com.example.leng.myapplication.base.hook.test.HookUtils;
 import com.example.leng.myapplication.base.plugIn.Hookhelper;
 import com.example.leng.myapplication.base.plugIn.TargetActivity;
+import com.example.leng.myapplication.base.plugIn.manager.PluginManager;
 import com.example.leng.myapplication.view.myView.MyView;
 import com.example.leng.myapplication.view.myView.MyView2;
 import com.example.leng.myapplication.view.myView.MyView3;
 import com.example.leng.myapplication.view.myView.MyView4;
 import com.example.leng.myapplication.view.myView.MyView7;
 import com.example.leng.myapplication.view.myView.MyView8;
+import com.example.leng.myapplication.view.tools.AndroidUtils;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,9 +57,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+        try {
+            PluginManager.init(this);
 
-//        HookUtils.replaceActivityInstrumentation(this);
-//        HookUtils.replaceContextInstrumentation();
+            String apk_path = AndroidUtils.getSDPath() + File.separator + "plugin"+ File.separator+"plugin.apk";
+            if(new File(apk_path).exists()){
+                PluginManager.getInstance().loadPlugin(new File(apk_path));
+            }else{
+                Toast.makeText(this,"插件不存在",Toast.LENGTH_SHORT).show();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         myView = (MyView)findViewById(R.id.myview);
         myView2 = (MyView2)findViewById(R.id.myview2);
