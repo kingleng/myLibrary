@@ -11,11 +11,13 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/app2library" />
             <option value="$PROJECT_DIR$/baselibrary" />
+            <option value="$PROJECT_DIR$/gradlelibrary" />
             <option value="$PROJECT_DIR$/mylibrary" />
             <option value="$PROJECT_DIR$/myloginlibrary" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
+        <option name="testRunner" value="PLATFORM" />
       </GradleProjectSettings>
     </option>
   </component>

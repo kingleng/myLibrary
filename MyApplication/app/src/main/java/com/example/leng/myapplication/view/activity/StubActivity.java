@@ -1,10 +1,10 @@
 package com.example.leng.myapplication.view.activity;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-public class StubActivity extends AppCompatActivity {
+public class StubActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

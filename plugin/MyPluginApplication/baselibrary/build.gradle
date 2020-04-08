@@ -1,0 +1,102 @@
+import com.android.build.gradle.api.LibraryVariant
+import com.google.common.base.Joiner
+
+apply plugin: 'com.android.library'
+apply from: 'maven_push.gradle'
+
+android {
+    compileSdkVersion 27
+
+    defaultConfig {
+        minSdkVersion 19
+        //noinspection ExpiredTargetSdkVersion
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        multiDexEnabled = true
+
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+final String projectAndroidStub = ':AndroidStub'
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    compileOnly project(path: projectAndroidStub)
+
+//    implementation 'com.android.support:appcompat-v7:27.1.0'
+//    implementation 'com.android.support:support-annotations:27.1.1'
+//    api 'com.android.support:recyclerview-v7:27.1.0'
+
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+
+    //dex 分包
+    implementation 'com.android.support:multidex:1.0.1'
+
+    //okhttp 网络
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.2.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.14.1'
+    implementation 'com.google.code.gson:gson:2.8.5' // gson
+
+    //glide 图片
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'jp.wasabeef:glide-transformations:2.0.0'  //独立的图片处理库
+
+    //加载超长图
+    implementation 'com.davemorrissey.labs:subsampling-scale-image-view:3.10.0'
+    //util 工具集
+    implementation 'com.blankj:utilcode:1.9.0'
+    //block
+    implementation 'com.github.markzhai:blockcanary-android:1.5.0'
+    //LogReport 异常日志上传
+    implementation 'com.github.wenmingvs:LogReport:1.0.3'
+    //eventbus 事件
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation 'com.google.code.gson:gson:2.8.1'
+    //WebView缓存
+    implementation 'ren.yale.android:cachewebviewlib:2.1.8'
+
+    implementation 'com.rxjava.rxhttp:rxhttp:1.2.4'
+    annotationProcessor 'com.rxjava.rxhttp:rxhttp-compiler:1.2.4' //注解处理器，生成RxHttp类
+    implementation 'com.rxjava.rxlife:rxlife:1.1.0'  //页面销毁，关闭请求，非必须
+
+    //jsoup
+    implementation 'org.jsoup:jsoup:1.10.3'
+
+    //二维码的扫描功能
+    implementation 'com.google.zxing:android-core:3.3.0'
+    implementation 'com.google.zxing:core:3.3.2'
+}
+
+// Using Stub classes first when compiling.
+afterEvaluate {
+    project.android.libraryVariants.each { LibraryVariant variant ->
+        variant.javaCompile.doFirst { JavaCompile javaCompile ->
+            String projectAndroidStubPath = project.project(projectAndroidStub).projectDir.canonicalPath
+//            println "projectAndroidStubPath: ${projectAndroidStubPath}"
+            File stubPath = javaCompile.classpath.find {
+                it.canonicalPath.startsWith(projectAndroidStubPath)
+            }
+            if (stubPath == null) {
+                throw new RuntimeException("reset bootclasspath error.")
+            }
+            javaCompile.options.setBootClasspath(Joiner.on(File.pathSeparator).join(stubPath, javaCompile.options.bootClasspath))
+        }
+    }
+}

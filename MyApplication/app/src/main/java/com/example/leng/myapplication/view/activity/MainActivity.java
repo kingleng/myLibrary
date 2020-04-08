@@ -5,7 +5,6 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
@@ -13,8 +12,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.leng.myapplication.R;
-import com.example.leng.myapplication.base.hook.test.HookUtils;
-import com.example.leng.myapplication.base.plugIn.Hookhelper;
 import com.example.leng.myapplication.base.plugIn.TargetActivity;
 import com.example.leng.myapplication.base.plugIn.manager.PluginManager;
 import com.example.leng.myapplication.view.myView.MyView;
@@ -29,7 +26,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private MyView myView;
     private MyView2 myView2;
@@ -58,9 +55,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         try {
-            PluginManager.init(this);
+            PluginManager.init(getBaseContext());
 
             String apk_path = AndroidUtils.getSDPath() + File.separator + "plugin"+ File.separator+"plugin.apk";
+//            String apk_path = "/sdcard" + File.separator + "plugin"+ File.separator+"plugin.apk";
             if(new File(apk_path).exists()){
                 PluginManager.getInstance().loadPlugin(new File(apk_path));
             }else{
@@ -83,8 +81,8 @@ public class MainActivity extends AppCompatActivity {
         myView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(MainActivity.this,Main4Activity.class));
                 startActivity(new Intent(MainActivity.this, TargetActivity.class));
+//                startActivity(new Intent(MainActivity.this, StubActivity.class));
             }
         });
 
@@ -93,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,Main5Activity.class));
+                startActivity(new Intent(MainActivity.this, StubActivity.class));
 //                getApplicationContext().startActivity(new Intent(MainActivity.this,Main5Activity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
             }
         });
@@ -102,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,Main3Activity.class));
+                startActivity(new Intent(MainActivity.this, StubActivity.class));
             }
         });
         final MyView4 btn3 = (MyView4)findViewById(R.id.ibtn3);

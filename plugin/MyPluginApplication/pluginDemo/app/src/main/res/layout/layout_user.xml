@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/user_layout"
+    android:layout_marginTop="@dimen/px40"
+    android:layout_marginBottom="@dimen/px10">
+
+    <RelativeLayout
+        android:layout_width="@dimen/px702"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/px80">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/z_layout_bg"
+            android:paddingTop="@dimen/px30"
+            android:paddingBottom="@dimen/px30"
+            android:paddingLeft="@dimen/px40"
+            android:paddingRight="@dimen/px40">
+
+            <TextView
+                android:id="@+id/user_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/z_layout_bg"
+                android:text="你是谁啊"
+                android:textSize="@dimen/px28"
+                android:textColor="@color/color_3c3f50"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

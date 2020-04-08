@@ -1,0 +1,60 @@
+
+buildscript {
+    repositories {
+        mavenLocal()
+        google()
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+    }
+}
+
+tasks.withType(GroovyCompile) {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
+
+apply plugin: 'groovy'
+apply plugin: 'java'//导入java插件用于，编译打包我们的插件
+
+apply plugin: 'maven'//maven插件，用于上传插件到仓库
+
+//uploadArchives 类型是upload，这个task不是'maven'创建的
+//而是'maven'定义了一个rule,而后由我们自己创建的，关于rule，请看后面内容
+uploadArchives{
+    //本地仓库的一种
+    repositories{
+        mavenDeployer {
+            repository(url: "http://192.168.11.205:8023/repository/maven-releases/") {
+                authentication(userName: "admin", password: "admin123")
+            }
+            pom.project {
+                name 'kl-app-gradle'
+                version '1.0.43'
+                artifactId 'kl-app-gradle'
+                groupId 'com.kingleng.demo'
+                packaging 'aar'
+                description 'gradle'
+            }
+        }
+    }
+
+}
+//group = "com.kingleng.demo"//project属性
+//version = "1.0"//project属性
+dependencies {
+    //导入Gradle的api，要写插件，肯定要使用Gradle的api
+    implementation gradleApi()
+    implementation localGroovy()
+
+    implementation 'com.google.guava:guava:19.0'
+    implementation 'commons-io:commons-io:1.4'
+    implementation 'commons-codec:commons-codec:1.6'
+    implementation 'org.ow2.asm:asm:4.0'
+    implementation 'org.javassist:javassist:3.18.2-GA'
+
+    implementation 'com.android.tools.build:gradle:3.1.0'
+}

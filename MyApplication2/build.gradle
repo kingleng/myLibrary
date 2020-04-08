@@ -16,6 +16,9 @@ buildscript {
 
         jcenter()
         google()
+
+//        flatDir  name:'localRepository',dir:"helloworld/localRepository/libs'
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.2'
@@ -23,8 +26,11 @@ buildscript {
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        classpath 'com.kingleng.demo:kl-app-gradle:1.0.1'//命名是我们的groupId：moduleName：version
     }
 }
+
 
 allprojects {
     repositories {

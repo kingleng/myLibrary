@@ -1,12 +1,20 @@
 package com.example.leng.myapplication.base.plugIn.manager;
 
 import android.app.Application;
+import android.app.Instrumentation;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.ContextWrapper;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
+import android.os.Handler;
 import android.util.Log;
+
+import com.example.leng.myapplication.base.plugIn.FieldUtil;
+import com.example.leng.myapplication.base.plugIn.InstrumentationProxy;
+import com.example.leng.myapplication.base.plugIn.ResourcesManager;
 
 import java.io.File;
 import java.lang.reflect.Field;
@@ -43,18 +51,64 @@ public class PluginManager {
 
     public PluginManager(Context context) {
         this.context = context;
-        File pFile = context.getDir("plugin",Context.MODE_PRIVATE);
-        privatePath =pFile.getAbsolutePath();
+//        File pFile = context.getDir("plugin",Context.MODE_PRIVATE);
+//        privatePath =pFile.getAbsolutePath();
+
+        privatePath =context.getFilesDir().getAbsolutePath()+"/plugin";
+        File pFile = new File(privatePath);
+        if(!pFile.exists()){
+            pFile.mkdir();
+        }
 //        privatePath = context.getFilesDir().getAbsolutePath()+"/plugin";
         dexOutputPath = context.getFilesDir().getAbsolutePath()+"/plugin_file";
+        File dFile = new File(dexOutputPath);
+        if(!dFile.exists()){
+            dFile.mkdir();
+        }
 
-        File dexFile = context.getDir("plugin_file",Context.MODE_PRIVATE);
-        dexOutputPath =dexFile.getAbsolutePath();
+//        File dexFile = context.getDir("plugin_file",Context.MODE_PRIVATE);
+//        dexOutputPath =dexFile.getAbsolutePath();
 
+        hookInstrumentationAndHandler();
+    }
+
+
+    protected void hookInstrumentationAndHandler() {
+        try {
+            Class<?> contextImplClass = Class.forName("android.app.ContextImpl");
+            Field mMainThreadField  = FieldUtil.getField(contextImplClass,"mMainThread");
+            Object activityThread = mMainThreadField.get(context);
+
+            Class<?> activityThreadClass = Class.forName("android.app.ActivityThread");
+            Field mInstrumentationField = FieldUtil.getField(activityThreadClass,"mInstrumentation");
+            InstrumentationProxy proxy = new InstrumentationProxy((Instrumentation)mInstrumentationField.get(activityThread),context.getPackageManager());
+            FieldUtil.setField(activityThreadClass,activityThread,"mInstrumentation",proxy);
+
+            Handler mainHandler = (Handler)FieldUtil.getField(activityThread.getClass(),activityThread,"mH");
+            FieldUtil.setField(Handler.class,mainHandler,"mCallback",proxy.addHandler(mainHandler));
+
+        } catch (Exception e) {
+            Log.w(TAG, e);
+        }
     }
 
     public Map<String, PlugInfo> getPluginPkgToInfoMap() {
         return pluginPkgToInfoMap;
+    }
+
+    public PlugInfo getLoadedPlugin(Intent intent) {
+        return getLoadedPlugin(intent.getComponent());
+    }
+
+    public PlugInfo getLoadedPlugin(ComponentName component) {
+        if (component == null) {
+            return null;
+        }
+        return this.getLoadedPlugin(component.getPackageName());
+    }
+
+    public PlugInfo getLoadedPlugin(String packageName) {
+        return this.pluginPkgToInfoMap.get(packageName);
     }
 
     public PlugInfo loadPlugin(File pluginSrcDirFile) throws Exception{
@@ -101,18 +155,9 @@ public class PluginManager {
         //获取一些apk里面 MainFest.xml的一些内容，包括 pacageName 、Activity 、application 等
         PluginManifestUtil.setManifestInfo(context, dexPath, info,null);
 
-        //Load Plugin Res
-        //通过反射的方式获取 AssetManager 的 addAssetPath 方法，把apk中的资源加入到 Resources 中
-        try {
-            AssetManager am = AssetManager.class.newInstance();
-            am.getClass().getMethod("addAssetPath", String.class).invoke(am, dexPath);
-            info.setAssetManager(am);
-            Resources hotRes = context.getResources();
-            Resources res = new Resources(am, hotRes.getDisplayMetrics(), hotRes.getConfiguration());
-            info.setResources(res);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Resources resources = createResources(context,dexPath,pluginApk);
+        info.setResources(resources);
+
 
         //Load  classLoader for Plugin
         PluginClassLoader pluginClassLoader = new PluginClassLoader(info, dexPath, dexOutputPath
@@ -129,6 +174,25 @@ public class PluginManager {
         info.setApplication(app);
         Log.i(TAG, "buildPlugInfo: " + info);
         return info;
+    }
+
+    protected Resources createResources(Context context, String dexPath, File apk) throws Exception {
+        if (true) {
+            return ResourcesManager.createResourcesSimple(context, apk.getAbsolutePath());
+        } else {
+//            Resources hostResources = context.getResources();
+//            AssetManager assetManager = createAssetManager(context, apk);
+//            return new Resources(assetManager, hostResources.getDisplayMetrics(), hostResources.getConfiguration());
+
+                    //Load Plugin Res
+        //通过反射的方式获取 AssetManager 的 addAssetPath 方法，把apk中的资源加入到 Resources 中
+            AssetManager am = AssetManager.class.newInstance();
+            am.getClass().getMethod("addAssetPath", String.class).invoke(am, dexPath);
+//            info.setAssetManager(am);
+            Resources hotRes = context.getResources();
+            Resources res = new Resources(am, hotRes.getDisplayMetrics(), hotRes.getConfiguration());
+            return res;
+        }
     }
 
     /**

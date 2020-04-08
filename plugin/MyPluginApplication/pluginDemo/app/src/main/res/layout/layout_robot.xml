@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/px40">
+
+    <ImageView
+        android:id="@+id/robot_image"
+        android:layout_width="@dimen/px163"
+        android:layout_height="@dimen/px133"
+        android:background="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/z_icon2" />
+
+
+    <RelativeLayout
+        android:layout_width="@dimen/px702"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/robot_image">
+
+        <RelativeLayout
+            android:id="@+id/rebot_text_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/z_layout_bg">
+
+            <ImageView
+                android:id="@+id/robot_text_icon"
+                android:layout_width="@dimen/px36"
+                android:layout_height="@dimen/px36"
+                android:layout_marginLeft="@dimen/px30"
+                android:layout_marginTop="@dimen/px30"
+                android:src="@drawable/z_rebot_icon1" />
+
+            <TextView
+                android:id="@+id/robot_text_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/px12"
+                android:layout_marginTop="@dimen/px30"
+                android:layout_marginRight="@dimen/px40"
+                android:layout_marginBottom="@dimen/px30"
+                android:layout_toRightOf="@+id/robot_text_icon"
+                android:text="小法的意见"
+                android:textColor="@color/color_113260"
+                android:textSize="@dimen/px26" />
+
+            <View
+                android:id="@+id/lin_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/px1"
+                android:layout_below="@+id/robot_text_title"
+                android:layout_alignLeft="@+id/robot_text"
+                android:layout_alignRight="@+id/robot_text"
+                android:background="@color/color_666666" />
+
+            <TextView
+                android:id="@+id/robot_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lin_layout"
+                android:layout_marginLeft="@dimen/px40"
+                android:layout_marginTop="@dimen/px30"
+                android:layout_marginRight="@dimen/px40"
+                android:layout_marginBottom="@dimen/px30"
+                android:textColor="@color/color_3c3f50"
+                android:textSize="@dimen/px28" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rebot_law_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rebot_text_layout"
+            android:layout_marginTop="@dimen/px40"
+            android:background="@drawable/z_layout_bg"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/robot_law_icon"
+                android:layout_width="@dimen/px36"
+                android:layout_height="@dimen/px36"
+                android:layout_marginLeft="@dimen/px30"
+                android:layout_marginTop="@dimen/px30"
+                android:src="@drawable/z_rebot_icon2" />
+
+            <TextView
+                android:id="@+id/robot_law_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/px12"
+                android:layout_marginTop="@dimen/px30"
+                android:layout_marginRight="@dimen/px40"
+                android:layout_marginBottom="@dimen/px30"
+                android:layout_toRightOf="@+id/robot_law_icon"
+                android:text="相关法律依据"
+                android:textColor="@color/color_113260"
+                android:textSize="@dimen/px26" />
+
+            <LinearLayout
+                android:id="@+id/rebot_law_more_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/px82"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_alignParentRight="true">
+
+                <TextView
+                    android:id="@+id/rebot_law_more_layout_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/robot_law_icon"
+                    android:text="查看全部"
+                    android:textColor="@color/color_3dc56d"
+                    android:textSize="@dimen/px26" />
+
+                <ImageView
+                    android:id="@+id/rebot_law_more_layout_icon"
+                    android:layout_width="@dimen/px36"
+                    android:layout_height="@dimen/px36"
+                    android:layout_marginLeft="@dimen/px30"
+                    android:layout_marginRight="@dimen/px30"
+                    android:src="@drawable/z_rebot_icon2" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/lin_layout2"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/px1"
+                android:layout_below="@+id/robot_law_title"
+                android:layout_alignLeft="@+id/rebot_law_lin"
+                android:layout_alignRight="@+id/rebot_law_lin"
+                android:background="@color/color_666666" />
+
+            <LinearLayout
+                android:id="@+id/rebot_law_lin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lin_layout2"
+                android:orientation="vertical"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rebot_choices_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rebot_law_layout"
+            android:layout_marginTop="@dimen/px40"
+            android:background="@drawable/z_layout_bg"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/rebot_choices_layout_rela"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/robot_choices_icon"
+                    android:layout_width="@dimen/px36"
+                    android:layout_height="@dimen/px36"
+                    android:layout_marginLeft="@dimen/px30"
+                    android:layout_marginTop="@dimen/px30"
+                    android:src="@drawable/z_rebot_icon3" />
+
+                <TextView
+                    android:id="@+id/robot_choices_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/px12"
+                    android:layout_marginTop="@dimen/px30"
+                    android:layout_marginBottom="@dimen/px30"
+                    android:layout_toRightOf="@+id/robot_choices_icon"
+                    android:text="相似问题"
+                    android:textColor="@color/color_113260"
+                    android:textSize="@dimen/px26" />
+
+                <TextView
+                    android:id="@+id/robot_choices_title2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/px17"
+                    android:layout_marginRight="@dimen/px30"
+                    android:layout_marginTop="@dimen/px35"
+                    android:layout_toRightOf="@+id/robot_choices_title"
+                    android:text="与您情况类似的问题"
+                    android:textColor="@color/color_a0acbf"
+                    android:textSize="@dimen/px20" />
+
+                <LinearLayout
+                    android:id="@+id/rebot_choices_lin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/robot_choices_title"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/px30"
+                    android:paddingBottom="@dimen/px30"/>
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/lin_layout3"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/px1"
+                android:layout_marginTop="@dimen/px85"
+                android:layout_alignRight="@+id/rebot_choices_layout_rela"
+                android:layout_alignLeft="@+id/rebot_choices_layout_rela"
+                android:background="@color/color_666666" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

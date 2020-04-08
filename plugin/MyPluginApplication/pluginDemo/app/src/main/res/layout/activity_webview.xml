@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.WebviewActivity"
+    android:id="@+id/layout_rela">
+
+
+    <com.tencent.smtt.sdk.WebView
+        android:id="@+id/tx_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <ImageButton
+        android:id="@+id/back_ib"
+        android:layout_width="@dimen/px79"
+        android:layout_height="@dimen/pxh79"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/px25"
+        android:layout_marginTop="@dimen/pxh462"
+        android:src="@drawable/phome_back"
+        android:background="@null"
+        android:scaleType="centerInside"
+        android:visibility="visible"/>
+
+    <View
+        android:id="@+id/view_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00ffffff"/>
+
+
+    <RelativeLayout
+        android:id="@+id/progress_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="visible">
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            style="@android:style/Widget.ProgressBar.Large.Inverse" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pxh22"
+            android:layout_below="@+id/progress"
+            android:layout_centerHorizontal="true"
+            android:text="加载中..."
+            android:textColor="#000000"
+            android:textSize="@dimen/px40"/>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

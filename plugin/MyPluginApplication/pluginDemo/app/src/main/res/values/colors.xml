@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="translucent_white">#61FFFFFF</color>
+    <color name="Color_BLUE">#4495FC</color>
+
+    <color name="color_333333">#333333</color>
+
+
+    <color name="color_100Tra">#00FFFFFF</color>
+    <color name="color_90Tra">#1AFFFFFF</color>
+    <color name="color_80Tra">#33FFFFFF</color>
+    <color name="color_70Tra">#4DFFFFFF</color>
+    <color name="color_60Tra">#66FFFFFF</color>
+    <color name="color_50Tra">#80FFFFFF</color>
+    <color name="color_40Tra">#99FFFFFF</color>
+    <color name="color_30Tra">#B3FFFFFF</color>
+    <color name="color_20Tra">#CCFFFFFF</color>
+    <color name="color_10Tra">#E6FFFFFF</color>
+    <color name="color_0Tra">#FFFFFFFF</color>
+
+    <color name="color_ffffff">#ffffff</color>
+    <color name="color_f6f6f6">#f6f6f6</color>
+    <color name="color_f9fcff">#F9FCFF</color>
+    <color name="color_86e1ee">#86E1EE</color>
+    <color name="color_1bb984">#1BB984</color>
+    <color name="color_c7e45e">#C7E45E</color>
+    <color name="color_4c87ec">#4c87ec</color>
+    <color name="color_0477f3">#0477F3</color>
+    <color name="color_2e65cf">#2E65CF</color>
+    <color name="color_2c61bd">#2C61BD</color>
+    <color name="color_252947">#252947</color>
+    <color name="color_3c3e45">#3C3E45</color>
+    <color name="color_7c8799">#7c8799</color>
+    <color name="color_68768c">#68768c</color>
+    <color name="color_3d3e45">#3D3E45</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_f9faff">#F9FAFF</color>
+    <color name="color_e3ecf6">#E3ECF6</color>
+    <color name="color_ff6262">#ff6262</color>
+    <color name="color_fc0303">#FC0303</color>
+    <color name="color_edf1f6">#EDF1F6</color>
+    <color name="color_3c3f50">#3C3F50</color>
+    <color name="color_a0acbf">#A0ACBF</color>
+    <color name="color_007eff">#007EFF</color>
+    <color name="color_113260">#113260</color>
+    <color name="color_3dc56d">#3DC56D</color>
+    <color name="color_65799b">#65799B</color>
+    <!--    45%   -->
+    <color name="color_73000000">#73000000</color>
+    <!--    60%   -->
+    <color name="color_99000000">#99000000</color>
+
+    <color name="color_10000000">#10000000</color>
+
+
+
+</resources>

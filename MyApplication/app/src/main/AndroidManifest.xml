@@ -8,7 +8,6 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 缓存资源优先存入SDcard -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 允许应用程序联网，以便向我们的服务器端发送数据 -->
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
@@ -20,42 +19,21 @@
 
     <application
         android:name=".app.MyApplication"
-        android:allowBackup="true"
-        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.DesignDemo"
-        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        android:theme="@style/Theme.DesignDemo">
+
         <activity
             android:name=".view.activity.StubActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".view.activity.MainActivity">
+            android:screenOrientation="portrait" />
+        <activity android:name=".view.activity.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.activity.Main2Activity" />
-        <activity android:name=".view.activity.Main3Activity" />
-        <activity android:name=".view.activity.Main4Activity" />
-        <activity android:name=".view.activity.Main5Activity" />
-        <activity android:name=".view.activity.DemoActivity" />
-        <activity android:name=".view.activity.MyTextNewActivity" />
-        <activity
-            android:name=".view.activity.TestActivity"
-            android:label="mytest!!!" />
-        <activity
-            android:name=".view.activity.CoordinatorLayoutActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".view.activity.CoordinatorLayout2Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.translucent" />
-        <activity
-            android:name=".view.activity.MyGameActivity"
-            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

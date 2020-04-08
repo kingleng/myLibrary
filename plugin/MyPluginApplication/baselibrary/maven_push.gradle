@@ -1,0 +1,27 @@
+apply plugin: 'maven'
+
+configurations {
+    deployerJars
+}
+
+repositories {
+    mavenCentral()
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "http://192.168.11.205:8023/repository/maven-releases/") {
+                authentication(userName: "admin", password: "admin123")
+            }
+            pom.project {
+                name 'kl-app-plugin-base'
+                version '1.0.17'
+                artifactId 'kl-app-plugin-base'
+                groupId 'com.kingleng.demo'
+                packaging 'aar'
+                description 'plugin-base'
+            }
+        }
+    }
+}
