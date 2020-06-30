@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.leng.myapplication2.R;
-import com.example.leng.myapplication2.ui.adapter.QuickAdapter;
+import com.example.leng.myapplication2.adapter.QuickAdapter;
 import com.example.leng.myapplication2.ui.tools.DensityUtil;
 import com.leochuan.ScaleLayoutManager;
 import com.leochuan.ViewPagerLayoutManager;

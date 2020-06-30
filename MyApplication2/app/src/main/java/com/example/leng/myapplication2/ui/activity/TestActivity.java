@@ -22,7 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.leng.myapplication2.R;
-import com.example.leng.myapplication2.ui.adapter.QuickAdapter;
+import com.example.leng.myapplication2.adapter.QuickAdapter;
 import com.example.leng.myapplication2.ui.myView.MyItemAnimator;
 import com.example.leng.myapplication2.ui.myView.SwitchButton;
 import com.example.leng.myapplication2.ui.tools.AndroidUtil;

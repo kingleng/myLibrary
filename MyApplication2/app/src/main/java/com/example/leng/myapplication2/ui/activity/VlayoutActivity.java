@@ -22,13 +22,13 @@ import com.alibaba.android.vlayout.layout.SingleLayoutHelper;
 import com.alibaba.android.vlayout.layout.StaggeredGridLayoutHelper;
 import com.alibaba.android.vlayout.layout.StickyLayoutHelper;
 import com.example.leng.myapplication2.R;
-import com.example.leng.myapplication2.ui.adapter.vlayout.FloatLayoutAdapter;
-import com.example.leng.myapplication2.ui.adapter.vlayout.GridHelperAdapter;
-import com.example.leng.myapplication2.ui.adapter.vlayout.LinearAdapter;
-import com.example.leng.myapplication2.ui.adapter.vlayout.OneToNAdapter;
-import com.example.leng.myapplication2.ui.adapter.vlayout.SingleLayoutAdapter;
-import com.example.leng.myapplication2.ui.adapter.vlayout.StaggeredGridLayoutAdapter;
-import com.example.leng.myapplication2.ui.adapter.vlayout.StickyLayoutAdapter;
+import com.example.leng.myapplication2.adapter.vlayout.FloatLayoutAdapter;
+import com.example.leng.myapplication2.adapter.vlayout.GridHelperAdapter;
+import com.example.leng.myapplication2.adapter.vlayout.LinearAdapter;
+import com.example.leng.myapplication2.adapter.vlayout.OneToNAdapter;
+import com.example.leng.myapplication2.adapter.vlayout.SingleLayoutAdapter;
+import com.example.leng.myapplication2.adapter.vlayout.StaggeredGridLayoutAdapter;
+import com.example.leng.myapplication2.adapter.vlayout.StickyLayoutAdapter;
 
 import java.util.ArrayList;
 

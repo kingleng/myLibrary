@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.leng.myapplication2.R;
-import com.example.leng.myapplication2.ui.adapter.My2PagerAdapter;
+import com.example.leng.myapplication2.adapter.My2PagerAdapter;
 import com.example.leng.myapplication2.ui.myView.DepthViewPager;
 import com.example.leng.myapplication2.ui.tools.DensityUtil;
 import com.example.leng.myapplication2.ui.tools.ShapeBuilder;

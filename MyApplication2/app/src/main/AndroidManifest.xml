@@ -32,6 +32,7 @@
         android:theme="@style/Theme.DesignDemo"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
+        <activity android:name=".ui.activity.SipPhoneActivity"></activity>
 
         <service
             android:name=".aidl.MyRemoteService"
@@ -73,7 +74,7 @@
         <activity android:name=".ui.activity.ViewPagerActivity" />
         <activity android:name=".ui.activity.ViewPager2Activity" />
         <activity
-            android:name=".ui.activity.HomeActivity"
+            android:name=".ui.HomeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
             <intent-filter>

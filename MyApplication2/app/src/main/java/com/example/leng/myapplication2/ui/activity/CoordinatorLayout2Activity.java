@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.leng.myapplication2.R;
-import com.example.leng.myapplication2.ui.adapter.MyPagerAdapter;
-import com.example.leng.myapplication2.ui.event.FinishEvent;
+import com.example.leng.myapplication2.adapter.MyPagerAdapter;
+import com.example.leng.myapplication2.event.FinishEvent;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;

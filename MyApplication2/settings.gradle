@@ -1,1 +1,2 @@
 include ':app', ':myloginlibrary',  ':mylibrary', ':baselibrary', ':app2library', ':gradlelibrary'
+include ':linphonelibrary'

@@ -7,9 +7,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.leng.myapplication2.R;
-import com.example.leng.myapplication2.ui.download.DownLoadTask;
-import com.example.leng.myapplication2.ui.download.FileInfo;
-import com.example.leng.myapplication2.ui.download.OnProgressListener;
+import com.example.leng.myapplication2.download.DownLoadTask;
+import com.example.leng.myapplication2.download.FileInfo;
+import com.example.leng.myapplication2.download.OnProgressListener;
 import com.example.leng.myapplication2.ui.rxhttp.DownloadInfo;
 import com.example.leng.myapplication2.ui.tools.MD5;
 

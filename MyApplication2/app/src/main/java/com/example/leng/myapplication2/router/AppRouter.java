@@ -11,7 +11,7 @@ import com.example.leng.myapplication2.ui.activity.CameraActivity;
 import com.example.leng.myapplication2.ui.activity.CoordinatorLayoutActivity;
 import com.example.leng.myapplication2.ui.activity.DemoActivity;
 import com.example.leng.myapplication2.ui.activity.FrameAnimationActivity;
-import com.example.leng.myapplication2.ui.activity.HomeActivity;
+import com.example.leng.myapplication2.ui.HomeActivity;
 import com.example.leng.myapplication2.ui.activity.HotfixActivity;
 import com.example.leng.myapplication2.ui.activity.ImageMapActivity;
 import com.example.leng.myapplication2.ui.activity.JsoupActivity;
@@ -28,6 +28,7 @@ import com.example.leng.myapplication2.ui.activity.Pic2AsciiActivity;
 import com.example.leng.myapplication2.ui.activity.RefreshActivity;
 import com.example.leng.myapplication2.ui.activity.RxHttpActivity;
 import com.example.leng.myapplication2.ui.activity.SendSMSActivity;
+import com.example.leng.myapplication2.ui.activity.SipPhoneActivity;
 import com.example.leng.myapplication2.ui.activity.TestActivity;
 import com.example.leng.myapplication2.ui.activity.VideoViewActivity;
 import com.example.leng.myapplication2.ui.activity.ViewPager2Activity;
@@ -147,6 +148,9 @@ public class AppRouter extends BaseRouter {
                 break;
             case TypeManager.MIAN_ITEM_28:
                 context.startActivity(new Intent(context, AdbActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                break;
+            case TypeManager.MIAN_ITEM_29:
+                context.startActivity(new Intent(context, SipPhoneActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 break;
             default:
                 isUsed = false;

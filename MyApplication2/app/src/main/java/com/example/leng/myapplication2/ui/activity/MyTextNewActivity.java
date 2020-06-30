@@ -15,7 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.leng.myapplication2.ui.adapter.MyPagerAdapter;
+import com.example.leng.myapplication2.adapter.MyPagerAdapter;
 import com.example.leng.myapplication2.R;
 import com.example.leng.myapplication2.ui.tools.FaceUtil;
 
