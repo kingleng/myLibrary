@@ -5,6 +5,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
 
@@ -23,6 +24,11 @@ public class PluginContext extends LayoutInflaterProxyContext {
             throw new IllegalStateException("Create a plugin context, but not given host context!");
         }
         this.plugInfo = plugInfo;
+    }
+
+    public PluginContext(PlugInfo plugin) {
+        super(plugin.getPluginManager().getHostContext());
+        this.plugInfo = plugin;
     }
 
     @Override
@@ -50,6 +56,11 @@ public class PluginContext extends LayoutInflaterProxyContext {
             return getBaseContextInner(((ContextWrapper) baseContext).getBaseContext());
         }
         return baseContext;
+    }
+
+    @Override
+    public PackageManager getPackageManager() {
+        return this.plugInfo.getPackageManager();
     }
 
 

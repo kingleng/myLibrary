@@ -16,7 +16,7 @@ uploadArchives {
             }
             pom.project {
                 name 'kl-app-plugin-base'
-                version '1.0.17'
+                version '1.0.20'
                 artifactId 'kl-app-plugin-base'
                 groupId 'com.kingleng.demo'
                 packaging 'aar'

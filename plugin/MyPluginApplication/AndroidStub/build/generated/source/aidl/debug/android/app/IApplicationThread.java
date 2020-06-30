@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: C:\\workspaces\\plugin\\MyPluginApplication\\AndroidStub\\src\\main\\aidl\\android\\app\\IApplicationThread.aidl
+ * Original file: C:\\workspaces\\myLibrary\\plugin\\MyPluginApplication\\AndroidStub\\src\\main\\aidl\\android\\app\\IApplicationThread.aidl
  */
 package android.app;
 public interface IApplicationThread extends android.os.IInterface

@@ -1,15 +1,17 @@
 package com.info.aegis.plugindemo2;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import com.info.aegis.baselibrary.base.LibraryActivity;
+
+public class MainActivity extends LibraryActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.plugin2_activity_main);
+        TextView textView = findViewById(R.id.text);
+        textView.setText("插件二");
     }
 }

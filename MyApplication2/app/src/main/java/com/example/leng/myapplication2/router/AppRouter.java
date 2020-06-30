@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.leng.myapplication2.ui.activity.AdbActivity;
 import com.example.leng.myapplication2.ui.activity.AudioActivity;
 import com.example.leng.myapplication2.ui.activity.CameraActivity;
 import com.example.leng.myapplication2.ui.activity.CoordinatorLayoutActivity;
@@ -143,6 +144,9 @@ public class AppRouter extends BaseRouter {
                 break;
             case TypeManager.MIAN_ITEM_27:
                 context.startActivity(new Intent(context, ImageMapActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                break;
+            case TypeManager.MIAN_ITEM_28:
+                context.startActivity(new Intent(context, AdbActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 break;
             default:
                 isUsed = false;

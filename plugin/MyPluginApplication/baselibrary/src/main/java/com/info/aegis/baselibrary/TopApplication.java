@@ -3,15 +3,10 @@ package com.info.aegis.baselibrary;
 import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
-import android.util.Log;
 
-import com.blankj.utilcode.util.Utils;
 import com.info.aegis.baselibrary.GLog.GLog;
 import com.info.aegis.baselibrary.utils.AppUtils;
-import com.info.aegis.baselibrary.utils.BlockUtil;
 import com.info.aegis.baselibrary.utils.CustomToast;
-import com.info.aegis.baselibrary.utils.LogReportUtil;
-import com.info.aegis.baselibrary.utils.TextFilter;
 
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
@@ -61,12 +56,12 @@ public class TopApplication extends Application {
 
         //工具类 (勿动)
         AppUtils.syncIsDebug(this); //检查测试/正式包 必须放在第一个
-        Utils.init(this); //通用工具集合
+//        Utils.init(this); //通用工具集合
         CustomToast.init(this); //Toast工具
 //        TextFilter.init(this); //敏感词过滤
         GLog.init(); //Log打印
-        BlockUtil.init(this); //阻塞监测工具
-        LogReportUtil.init(this); //异常日志工具
+//        BlockUtil.init(this); //阻塞监测工具
+//        LogReportUtil.init(this); //异常日志工具
 
 //        httpSenderInit();
 

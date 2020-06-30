@@ -5,25 +5,36 @@ import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.info.aegis.baselibrary.GLog.GLog;
+import com.info.aegis.baselibrary.SharePreHelper;
 import com.info.aegis.baselibrary.router.BaseModule;
 import com.info.aegis.baselibrary.router.PluginModule;
 import com.info.aegis.baselibrary.router.TypeManager;
+import com.info.aegis.baselibrary.utils.CustomToast;
 import com.info.aegis.baselibrary.utils.MyGlide;
 import com.info.aegis.mypluginapplication.router.RouterManager;
 import com.info.aegis.plugincore.PluginManager;
 import com.info.aegis.plugincore.plugIn.PlugInfo;
 
-import java.io.File;
-import java.util.Iterator;
+import org.json.JSONObject;
 
-public class MainActivity extends AppCompatActivity {
+import java.io.File;
+import java.text.MessageFormat;
+import java.util.Iterator;
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class MainActivity extends BaseActivity {
 
     private static final String TAG = "MainActivity";
 
@@ -31,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -51,14 +62,97 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+//        final int[] num = {0};
+//        Timer timer = new Timer();
+//        TimerTask task = new TimerTask() {
+//            @Override
+//            public void run() {
+//
+//                getDataTest(num[0]);
+//                num[0]++;
+//            }
+//        };
+//
+//        timer.schedule(task,200,200);
 
-        if (hasPermission()) {
-            this.loadPlugin();
-        } else {
-            requestPermission();
+
+        getDataTest(0);
+
+
+//        if (hasPermission()) {
+//            this.loadPlugin();
+//        } else {
+//            requestPermission();
+//        }
+
+
+    }
+
+    public void getdata(int num){
+        num++;
+        int finalNum = num;
+        if(finalNum>2000){
+            return;
         }
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
 
+                getDataTest(finalNum);
+            }
+        },8000);
 
+    }
+
+    public void getDataTest(int num){
+        String url = "http://t-newspaper-management.aegis-info.com/apkVersion?deviceId=2dd379545defb63f1b49a419dcd23115&apkName=fayuanbao_video_20190710_1311_2.2.1_u31.apk";
+        requstInfo(url, new NetMsgListener() {
+            @Override
+            public void onStart() {
+
+            }
+
+            @Override
+            public void onSucceed(Object o) {
+                JSONObject jsonObject = (JSONObject)o;
+                GLog.e(o.toString());
+                if(jsonObject.has("data")){
+                    JSONObject data = jsonObject.optJSONObject("data");
+                    if (data != null) {
+                        long robotCreateTime = data.optLong("robotCreateTime");
+                        long robotDueTime = data.optLong("robotDueTime");
+
+                        Long currentTime = System.currentTimeMillis();
+                        boolean isActive = false;
+                        if(currentTime>robotCreateTime && currentTime<robotDueTime){
+                            isActive = true;
+                        }
+                        if(isActive){
+                            Log.e("DataTest","num="+num+"激活成功");
+                            getdata(num);
+                        }else{
+
+                            Log.e("getDataTest","num="+num+"设备已过期");
+                        }
+                    }else{
+                        Log.e("getDataTest","num="+num+"设备未激活&& data == null");
+                    }
+                }else{
+                    Log.e("getDataTest","num="+num+"设备未激活&& no data");
+                }
+            }
+
+            @Override
+            public void onFailed(String msg) {
+                CustomToast.showLongToast("接口连接失败，正在重试，请稍等。");
+                Log.e("","num="+num+"接口连接失败");
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        });
     }
 
     public void loadPlugin() {

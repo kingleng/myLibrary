@@ -4,10 +4,8 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.util.Log;
@@ -16,7 +14,7 @@ import com.info.aegis.mypluginapplication.plugin.R;
 import com.info.aegis.mypluginapplication.plugin.base.BaseActivity;
 import com.info.aegis.mypluginapplication.plugin.ui.fragment.ZnwdFragment;
 
-public class ZHomeActivity extends FragmentActivity {
+public class ZHomeActivity extends BaseActivity {
 
     private static final String TAG = "ZHomeActivity";
 

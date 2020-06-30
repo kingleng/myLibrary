@@ -27,7 +27,7 @@ buildscript {
         // in the individual module build.gradle files
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
-        classpath 'com.kingleng.demo:kl-app-gradle:1.0.1'//命名是我们的groupId：moduleName：version
+        classpath 'com.kingleng.demo:kl-app-gradle:1.1.1'//命名是我们的groupId：moduleName：version
     }
 }
 

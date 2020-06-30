@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.kingleng.demo.helloworld'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
 
@@ -125,8 +126,8 @@ dependencies {
 
     implementation 'com.aliyun.ams:alicloud-android-hotfix:3.2.8'
 
-//    implementation project(':baselibrary')
-    implementation 'com.kingleng.demo:kl-app-base:1.0.3'
+    implementation project(':baselibrary')
+//    implementation 'com.kingleng.demo:kl-app-base:1.0.3'
     implementation project(':app2library')
 //    implementation 'com.kingleng.demo:kl-app-module2:1.0.1'
 
@@ -142,4 +143,5 @@ dependencies {
 
     //可定制化阴影的万能阴影布局ShadowLayout  https://github.com/lihangleo2/ShadowLayout?utm_source=androidweekly.io&utm_medium=website
     implementation 'com.github.lihangleo2:ShadowLayout:2.1.6'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

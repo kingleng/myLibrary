@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: C:\\workspaces\\plugin\\MyPluginApplication\\AndroidStub\\src\\main\\aidl\\android\\app\\IActivityManager.aidl
+ * Original file: C:\\workspaces\\myLibrary\\plugin\\MyPluginApplication\\AndroidStub\\src\\main\\aidl\\android\\app\\IActivityManager.aidl
  */
 package android.app;
 /**

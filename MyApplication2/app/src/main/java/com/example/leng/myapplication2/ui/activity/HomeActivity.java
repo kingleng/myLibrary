@@ -113,20 +113,20 @@ public class HomeActivity extends Activity {
 
         });
 
-        PersonObserver p1 = new PersonObserver("小一");
-        PersonObserver p2 = new PersonObserver("小二");
-        PersonObserver p3 = new PersonObserver("小三");
-        PersonObserver p4 = new PersonObserver("小四");
-
-        AndroidObervable androidObervable = new AndroidObervable();
-
-        androidObervable.addObserver(p1);
-        androidObervable.addObserver(p2);
-        androidObervable.addObserver(p3);
-        androidObervable.addObserver(p4);
-
-        androidObervable.postNewInfo("吃饭了");
-        androidObervable.postNewInfo("吃过了");
+//        PersonObserver p1 = new PersonObserver("小一");
+//        PersonObserver p2 = new PersonObserver("小二");
+//        PersonObserver p3 = new PersonObserver("小三");
+//        PersonObserver p4 = new PersonObserver("小四");
+//
+//        AndroidObervable androidObervable = new AndroidObervable();
+//
+//        androidObervable.addObserver(p1);
+//        androidObervable.addObserver(p2);
+//        androidObervable.addObserver(p3);
+//        androidObervable.addObserver(p4);
+//
+//        androidObervable.postNewInfo("吃饭了");
+//        androidObervable.postNewInfo("吃过了");
 
     }
 
@@ -415,6 +415,12 @@ public class HomeActivity extends Activity {
         classData27.className = ImageMapActivity.class;
         classData27.adType = "100027";
         datas.add(classData27);
+
+        ClassData classData28 = new ClassData();
+        classData28.name = "adb命令远程下发执行测试";
+        classData28.className = AdbActivity.class;
+        classData28.adType = "100028";
+        datas.add(classData28);
 
     }
 

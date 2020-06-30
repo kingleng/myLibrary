@@ -32,7 +32,14 @@
         android:theme="@style/Theme.DesignDemo"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
-        <activity android:name=".ui.activity.ImageMapActivity"></activity>
+
+        <service
+            android:name=".aidl.MyRemoteService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ui.activity.AdbActivity" />
+        <activity android:name=".ui.activity.ImageMapActivity" />
         <activity android:name=".ui.activity.Pic2AsciiActivity" />
         <activity android:name=".ui.activity.AudioActivity" />
         <activity android:name=".ui.activity.SendSMSActivity" />

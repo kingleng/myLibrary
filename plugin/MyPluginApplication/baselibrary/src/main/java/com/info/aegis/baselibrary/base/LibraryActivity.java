@@ -1,8 +1,8 @@
 package com.info.aegis.baselibrary.base;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.widget.Toast;
@@ -23,7 +23,7 @@ import java.util.Map;
 /**
  * Created by leng on 2019/9/9.
  */
-public class LibraryActivity extends Activity {
+public class LibraryActivity extends AppCompatActivity {
 
     public boolean isOnline = false;
 

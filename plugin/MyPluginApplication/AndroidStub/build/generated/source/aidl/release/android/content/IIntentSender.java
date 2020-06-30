@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: C:\\workspaces\\plugin\\MyPluginApplication\\AndroidStub\\src\\main\\aidl\\android\\content\\IIntentSender.aidl
+ * Original file: C:\\workspaces\\myLibrary\\plugin\\MyPluginApplication\\AndroidStub\\src\\main\\aidl\\android\\content\\IIntentSender.aidl
  */
 package android.content;
 public interface IIntentSender extends android.os.IInterface

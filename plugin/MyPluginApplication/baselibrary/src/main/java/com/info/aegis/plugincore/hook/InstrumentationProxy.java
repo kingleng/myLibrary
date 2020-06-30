@@ -25,6 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.info.aegis.plugincore.Constants;
+import com.info.aegis.plugincore.StubActivity;
 import com.info.aegis.plugincore.utils.FieldUtil;
 import com.info.aegis.plugincore.PluginManager;
 import com.info.aegis.plugincore.plugIn.PlugInfo;
@@ -61,7 +62,8 @@ public class InstrumentationProxy extends Instrumentation implements Handler.Cal
             checkIntent(intent);
             intent.putExtra(Constants.TARGET_INTENT_NAME, intent.getComponent().getClassName());
             intent.putExtra(Constants.TARGET_INTENT_PACKAGE, intent.getComponent().getPackageName());
-            intent.setClassName(who, "com.info.aegis.plugincore.StubActivity");
+            intent.putExtra(Constants.KEY_IS_PLUGIN, true);
+            intent.setClassName(who, StubActivity.class.getName());
         }
         try {
             Method execMethod = Instrumentation.class.getDeclaredMethod("execStartActivity", Context.class, IBinder.class, IBinder.class, Activity.class, Intent.class, int.class, Bundle.class);
@@ -137,14 +139,20 @@ public class InstrumentationProxy extends Instrumentation implements Handler.Cal
                 Reflector.with(base).field("mResources").set(plugin.getResources());
                 Reflector reflector = Reflector.with(activity);
 //                reflector.field("mBase").set(plugin.createPluginContext(activity.getBaseContext()));
-//                reflector.field("mBase").set(new PluginContext(activity.getBaseContext(), plugin));
-//                reflector.field("mApplication").set(plugin.getApplication());
+                reflector.field("mBase").set(new PluginContext(PluginManager.getInstance().getHostContext(), plugin));
+                reflector.field("mApplication").set(plugin.getApplication());
 
                 // set screenOrientation
                 ActivityInfo activityInfo = plugin.findActivityByClassName(intentName);
                 if (activityInfo.screenOrientation != ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED) {
                     activity.setRequestedOrientation(activityInfo.screenOrientation);
                 }
+
+                // for native activity
+                ComponentName component = PluginUtil.getComponent(intent);
+                Intent wrapperIntent = new Intent(intent);
+                wrapperIntent.setClassName(component.getPackageName(), component.getClassName());
+                activity.setIntent(wrapperIntent);
 
             } catch (Exception e) {
                 Log.w(TAG, e);
@@ -164,17 +172,15 @@ public class InstrumentationProxy extends Instrumentation implements Handler.Cal
 
                 ActivityInfo activityInfo = (ActivityInfo) FieldUtil.getField(r.getClass(), r, "activityInfo");
                 Intent intent = (Intent) FieldUtil.getField(r.getClass(), r, "intent");
-                String packageName = intent.getStringExtra(Constants.TARGET_INTENT_PACKAGE);
-
-
-                int theme = PluginUtil.getTheme(PluginManager.getInstance().getHostContext(),intent);
-//                PlugInfo plugInfo = PluginManager.getInstance().getLoadedPlugin(packageName);
-//                ComponentName componentName = intent.getComponent();
-//                int theme = getTheme(plugInfo,componentName);
-                if (theme != 0) {
-                    Log.i(TAG, "resolve theme, current theme:" + activityInfo.theme + "  after :0x" + Integer.toHexString(theme));
-                    activityInfo.theme = theme;
+//                intent.setExtrasClassLoader(PluginManager.getInstance().getHostContext().getClassLoader());
+                if(PluginUtil.isIntentFromPlugin(intent)){
+                    int theme = PluginUtil.getTheme(PluginManager.getInstance().getHostContext(),intent);
+                    if (theme != 0) {
+                        Log.i(TAG, "resolve theme, current theme:" + activityInfo.theme + "  after :0x" + Integer.toHexString(theme));
+                        activityInfo.theme = theme;
+                    }
                 }
+
 
             } catch (Exception e) {
                 e.printStackTrace();

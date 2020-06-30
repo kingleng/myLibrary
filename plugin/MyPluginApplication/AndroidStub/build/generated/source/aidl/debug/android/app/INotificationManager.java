@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: C:\\workspaces\\plugin\\MyPluginApplication\\AndroidStub\\src\\main\\aidl\\android\\app\\INotificationManager.aidl
+ * Original file: C:\\workspaces\\myLibrary\\plugin\\MyPluginApplication\\AndroidStub\\src\\main\\aidl\\android\\app\\INotificationManager.aidl
  */
 package android.app;
 public interface INotificationManager extends android.os.IInterface

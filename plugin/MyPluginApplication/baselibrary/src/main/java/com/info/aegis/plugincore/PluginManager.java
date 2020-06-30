@@ -4,6 +4,7 @@ import android.app.Instrumentation;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ResolveInfo;
 import android.os.Handler;
 import android.util.Log;
 
@@ -13,6 +14,8 @@ import com.info.aegis.plugincore.utils.FieldUtil;
 
 import java.io.File;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -152,44 +155,36 @@ public class PluginManager {
         return this.context;
     }
 
-//    /**
-//     * 将Apk复制到私有目录
-//     *
-//     * @param pluginApk    插件apk原始路径
-//     * @param targetPutApk 要拷贝到的目标位置
-//     */
-//    private void copyApkToPrivatePath(File pluginApk, File targetPutApk) {
-//        if (targetPutApk.exists()) {
-//            return;
-//        }
-//        try {
-//            FileUtils.copyFile(pluginApk, targetPutApk);
-//        } catch (Exception e){
-//            e.printStackTrace();
-//        }
-//    }
-//
-//
-//
-//    private void attachBaseContext(PlugInfo info, Application app) {
-//        try {
-//            Field mBase = ContextWrapper.class.getDeclaredField("mBase");
-//            mBase.setAccessible(true);
-//            mBase.set(app, new PluginContext(context.getApplicationContext(), info));
-//        } catch (Throwable e) {
-//            e.printStackTrace();
-//        }
-//    }
-//
-//    public File getPluginLibPath(PlugInfo plugInfo) {
-////        return new File(privatePath, plugInfo.getId() + "-dir/lib/");
-//        return new File(getDexInternalStoragePath(), plugInfo.getId() + "-dir/lib/");
-//    }
-//
-//    /**
-//     * @return 存储插件的私有目录
-//     */
-//    File getDexInternalStoragePath() {
-//        return dexInternalStoragePath;
-//    }
+    public ResolveInfo resolveActivity(Intent intent) {
+        return this.resolveActivity(intent, 0);
+    }
+
+    public ResolveInfo resolveActivity(Intent intent, int flags) {
+        for (PlugInfo plugin : this.pluginPkgToInfoMap.values()) {
+            ResolveInfo resolveInfo = plugin.resolveActivity(intent, flags);
+            if (null != resolveInfo) {
+                return resolveInfo;
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * used in PluginPackageManager, do not invoke it from outside.
+     */
+    @Deprecated
+    public List<ResolveInfo> queryIntentActivities(Intent intent, int flags) {
+        List<ResolveInfo> resolveInfos = new ArrayList<ResolveInfo>();
+
+        for (PlugInfo plugin : this.pluginPkgToInfoMap.values()) {
+            List<ResolveInfo> result = plugin.queryIntentActivities(intent, flags);
+            if (null != result && result.size() > 0) {
+                resolveInfos.addAll(result);
+            }
+        }
+
+        return resolveInfos;
+    }
+
 }
