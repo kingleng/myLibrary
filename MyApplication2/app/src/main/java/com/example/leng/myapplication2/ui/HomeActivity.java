@@ -269,6 +269,15 @@ public class HomeActivity extends Activity {
     private void initData(){
         datas.clear();
 
+        ClassData classData01 = new ClassData();
+        classData01.name = "模块二内容";
+        classData01.adType = "110001";
+        datas.add(classData01);
+        ClassData classData02 = new ClassData();
+        classData02.name = "模块二内容";
+        classData02.adType = "110002";
+        datas.add(classData02);
+
         ClassData classData0 = new ClassData();
         classData0.name = "test";
         classData0.className = TestActivity.class;

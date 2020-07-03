@@ -7,7 +7,8 @@
         android:hardwareAccelerated="true"
         android:label="@string/app_name"
         android:supportsRtl="true">
-        <activity android:name=".ui.activity.Main2Activity"></activity>
+        <activity android:name=".ui.activity.DataBindingActivity"></activity>
+        <activity android:name=".ui.activity.Main2Activity" />
         <activity android:name=".ui.activity.MainActivity" />
     </application>
 

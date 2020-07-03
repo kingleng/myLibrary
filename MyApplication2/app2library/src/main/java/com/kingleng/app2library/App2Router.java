@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.kingleng.app2library.ui.activity.DataBindingActivity;
 import com.kingleng.app2library.ui.activity.MainActivity;
 
 import com.kingleng.baselibrary.base.BaseRouter;
@@ -23,6 +24,9 @@ public class App2Router extends BaseRouter {
             case "110001":
                 startMainActivity(context,bundle);
                 break;
+            case "110002":
+                startActivity2(context,bundle);
+                break;
             default:
                 isUsed = false;
         }
@@ -35,6 +39,15 @@ public class App2Router extends BaseRouter {
         if(!(context instanceof Activity)){
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         }
+        context.startActivity(intent);
+    }
+
+    public void startActivity2(Context context, Bundle bundle){
+        Intent intent = new Intent(context, DataBindingActivity.class);
+        if(!(context instanceof Activity)){
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        }
+        intent.putExtras(bundle);
         context.startActivity(intent);
     }
 

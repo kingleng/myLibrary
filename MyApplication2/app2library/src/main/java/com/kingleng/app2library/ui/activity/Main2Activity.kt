@@ -11,6 +11,5 @@ class Main2Activity : BaseAvtivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
-
     }
 }

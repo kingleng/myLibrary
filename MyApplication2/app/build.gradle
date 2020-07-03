@@ -67,6 +67,10 @@ android {
             dirs project(':linphonelibrary').file('libs')
         }
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 
