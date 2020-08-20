@@ -5,7 +5,7 @@ import android.databinding.ViewDataBinding
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.kingleng.app2library.R
-import com.kingleng.app2library.databinding.ActivityDataBindingBinding
+//import com.kingleng.app2library.databinding.ActivityDataBindingBinding
 import com.kingleng.app2library.model.User
 
 class DataBindingActivity : AppCompatActivity() {
@@ -13,10 +13,10 @@ class DataBindingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_data_binding)
-        val dataBinding:ActivityDataBindingBinding = DataBindingUtil.setContentView(this,R.layout.activity_data_binding)
-        val user = User("1","kingjian","123456");
-        dataBinding.user = user
-        dataBinding.bclick = ButtonClick(user)
+//        val dataBinding:ActivityDataBindingBinding = DataBindingUtil.setContentView(this,R.layout.activity_data_binding)
+//        val user = User("1","kingjian","123456");
+//        dataBinding.user = user
+//        dataBinding.bclick = ButtonClick(user)
 
     }
 

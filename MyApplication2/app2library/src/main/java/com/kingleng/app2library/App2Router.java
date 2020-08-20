@@ -7,8 +7,7 @@ import android.os.Bundle;
 
 import com.kingleng.app2library.ui.activity.DataBindingActivity;
 import com.kingleng.app2library.ui.activity.MainActivity;
-
-import com.kingleng.baselibrary.base.BaseRouter;
+import com.kingleng.baselibrary.router.BaseRouter;
 
 /**
  * Created by leng on 2019/7/29.

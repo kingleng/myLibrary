@@ -18,6 +18,8 @@
             <option value="$PROJECT_DIR$/linphonelibrary" />
             <option value="$PROJECT_DIR$/mylibrary" />
             <option value="$PROJECT_DIR$/myloginlibrary" />
+            <option value="$PROJECT_DIR$/mypluginapplication" />
+            <option value="$PROJECT_DIR$/plugincorelibrary" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

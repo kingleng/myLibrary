@@ -19,9 +19,24 @@
     <FrameLayout
         android:id="@+id/fl_adplaceholder"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="@dimen/qb_px_400"
         android:layout_marginBottom="15dp"
         android:layout_marginTop="15dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击开始语音识别"
+            android:layout_gravity="center_horizontal"/>
+
+        <com.example.leng.myapplication2.ui.myView.GifView
+            android:id="@+id/figview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:gif="@drawable/z_voice_bg"
+            app:paused="false"
+            android:visibility="gone"/>
+
     </FrameLayout>
 
     <android.support.v7.widget.RecyclerView
@@ -30,6 +45,8 @@
         android:layout_height="match_parent"
         android:background="@color/color_d4d4d4"
         android:layout_below="@+id/fl_adplaceholder"/>
+
+
 
 
 

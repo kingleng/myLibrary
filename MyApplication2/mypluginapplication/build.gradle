@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.kingleng.demo.kl-plugin'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+
+    defaultConfig {
+        applicationId "com.info.aegis.mypluginapplication"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        multiDexEnabled = true
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('keystore/LawPush.jks')
+            storePassword "LawPush"
+            keyAlias "LawPush4Android"
+            keyPassword "LawPush"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //指定jdk版本
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //dex 分包
+    implementation 'com.android.support:multidex:1.0.3'
+
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation project(':baselibrary')
+}
+
+klApk {
+    packageId = 0x6f             // The package id of Resources.
+    targetHost = '../app'
+    // The path of application module in host project.
+    applyHostMapping = false      // [Optional] Default value is true.
+}
+

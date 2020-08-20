@@ -2,6 +2,7 @@ package com.example.leng.myapplication2.app;
 
 import android.app.Application;
 import android.content.Context;
+import android.os.Handler;
 import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 
@@ -35,6 +36,15 @@ public class MyApplication extends MultiDexApplication {
      */
     public static final Integer CONFIG = Constants.BUG;
 
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        //路由初始化
+        RouterManager.getInstance().init(base);
+
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -42,10 +52,6 @@ public class MyApplication extends MultiDexApplication {
         if (CONFIG == Constants.RELEASE) {
             MyLog.isDebug = false;
         }
-
-        //路由初始化
-        RouterManager.getInstance().init();
-
 
         httpSenderInit();
 

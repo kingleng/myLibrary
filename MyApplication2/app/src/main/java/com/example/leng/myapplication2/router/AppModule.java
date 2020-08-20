@@ -1,7 +1,7 @@
 package com.example.leng.myapplication2.router;
 
-import com.kingleng.baselibrary.base.BaseModule;
-import com.kingleng.baselibrary.base.BaseRouter;
+import com.kingleng.baselibrary.router.BaseModule;
+import com.kingleng.baselibrary.router.BaseRouter;
 
 /**
  * Created by leng on 2019/5/6.

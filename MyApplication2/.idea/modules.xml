@@ -10,6 +10,8 @@
       <module fileurl="file://$PROJECT_DIR$/linphonelibrary/linphonelibrary.iml" filepath="$PROJECT_DIR$/linphonelibrary/linphonelibrary.iml" group="MyApplication2/linphonelibrary" />
       <module fileurl="file://$PROJECT_DIR$/mylibrary/mylibrary.iml" filepath="$PROJECT_DIR$/mylibrary/mylibrary.iml" group="MyApplication2/mylibrary" />
       <module fileurl="file://$PROJECT_DIR$/myloginlibrary/myloginlibrary.iml" filepath="$PROJECT_DIR$/myloginlibrary/myloginlibrary.iml" group="MyApplication2/myloginlibrary" />
+      <module fileurl="file://$PROJECT_DIR$/mypluginapplication/mypluginapplication.iml" filepath="$PROJECT_DIR$/mypluginapplication/mypluginapplication.iml" group="MyApplication2/mypluginapplication" />
+      <module fileurl="file://$PROJECT_DIR$/plugincorelibrary/plugincorelibrary.iml" filepath="$PROJECT_DIR$/plugincorelibrary/plugincorelibrary.iml" group="MyApplication2/plugincorelibrary" />
     </modules>
   </component>
 </project>

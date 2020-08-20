@@ -1,2 +1,4 @@
-include ':app', ':myloginlibrary',  ':mylibrary', ':baselibrary', ':app2library', ':gradlelibrary'
+include ':app', ':myloginlibrary', ':mylibrary', ':baselibrary', ':app2library', ':gradlelibrary'
 include ':linphonelibrary'
+include ':plugincorelibrary'
+include ':mypluginapplication'

@@ -8,6 +8,7 @@ import android.widget.EditText;
 
 import com.example.leng.myapplication2.R;
 import com.example.leng.myapplication2.base.HttpsTrustManager;
+import com.kingleng.baselibrary.router.BaseModule;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -19,8 +20,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.kingleng.baselibrary.base.BaseModule;
 
 public class JsoupActivity extends AppCompatActivity {
 

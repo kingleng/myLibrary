@@ -1,9 +1,12 @@
 package com.example.leng.myapplication2.router;
 
-import com.kingleng.app2library.App2Module;
+import android.content.Context;
+import android.util.Log;
 
-import com.kingleng.baselibrary.base.BaseManager;
-import com.kingleng.baselibrary.base.Router;
+import com.info.aegis.plugincorelibrary.PluginManager;
+import com.kingleng.app2library.App2Module;
+import com.kingleng.baselibrary.router.BaseManager;
+import com.kingleng.baselibrary.router.Router;
 
 /**
  * Created by leng on 2019/7/29.
@@ -19,9 +22,16 @@ public class RouterManager extends BaseManager {
         return instance;
     }
 
-    public void init(){
+    public void init(Context base){
         registerModule();
         Router.getInstance().init(getBaseModules());
+
+        try {
+            PluginManager.init(base);
+        } catch (Exception e) {
+            Log.e("RouterManager","插件框架启动失败！");
+            e.printStackTrace();
+        }
     }
 
     public void registerModule(){

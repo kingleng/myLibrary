@@ -1,7 +1,7 @@
 package com.kingleng.app2library;
 
-import com.kingleng.baselibrary.base.BaseModule;
-import com.kingleng.baselibrary.base.BaseRouter;
+import com.kingleng.baselibrary.router.BaseModule;
+import com.kingleng.baselibrary.router.BaseRouter;
 
 /**
  * Created by leng on 2019/7/26.

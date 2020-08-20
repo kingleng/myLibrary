@@ -1,10 +1,20 @@
 package com.example.leng.myapplication2.ui;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.view.LayoutInflaterCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +28,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.leng.myapplication2.R;
+import com.example.leng.myapplication2.base.BaseActivity;
 import com.example.leng.myapplication2.router.AppModule;
 import com.example.leng.myapplication2.adapter.QuickAdapter;
+import com.example.leng.myapplication2.router.RouterManager;
 import com.example.leng.myapplication2.ui.activity.AdbActivity;
 import com.example.leng.myapplication2.ui.activity.AudioActivity;
 import com.example.leng.myapplication2.ui.activity.CameraActivity;
@@ -48,24 +60,59 @@ import com.example.leng.myapplication2.ui.activity.ViewPager2Activity;
 import com.example.leng.myapplication2.ui.activity.ViewPagerActivity;
 import com.example.leng.myapplication2.ui.activity.VlayoutActivity;
 import com.example.leng.myapplication2.ui.activity.XuanFuActivity;
+import com.example.leng.myapplication2.ui.activity.YMTDActivity;
 import com.example.leng.myapplication2.ui.customWidget.NameBean;
 import com.example.leng.myapplication2.ui.customWidget.SectionDecoration;
 import com.example.leng.myapplication2.ui.myView.FloatDragView;
+import com.example.leng.myapplication2.utils.PluginUtil;
+import com.example.leng.myapplication2.voice.VoiceCallback;
+import com.example.leng.myapplication2.voice.VoiceHelper;
+import com.kingleng.baselibrary.router.BaseModule;
 import com.plattysoft.leonids.ParticleSystem;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeActivity extends Activity {
+public class HomeActivity extends BaseActivity {
 
     private FrameLayout mFlAdHolder;
 
+    View figview;
     RelativeLayout rela_layout;
     RecyclerView recyclerView;
     ArrayList<ClassData> datas = new ArrayList<>();
 
+    List<Resources> resources;
+
+    Typeface typeface;
+
+    VoiceHelper voiceHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (typeface == null) {
+            typeface = Typeface.createFromAsset(getAssets(), "hwxk.ttf");
+        }
+
+        LayoutInflaterCompat.setFactory2(LayoutInflater.from(this), new LayoutInflater.Factory2() {
+            @Override
+            public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
+                AppCompatDelegate delegate = getDelegate();
+                View view = delegate.createView(parent, name, context, attrs);
+
+                if ( view!= null && (view instanceof TextView))
+                {
+                    ((TextView) view).setTypeface(typeface);
+                }
+                return view;
+            }
+
+            @Override
+            public View onCreateView(String name, Context context, AttributeSet attrs) {
+                return null;
+            }
+        });
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
@@ -77,6 +124,15 @@ public class HomeActivity extends Activity {
         initView();
         initData();
         setPullAction(datas);
+
+        resources = PluginUtil.loadPlugin(HomeActivity.this);
+
+        voiceHelper = new VoiceHelper(this);
+
+        voiceHelper.setVoice();
+
+        /*******************************************************************************/
+
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
 //        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
@@ -124,7 +180,7 @@ public class HomeActivity extends Activity {
 //                        Intent intent = new Intent(HomeActivity.this,data.className);
 //                        startActivity(intent);
                         if(!TextUtils.isEmpty(data.adType)){
-                            AppModule.startActivityByUrl(HomeActivity.this,"www.kingleng.com?adType="+data.adType);
+                            AppModule.startActivityByUrl(HomeActivity.this,"www.aegis.com?adType="+data.adType);
                         }else{
                             AppModule.startActivityByUrl(HomeActivity.this,data.url);
                         }
@@ -152,6 +208,14 @@ public class HomeActivity extends Activity {
 
     }
 
+    @Override
+    public void onDestroy() {
+        if(voiceHelper!=null){
+            voiceHelper.close();
+        }
+        super.onDestroy();
+    }
+
     List<NameBean> dataList;
     private void setPullAction(List<ClassData> classDataList) {
         dataList = new ArrayList<>();
@@ -175,11 +239,38 @@ public class HomeActivity extends Activity {
 //        MyHorizontalScrollView myHorizontalScrollView = (MyHorizontalScrollView)findViewById(R.id.myHorizontalScrollView);
 //        recyclerView = myHorizontalScrollView.getContentView();
 
+        figview = findViewById(R.id.figview);
         mFlAdHolder = (FrameLayout) findViewById(R.id.fl_adplaceholder);
 
         recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
 
         rela_layout = (RelativeLayout) findViewById(R.id.rela_layout);
+
+        mFlAdHolder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                figview.setVisibility(View.VISIBLE);
+
+                voiceHelper.startVoice(new VoiceCallback() {
+                    @Override
+                    public void result(String result) {
+
+                        figview.setVisibility(View.GONE);
+
+                        toastCenter(result);
+//                        edit_text.setText(result);
+                    }
+                });
+
+//                int id = resources.get(0).getIdentifier("app_name","string","com.info.aegis.mypluginapplication");
+//                String appname = resources.get(0).getString(id);
+//                Log.e("asd",appname);
+//                Intent intent = new Intent();
+//                intent.setClassName(HomeActivity.this, "com.info.aegis.mypluginapplication.MainActivity");
+//                startActivity(intent);
+            }
+        });
 
 
         FloatDragView.addFloatDragView(this, rela_layout, new View.OnClickListener() {
@@ -458,6 +549,12 @@ public class HomeActivity extends Activity {
         classData29.className = SipPhoneActivity.class;
         classData29.adType = "100029";
         datas.add(classData29);
+
+        ClassData classData30 = new ClassData();
+        classData30.name = "胎动计数器";
+        classData30.className = YMTDActivity.class;
+        classData30.adType = "100030";
+        datas.add(classData30);
 
     }
 
