@@ -2,6 +2,7 @@ package com.example.leng.myapplication2.ui.activity;
 
 import android.graphics.Color;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +24,11 @@ import android.widget.Toast;
 
 import com.example.leng.myapplication2.R;
 import com.example.leng.myapplication2.adapter.QuickAdapter;
+import com.example.leng.myapplication2.base.BaseActivity;
+import com.example.leng.myapplication2.permission.AlertWindowPermissionUtil;
+import com.example.leng.myapplication2.permission.CameraPermissionUtil;
+import com.example.leng.myapplication2.permission.RecordPermissionUtil;
+import com.example.leng.myapplication2.permission.StoragePermissionUtil;
 import com.example.leng.myapplication2.ui.myView.MyItemAnimator;
 import com.example.leng.myapplication2.ui.myView.SwitchButton;
 import com.example.leng.myapplication2.ui.tools.AndroidUtil;
@@ -31,7 +37,12 @@ import com.example.mylibrary.util.DensityUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestActivity extends AppCompatActivity {
+public class TestActivity extends BaseActivity {
+
+    private static final int REQUEST_CAMERA = 1;
+    private static final int REQUEST_RECORD = 2;
+    private static final int REQUEST_STORAGE = 21;
+    private static final int REQUEST_ALERT = 31;
 
     RecyclerView recyclerView;
     AppBarLayout appbar;
@@ -50,16 +61,38 @@ public class TestActivity extends AppCompatActivity {
     private RadioButton radioButton1;
     private RadioButton radioButton2;
 
+    CameraPermissionUtil mCameraPermissionUtil;
+    RecordPermissionUtil mRecordPermissionUtil;
+    StoragePermissionUtil mStoragePermissionUtil;
+    AlertWindowPermissionUtil mAlertWindowPermissionUtil;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test2);
 
+        initView();
 
-        txtView_content_pic_lin = (LinearLayout) findViewById(R.id.txtView_content_pic_lin);
+        getCamera();
 
+    }
+
+    private void initView(){
 
         final SwipeRefreshLayout swipeRefreshlayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refreshlayout);
+        txtView_content_pic_lin = (LinearLayout) findViewById(R.id.txtView_content_pic_lin);
+        appbar = (AppBarLayout)findViewById(R.id.appbar);
+        recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
+        switchbtn = (SwitchButton)findViewById(R.id.switchbtn);
+        switchbtn.writeSwitchButtonState(true);
+        c_tv = findViewById(R.id.c_tv);
+
+        sex_radiogroup = (RadioGroup) findViewById(R.id.sex_radiogroup);
+        radioButton1 = (RadioButton) findViewById(R.id.radioButton1);
+        radioButton2 = (RadioButton) findViewById(R.id.radioButton2);
+
+
+
 
         swipeRefreshlayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -79,9 +112,7 @@ public class TestActivity extends AppCompatActivity {
             }
         });
 
-        appbar = (AppBarLayout)findViewById(R.id.appbar);
 
-        recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setItemAnimator(new MyItemAnimator());
         setData();
@@ -122,8 +153,7 @@ public class TestActivity extends AppCompatActivity {
         });
 
 
-        switchbtn = (SwitchButton)findViewById(R.id.switchbtn);
-        switchbtn.writeSwitchButtonState(true);
+
 
         switchbtn.setStateListener(new SwitchButton.StateListener() {
             @Override
@@ -134,45 +164,16 @@ public class TestActivity extends AppCompatActivity {
                     Log.e("asd","false");
                 }
 
-                float ssa = 40;
-
-                for(int i=0;i<30;i++){
-                    Log.e("asdd","i = "+i+" aas = "+ssa);
-                    ssa*=1.14f;
-                    ssa+=5;
-                }
-
-//                String[] ass = {"111","222","333"};
-//                ArrayList<String> add = new ArrayList<>();
-//                add.add("111");
-//                add.add("222");
-//                add.add("333");
-//                add.add("444");
-//                Log.e("asd","ass = "+add.toString().replace("[","").replace("]",""));
-//
-//                String pgPrice = "100.00";
-//                String price = pgPrice;
-//                try{
-//                    double mp = Double.parseDouble(price);
-//                    price = mp+"";
-//                }catch (Exception e){
-//                }
-//                Log.e("asd","price = "+price);
             }
         });
-
 
         vto2 = switchbtn.getViewTreeObserver();
         vto2.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-
-                Log.e("asd","price :::: ");
                 if(vto2.isAlive()){
                     vto2.removeGlobalOnLayoutListener(this);
                 }
-
-
             }
         });
 
@@ -201,31 +202,6 @@ public class TestActivity extends AppCompatActivity {
             txtView_content_pic_lin.addView(relativeLayout);
         }
 
-
-
-        c_tv = findViewById(R.id.c_tv);
-
-        float asf = 40400;
-        float aaa = 0;
-        for(int i=0;i<10;i++){
-            aaa += asf*0.07f/12;
-            asf -= 4400;
-            Log.e("asd","aaa = "+aaa);
-        }
-
-//        String mPrice = "818.8";
-//        String mPrice = aaa+"";
-//        if(!mPrice.contains(".")){
-//            mPrice = mPrice+".00";
-//        }
-//        String[] ss = mPrice.split("\\.");
-//        SpannableString spanString = new SpannableString("¥"+ss[0]+"."+ss[1]);
-//
-//        AbsoluteSizeSpan span = new AbsoluteSizeSpan(DensityUtil.sp2px(TestActivity.this,11.5f));
-//        AbsoluteSizeSpan span2 = new AbsoluteSizeSpan(DensityUtil.sp2px(TestActivity.this,11.5f));
-//        spanString.setSpan(span, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-//        spanString.setSpan(span2, 1+ss[0].length(), 2+ss[0].length()+ss[1].length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-
         String title = "我在这里吃饭<em>好吃的</em>烤肉！";
         int start=title.indexOf("<em>");
         int length =title.indexOf("</em>")-start-4;
@@ -234,12 +210,8 @@ public class TestActivity extends AppCompatActivity {
         spanString.setSpan(new ForegroundColorSpan(Color.parseColor("#FFBE00")), start,start+length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         c_tv.setText(spanString);
-//        c_tv.append(spanString);
 
 
-        sex_radiogroup = (RadioGroup) findViewById(R.id.sex_radiogroup);
-        radioButton1 = (RadioButton) findViewById(R.id.radioButton1);
-        radioButton2 = (RadioButton) findViewById(R.id.radioButton2);
 
         sex_radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -251,6 +223,47 @@ public class TestActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+
+
+
+    private void getCamera(){
+        mCameraPermissionUtil = new CameraPermissionUtil(this, REQUEST_CAMERA);
+        mCameraPermissionUtil.checkPermissionOrRequest();
+
+//        mRecordPermissionUtil = new RecordPermissionUtil(this, REQUEST_RECORD);
+//        mRecordPermissionUtil.checkPermissionOrRequest();
+
+        mStoragePermissionUtil = new StoragePermissionUtil(this,REQUEST_STORAGE);
+        mStoragePermissionUtil.checkPermissionOrRequest();
+
+        mAlertWindowPermissionUtil = new AlertWindowPermissionUtil(this,REQUEST_ALERT);
+        mAlertWindowPermissionUtil.checkPermissionOrRequest();
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//        Log.i(TAG, "--- onRequestPermissionsResult requestCode : "+requestCode+" permissions : "+permissions);
+
+        if(requestCode == REQUEST_CAMERA){
+            mCameraPermissionUtil.handleRequestResult(requestCode, permissions, grantResults);
+        }
+
+//        if(requestCode == REQUEST_RECORD){
+//            mRecordPermissionUtil.handleRequestResult(requestCode, permissions, grantResults);
+//        }
+
+
+        if(requestCode == REQUEST_STORAGE){
+            mStoragePermissionUtil.handleRequestResult(requestCode, permissions, grantResults);
+        }
+
+        if(requestCode == REQUEST_ALERT){
+            mAlertWindowPermissionUtil.handleRequestResult(requestCode, permissions, grantResults);
+        }
 
     }
 

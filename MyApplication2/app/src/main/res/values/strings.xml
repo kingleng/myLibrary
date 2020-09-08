@@ -1,4 +1,21 @@
 <resources>
     <string name="app_name">KL App</string>
     <string name="title_activity_frame_animation">FrameAnimationActivity</string>
+
+    <string name="pub_confirm">确定</string>
+    <string name="pub_cancel">取消</string>
+
+    <string name="permission_no_camera">我们想访问您的相机</string>
+    <string name="permission_no_camera_to_setting">请到设置中打开相机权限</string>
+    <string name="product_dialog_dismiss">我知道了</string>
+    <string name="to_setting">去设置</string>
+
+    <string name="permission_no_record">我们想访问您的麦克风</string>
+
+    <string name="permission_no_storage">我们想获取您的存储权限</string>
+    <string name="permission_no_storage_to_setting">请到设置中打开存储权限</string>
+
+    <string name="permission_no_alert_window">我们想获取您的悬浮框权限</string>
+    <string name="permission_no_alert_window_to_setting">请到设置中打开悬浮框权限</string>
+
 </resources>

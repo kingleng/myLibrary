@@ -100,8 +100,7 @@ public class HomeActivity extends BaseActivity {
                 AppCompatDelegate delegate = getDelegate();
                 View view = delegate.createView(parent, name, context, attrs);
 
-                if ( view!= null && (view instanceof TextView))
-                {
+                if ( view!= null && (view instanceof TextView)) {
                     ((TextView) view).setTypeface(typeface);
                 }
                 return view;
@@ -492,7 +491,7 @@ public class HomeActivity extends BaseActivity {
         ClassData classData20 = new ClassData();
         classData20.name = "网页";
 //        classData20.url = "http://player.videoincloud.com/vod/5193433?src=gkw&cc=1";
-        classData20.url = "debugtbs.qq.com";
+        classData20.url = "https://12348hotline.aegis-info.com/im/text/01dQ81.html";
         datas.add(classData20);
 
 

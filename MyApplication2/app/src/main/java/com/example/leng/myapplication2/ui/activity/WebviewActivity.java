@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.View;
+import android.webkit.JavascriptInterface;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 import com.example.leng.myapplication2.R;
@@ -49,21 +50,27 @@ public class WebviewActivity extends AppCompatActivity {
         txWebview.getSettings().setBlockNetworkImage(false);//解决图片不显示
         txWebview.getSettings().setLoadsImagesAutomatically(true); //支持自动加载图片
         txWebview.getSettings().setDefaultTextEncodingName("utf-8");//设置编码格式
-        // 开启 DOM storage API 功能
-        txWebview.getSettings().setDomStorageEnabled(true);
-
-        txWebview.getSettings().setUseWideViewPort(true);
-        txWebview.getSettings().setLoadWithOverviewMode(true);
+//        // 开启 DOM storage API 功能
+//        txWebview.getSettings().setDomStorageEnabled(true);
+//
+//        txWebview.getSettings().setUseWideViewPort(true);
+//        txWebview.getSettings().setLoadWithOverviewMode(true);
 
         //该界面打开更多链接
         txWebview.setWebViewClient(new WebViewClient() {
 
             @Override
-            public boolean shouldOverrideUrlLoading(WebView webView, WebResourceRequest webResourceRequest) {
-                webView.loadUrl(url);
+            public boolean shouldOverrideUrlLoading(WebView webView, String s) {
+                webView.loadUrl(s);
                 return true;
-//                return super.shouldOverrideUrlLoading(webView, webResourceRequest);
             }
+
+//            @Override
+//            public boolean shouldOverrideUrlLoading(WebView webView, WebResourceRequest webResourceRequest) {
+//                webView.loadUrl(url);
+//                return true;
+////                return super.shouldOverrideUrlLoading(webView, webResourceRequest);
+//            }
 
             @Override
             public void onReceivedSslError(WebView webView, SslErrorHandler sslErrorHandler, SslError sslError) {
@@ -84,15 +91,15 @@ public class WebviewActivity extends AppCompatActivity {
             }
 
         });
-        //监听网页的加载进度
-        txWebview.setWebChromeClient(new WebChromeClient() {
-            @Override
-            public void onProgressChanged(WebView webView, int i) {
-                webView.setVisibility(View.VISIBLE);
-            }
-
-
-        });
+//        //监听网页的加载进度
+//        txWebview.setWebChromeClient(new WebChromeClient() {
+//            @Override
+//            public void onProgressChanged(WebView webView, int i) {
+//                webView.setVisibility(View.VISIBLE);
+//            }
+//
+//
+//        });
 
         if(txWebview.getX5WebViewExtension()!=null){
             Log.e("asd","x5 core");
@@ -103,9 +110,21 @@ public class WebviewActivity extends AppCompatActivity {
             initX5();
         }
 
-        txWebview.loadUrl(url);
+//        txWebview.addJavascriptInterface(new JsInteration(),"android");
+
+//        txWebview.loadUrl(url);
+        txWebview.loadUrl("https://www.baidu.com");
 
 //        myToast(url);
+    }
+
+    public class JsInteration{
+
+        @JavascriptInterface
+        public String call(String number){
+            myToast("调用成功!!");
+            return "调用成功！！";
+        }
     }
 
     private void myToast(String url){

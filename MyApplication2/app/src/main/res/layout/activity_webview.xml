@@ -20,11 +20,10 @@
 
         <com.tencent.smtt.sdk.WebView
             android:id="@+id/webview_x5"
-            android:layout_width="960px"
-            android:layout_height="540px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="100dp"
-            android:visibility="gone" />
+            android:visibility="visible" />
 
     </com.example.leng.myapplication2.ui.myView.MyRelativeLayout>
 
