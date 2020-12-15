@@ -1,0 +1,10 @@
+#Fri Nov 13 15:46:07 CST 2020
+tbs_core_build_number=20201113154607
+build_version_release_max_supported=4.4.4
+android_sdk_min_supported=14
+tbs_shell_target_version=62
+tbs_core_version=045426
+cookies_database_version=9
+android_sdk_max_supported=30
+build_version_release_max_support="11"
+build_version_release_min_support="4"
