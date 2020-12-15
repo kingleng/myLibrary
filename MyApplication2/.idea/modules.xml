@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MyApplication2.iml" filepath="$PROJECT_DIR$/MyApplication2.iml" group="MyApplication2" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="MyApplication2/app" />
-      <module fileurl="file://$PROJECT_DIR$/app2library/app2library.iml" filepath="$PROJECT_DIR$/app2library/app2library.iml" group="MyApplication2/app2library" />
-      <module fileurl="file://$PROJECT_DIR$/baselibrary/baselibrary.iml" filepath="$PROJECT_DIR$/baselibrary/baselibrary.iml" group="MyApplication2/baselibrary" />
-      <module fileurl="file://$PROJECT_DIR$/gradlelibrary/gradlelibrary.iml" filepath="$PROJECT_DIR$/gradlelibrary/gradlelibrary.iml" group="MyApplication2/gradlelibrary" />
-      <module fileurl="file://$PROJECT_DIR$/linphonelibrary/linphonelibrary.iml" filepath="$PROJECT_DIR$/linphonelibrary/linphonelibrary.iml" group="MyApplication2/linphonelibrary" />
-      <module fileurl="file://$PROJECT_DIR$/mylibrary/mylibrary.iml" filepath="$PROJECT_DIR$/mylibrary/mylibrary.iml" group="MyApplication2/mylibrary" />
-      <module fileurl="file://$PROJECT_DIR$/myloginlibrary/myloginlibrary.iml" filepath="$PROJECT_DIR$/myloginlibrary/myloginlibrary.iml" group="MyApplication2/myloginlibrary" />
-      <module fileurl="file://$PROJECT_DIR$/mypluginapplication/mypluginapplication.iml" filepath="$PROJECT_DIR$/mypluginapplication/mypluginapplication.iml" group="MyApplication2/mypluginapplication" />
-      <module fileurl="file://$PROJECT_DIR$/plugincorelibrary/plugincorelibrary.iml" filepath="$PROJECT_DIR$/plugincorelibrary/plugincorelibrary.iml" group="MyApplication2/plugincorelibrary" />
+      <module fileurl="file://$PROJECT_DIR$/MyApplication2.iml" filepath="$PROJECT_DIR$/MyApplication2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MyApplication2.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MyApplication2.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app2library/MyApplication2.app2library.iml" filepath="$PROJECT_DIR$/.idea/modules/app2library/MyApplication2.app2library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/baselibrary/MyApplication2.baselibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/baselibrary/MyApplication2.baselibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gradlelibrary/MyApplication2.gradlelibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/gradlelibrary/MyApplication2.gradlelibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/linphonelibrary/MyApplication2.linphonelibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/linphonelibrary/MyApplication2.linphonelibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mylibrary/MyApplication2.mylibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/mylibrary/MyApplication2.mylibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/myloginlibrary/MyApplication2.myloginlibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/myloginlibrary/MyApplication2.myloginlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mypluginapplication/MyApplication2.mypluginapplication.iml" filepath="$PROJECT_DIR$/.idea/modules/mypluginapplication/MyApplication2.mypluginapplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugincorelibrary/MyApplication2.plugincorelibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/plugincorelibrary/MyApplication2.plugincorelibrary.iml" />
     </modules>
   </component>
 </project>

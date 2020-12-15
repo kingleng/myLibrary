@@ -4,12 +4,15 @@ import android.app.Activity;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
 import com.example.leng.myapplication2.R;
+
+import java.io.File;
 
 public class VideoViewActivity extends Activity {
 
@@ -35,7 +38,8 @@ public class VideoViewActivity extends Activity {
 //        videoView.setVideoPath(url);//播放网络视频
 
 
-//        File file = new File(Environment.getExternalStorageDirectory(),"213421.mp4");
+//        File file = new File(Environment.getExternalStorageDirectory(),"aegis/videoDownload/2c6cd48441a89cc5eb00732868e6f77e240d88b6.mp4");
+////        File file = new File("/storage/emulated/0/aegis/videoDownload/d5b7ff0de37dd291cd44f34f2e5d8356f3f40f30.mp4");
 //        String filePath = file.getPath();
 //        videoView.setVideoPath(filePath); // 指定视频文件的路径
 

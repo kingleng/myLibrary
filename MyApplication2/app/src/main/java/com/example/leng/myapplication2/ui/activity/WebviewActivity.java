@@ -107,7 +107,7 @@ public class WebviewActivity extends AppCompatActivity {
         }else{
             Log.e("asd","sys core");
             myToast("sys core");
-            initX5();
+//            initX5();
         }
 
 //        txWebview.addJavascriptInterface(new JsInteration(),"android");

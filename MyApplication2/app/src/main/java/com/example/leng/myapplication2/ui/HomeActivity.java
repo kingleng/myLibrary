@@ -5,8 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.support.v4.view.LayoutInflaterCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
@@ -64,6 +66,7 @@ import com.example.leng.myapplication2.ui.activity.YMTDActivity;
 import com.example.leng.myapplication2.ui.customWidget.NameBean;
 import com.example.leng.myapplication2.ui.customWidget.SectionDecoration;
 import com.example.leng.myapplication2.ui.myView.FloatDragView;
+import com.example.leng.myapplication2.ui.service.StartFloatBallService;
 import com.example.leng.myapplication2.utils.PluginUtil;
 import com.example.leng.myapplication2.voice.VoiceCallback;
 import com.example.leng.myapplication2.voice.VoiceHelper;
@@ -281,6 +284,9 @@ public class HomeActivity extends BaseActivity {
                         .setScaleRange(0.1f,0.3f)
                         .setAcceleration(0, 360)
                         .oneShot(recyclerView, 200);
+
+                permission();
+
 ////                 点击事件
 //                popupWindow.setAnchorView(view);
 //                popupWindow.show();
@@ -316,6 +322,26 @@ public class HomeActivity extends BaseActivity {
                 popupWindow.dismiss();
             }
         });
+    }
+
+    public void permission(){
+        if (Build.VERSION.SDK_INT >= 23) {
+            if(!Settings.canDrawOverlays(this)) {
+                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
+                startActivity(intent);
+                return;
+            } else {
+                //Android6.0以上
+                Intent intent = new Intent(this, StartFloatBallService.class);
+                startService(intent);
+                finish();
+            }
+        } else {
+            //Android6.0以下，不用动态声明权限
+            Intent intent = new Intent(this, StartFloatBallService.class);
+            startService(intent);
+            finish();
+        }
     }
 
     class MyListAdapter extends BaseAdapter{
