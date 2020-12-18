@@ -34,6 +34,7 @@ import com.example.leng.myapplication2.ui.activity.VideoViewActivity;
 import com.example.leng.myapplication2.ui.activity.ViewPager2Activity;
 import com.example.leng.myapplication2.ui.activity.ViewPagerActivity;
 import com.example.leng.myapplication2.ui.activity.VlayoutActivity;
+import com.example.leng.myapplication2.ui.activity.WNFXActivity;
 import com.example.leng.myapplication2.ui.activity.WebviewActivity;
 import com.example.leng.myapplication2.ui.activity.XuanFuActivity;
 import com.example.leng.myapplication2.ui.activity.YMTDActivity;
@@ -154,6 +155,9 @@ public class AppRouter extends BaseRouter {
                 break;
             case TypeManager.MIAN_ITEM_30:
                 context.startActivity(new Intent(context, YMTDActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                break;
+            case TypeManager.MIAN_ITEM_31:
+                context.startActivity(new Intent(context, WNFXActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 break;
             default:
                 isUsed = false;

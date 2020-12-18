@@ -61,6 +61,7 @@ import com.example.leng.myapplication2.ui.activity.VideoViewActivity;
 import com.example.leng.myapplication2.ui.activity.ViewPager2Activity;
 import com.example.leng.myapplication2.ui.activity.ViewPagerActivity;
 import com.example.leng.myapplication2.ui.activity.VlayoutActivity;
+import com.example.leng.myapplication2.ui.activity.WNFXActivity;
 import com.example.leng.myapplication2.ui.activity.XuanFuActivity;
 import com.example.leng.myapplication2.ui.activity.YMTDActivity;
 import com.example.leng.myapplication2.ui.customWidget.NameBean;
@@ -580,6 +581,14 @@ public class HomeActivity extends BaseActivity {
         classData30.className = YMTDActivity.class;
         classData30.adType = "100030";
         datas.add(classData30);
+
+        ClassData classData31 = new ClassData();
+        classData31.name = "喂奶分析";
+        classData31.className = WNFXActivity.class;
+        classData31.adType = "100031";
+        datas.add(classData31);
+
+
 
     }
 
