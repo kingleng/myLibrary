@@ -71,12 +71,13 @@ import com.example.leng.myapplication2.ui.service.StartFloatBallService;
 import com.example.leng.myapplication2.utils.PluginUtil;
 import com.example.leng.myapplication2.voice.VoiceCallback;
 import com.example.leng.myapplication2.voice.VoiceHelper;
-import com.kingleng.baselibrary.router.BaseModule;
+import com.info.aegis.kl_annotation.Hello;
 import com.plattysoft.leonids.ParticleSystem;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Hello(value = "HomeActivity")
 public class HomeActivity extends BaseActivity {
 
     private FrameLayout mFlAdHolder;

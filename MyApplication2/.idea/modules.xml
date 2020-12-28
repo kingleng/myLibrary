@@ -7,6 +7,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app2library/MyApplication2.app2library.iml" filepath="$PROJECT_DIR$/.idea/modules/app2library/MyApplication2.app2library.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/baselibrary/MyApplication2.baselibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/baselibrary/MyApplication2.baselibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/gradlelibrary/MyApplication2.gradlelibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/gradlelibrary/MyApplication2.gradlelibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kl_annotation/MyApplication2.kl_annotation.iml" filepath="$PROJECT_DIR$/.idea/modules/kl_annotation/MyApplication2.kl_annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kl_compiler/MyApplication2.kl_compiler.iml" filepath="$PROJECT_DIR$/.idea/modules/kl_compiler/MyApplication2.kl_compiler.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/linphonelibrary/MyApplication2.linphonelibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/linphonelibrary/MyApplication2.linphonelibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mylibrary/MyApplication2.mylibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/mylibrary/MyApplication2.mylibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/myloginlibrary/MyApplication2.myloginlibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/myloginlibrary/MyApplication2.myloginlibrary.iml" />

@@ -96,6 +96,11 @@ dependencies {
     implementation project(path: ':myloginlibrary')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+
+    annotationProcessor project(':kl_compiler')
+    implementation project(':kl_annotation')
+
+
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support:recyclerview-v7:27.1.1'

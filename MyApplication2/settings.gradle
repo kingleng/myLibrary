@@ -1,3 +1,5 @@
+include ':kl_compiler'
+include ':kl_annotation'
 include ':app', ':myloginlibrary', ':mylibrary', ':baselibrary', ':app2library', ':gradlelibrary'
 include ':linphonelibrary'
 include ':plugincorelibrary'
