@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.info.aegis.kl_annotation.Hello;
 import com.kingleng.app2library.App2Module;
 import com.kingleng.app2library.R;
 import com.kingleng.app2library.adapter.CycleViewPagerAdapter;
@@ -15,6 +16,7 @@ import com.kingleng.app2library.utils.RxTimer;
 import java.util.ArrayList;
 import java.util.List;
 
+@Hello(value = "app2_MainActivity")
 public class MainActivity extends AppCompatActivity implements CycleViewPagerAdapter.OnClickListener {
 
     ViewPager viewPager;

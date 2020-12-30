@@ -6,10 +6,12 @@ import android.widget.ArrayAdapter;
 
 import com.example.leng.myapplication2.R;
 import com.example.leng.myapplication2.ui.myView.MyView5;
+import com.info.aegis.kl_annotation.Hello;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Hello(value = "Main2Activity")
 public class Main2Activity extends AppCompatActivity {
 
     private MyView5 myView5;

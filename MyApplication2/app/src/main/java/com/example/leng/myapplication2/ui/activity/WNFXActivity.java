@@ -15,6 +15,7 @@ import com.example.leng.myapplication2.R;
 import com.example.leng.myapplication2.adapter.QuickAdapter;
 import com.example.leng.myapplication2.base.BaseActivity;
 import com.google.gson.Gson;
+import com.info.aegis.kl_annotation.Hello;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,6 +28,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+@Hello(value = "WNFXActivity")
 public class WNFXActivity extends BaseActivity implements View.OnClickListener {
 
     Button ib;

@@ -76,11 +76,13 @@ public class MyProcessor extends AbstractProcessor {
             if (!Utils.isEmpty(rootElements)) {
                 log.i("MyProcessor process");
 
+                int i=0;
                 for (Element element : rootElements) {
 
                     Hello hello = element.getAnnotation(Hello.class);
-                    rootMap.put("11", hello.value());
+                    rootMap.put("11"+i, hello.value());
                     log.i("MyProcessor process ::" + rootMap.toString());
+                    i++;
                 }
 
                 createClass();
