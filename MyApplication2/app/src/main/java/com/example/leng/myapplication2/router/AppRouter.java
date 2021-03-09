@@ -15,6 +15,7 @@ import com.example.leng.myapplication2.ui.HomeActivity;
 import com.example.leng.myapplication2.ui.activity.HotfixActivity;
 import com.example.leng.myapplication2.ui.activity.ImageMapActivity;
 import com.example.leng.myapplication2.ui.activity.JsoupActivity;
+import com.example.leng.myapplication2.ui.activity.LargeImageActivity;
 import com.example.leng.myapplication2.ui.activity.Main2Activity;
 import com.example.leng.myapplication2.ui.activity.Main6Activity;
 import com.example.leng.myapplication2.ui.activity.Main7Activity;
@@ -158,6 +159,9 @@ public class AppRouter extends BaseRouter {
                 break;
             case TypeManager.MIAN_ITEM_31:
                 context.startActivity(new Intent(context, WNFXActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                break;
+            case TypeManager.MIAN_ITEM_32:
+                context.startActivity(new Intent(context, LargeImageActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 break;
             default:
                 isUsed = false;

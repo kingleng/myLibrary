@@ -1,6 +1,7 @@
 package com.example.leng.myapplication2.ui;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -43,6 +44,7 @@ import com.example.leng.myapplication2.ui.activity.FrameAnimationActivity;
 import com.example.leng.myapplication2.ui.activity.HotfixActivity;
 import com.example.leng.myapplication2.ui.activity.ImageMapActivity;
 import com.example.leng.myapplication2.ui.activity.JsoupActivity;
+import com.example.leng.myapplication2.ui.activity.LargeImageActivity;
 import com.example.leng.myapplication2.ui.activity.Main2Activity;
 import com.example.leng.myapplication2.ui.activity.Main6Activity;
 import com.example.leng.myapplication2.ui.activity.Main7Activity;
@@ -589,9 +591,16 @@ public class HomeActivity extends BaseActivity {
         classData31.adType = "100031";
         datas.add(classData31);
 
+        ClassData classData32 = new ClassData();
+        classData32.name = "超大图显示";
+        classData32.className = LargeImageActivity.class;
+        classData32.adType = "100032";
+        datas.add(classData32);
 
 
     }
+
+
 
     public class ClassData{
         public String icon;

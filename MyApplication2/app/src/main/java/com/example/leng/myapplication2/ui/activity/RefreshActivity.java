@@ -54,19 +54,19 @@ public class RefreshActivity extends AppCompatActivity {
         width = wm.getDefaultDisplay().getWidth();
         height = wm.getDefaultDisplay().getHeight();
 
-        imageView = findViewById(R.id.test_image);
-
-        //获得ImageView中Image的变换矩阵
-        Matrix m = imageView.getImageMatrix();
-        float[] values = new float[10];
-        m.getValues(values);
-
-        //Image在绘制过程中的变换矩阵，从中获得x和y方向的缩放系数
-        float sx = values[0];
-        currentScale = sx;
-        Log.e("lxy", "currentScale = " + currentScale);
-
-        imageView.setOnTouchListener(new TouchListener());
+//        imageView = findViewById(R.id.test_image);
+//
+//        //获得ImageView中Image的变换矩阵
+//        Matrix m = imageView.getImageMatrix();
+//        float[] values = new float[10];
+//        m.getValues(values);
+//
+//        //Image在绘制过程中的变换矩阵，从中获得x和y方向的缩放系数
+//        float sx = values[0];
+//        currentScale = sx;
+//        Log.e("lxy", "currentScale = " + currentScale);
+//
+//        imageView.setOnTouchListener(new TouchListener());
 
     }
 

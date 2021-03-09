@@ -3,6 +3,8 @@ package com.kingleng.baselibrary.router;
 import android.content.Context;
 import android.os.Bundle;
 
+import com.kingleng.baselibrary.router.interceptor.InterceptorManager;
+
 import java.util.Map;
 import java.util.Set;
 
@@ -55,6 +57,11 @@ public class Router {
         params = params.replace("https://www.aegis.com?", "");
         params = params.replace("http://www.aegis.com?", "");
         String adType = params.split("&")[0].replace("adType=", "");
+
+        boolean mInterceptor = InterceptorManager.getInstance().Interceptor(adType);
+        if(mInterceptor){
+            return;
+        }
 
         Set<String> keys = baseModules.keySet();
         boolean isUsed = false;

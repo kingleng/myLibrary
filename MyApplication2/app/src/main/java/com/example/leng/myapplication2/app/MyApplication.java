@@ -1,6 +1,5 @@
 package com.example.leng.myapplication2.app;
 
-import android.app.Application;
 import android.content.Context;
 import android.os.Handler;
 import android.support.multidex.MultiDexApplication;
@@ -8,12 +7,10 @@ import android.util.Log;
 
 import com.danikula.videocache.HttpProxyCacheServer;
 import com.example.leng.myapplication2.router.RouterManager;
+import com.example.leng.myapplication2.ui.server.videoCache.VideoCacheServer;
 import com.example.leng.myapplication2.ui.tools.MyLog;
 import com.rxjava.rxhttp.BuildConfig;
 import com.tencent.smtt.sdk.QbSdk;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import cc.rome753.activitytaskview.ActivityTask;
 import io.reactivex.functions.Function;
@@ -80,6 +77,18 @@ public class MyApplication extends MultiDexApplication {
         }).start();
 
         ActivityTask.init(this, true);
+
+        if(videoCacheServer == null){
+            videoCacheServer = new VideoCacheServer("");
+            videoCacheServer.start();
+        }
+
+    }
+
+    private static VideoCacheServer videoCacheServer;
+
+    public static VideoCacheServer getVideoProxyServer() {
+        return videoCacheServer;
     }
 
     private HttpProxyCacheServer proxy;

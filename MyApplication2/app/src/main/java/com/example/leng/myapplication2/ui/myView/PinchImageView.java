@@ -751,6 +751,8 @@ public class PinchImageView extends ImageView {
             }
             return true;
         }
+
+
     });
 
     @Override

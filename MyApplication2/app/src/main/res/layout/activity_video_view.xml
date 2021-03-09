@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context="com.example.leng.myapplication2.ui.activity.VideoViewActivity">
 
-    <com.example.leng.myapplication2.ui.myView.CustomVideoView
+<!--    <com.example.leng.myapplication2.ui.myView.CustomVideoView-->
+    <VideoView
         android:id="@+id/videoview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

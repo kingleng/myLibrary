@@ -48,7 +48,8 @@
         android:theme="@style/Theme.DesignDemo"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
-        <activity android:name=".ui.activity.WNFXActivity"></activity>
+        <activity android:name=".ui.activity.LargeImageActivity"></activity>
+        <activity android:name=".ui.activity.WNFXActivity" />
         <activity android:name=".ui.activity.YMTDActivity" />
         <activity android:name=".ui.activity.SipPhoneActivity" />
 

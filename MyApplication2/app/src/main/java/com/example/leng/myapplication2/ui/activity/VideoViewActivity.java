@@ -2,17 +2,14 @@ package com.example.leng.myapplication2.ui.activity;
 
 import android.app.Activity;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
 import com.example.leng.myapplication2.R;
-
-import java.io.File;
+import com.example.leng.myapplication2.app.MyApplication;
 
 public class VideoViewActivity extends Activity {
 
@@ -30,10 +27,10 @@ public class VideoViewActivity extends Activity {
 //        String url = "http://newspaper-management.aegis-info.com/file/download?name=admin_6672149472645786031.MP4";
 //        String url = "https://media.w3.org/2010/05/sintel/trailer.mp4";
 //        String url = "http://newspaper-management.aegis-info.com/file/download?name=admin_213421.mp4";
-        String url = "http://v.videoincloud.com/sgy/20190614/oQMpsG/oQMpsG.m3u8";
+//        String url = "http://v.videoincloud.com/sgy/20190614/oQMpsG/oQMpsG.m3u8";
 //        HttpProxyCacheServer proxy = MyApplication.getProxy(this);
 //        String proxyUrl = proxy.getProxyUrl(url);
-        videoView.setVideoURI(Uri.parse(url));//播放网络视频
+//        videoView.setVideoURI(Uri.parse(url));//播放网络视频
 //        videoView.setVideoPath(proxyUrl);//播放网络视频
 //        videoView.setVideoPath(url);//播放网络视频
 
@@ -42,6 +39,9 @@ public class VideoViewActivity extends Activity {
 ////        File file = new File("/storage/emulated/0/aegis/videoDownload/d5b7ff0de37dd291cd44f34f2e5d8356f3f40f30.mp4");
 //        String filePath = file.getPath();
 //        videoView.setVideoPath(filePath); // 指定视频文件的路径
+
+        String url = MyApplication.getVideoProxyServer().getProxyUrl("http://vfx.mtime.cn/Video/2019/03/21/mp4/190321153853126488.mp4");
+        videoView.setVideoPath(url);
 
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -53,4 +53,17 @@ public class VideoViewActivity extends Activity {
 
         videoView.start(); // 开始播放
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        videoView.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        videoView.resume();
+    }
+
 }
