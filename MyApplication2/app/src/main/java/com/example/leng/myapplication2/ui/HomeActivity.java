@@ -56,6 +56,7 @@ import com.example.leng.myapplication2.ui.activity.MyGameActivity;
 import com.example.leng.myapplication2.ui.activity.MyTextNewActivity;
 import com.example.leng.myapplication2.ui.activity.Pic2AsciiActivity;
 import com.example.leng.myapplication2.ui.activity.RefreshActivity;
+import com.example.leng.myapplication2.ui.activity.SVGActivity;
 import com.example.leng.myapplication2.ui.activity.SendSMSActivity;
 import com.example.leng.myapplication2.ui.activity.SipPhoneActivity;
 import com.example.leng.myapplication2.ui.activity.TestActivity;
@@ -596,6 +597,13 @@ public class HomeActivity extends BaseActivity {
         classData32.className = LargeImageActivity.class;
         classData32.adType = "100032";
         datas.add(classData32);
+
+        ClassData classData33 = new ClassData();
+        classData33.name = "lottie 动画";
+        classData33.className = SVGActivity.class;
+        classData33.adType = "100033";
+        datas.add(classData33);
+
 
 
     }

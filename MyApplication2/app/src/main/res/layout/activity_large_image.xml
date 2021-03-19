@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.activity.LargeImageActivity">
 
-    <com.example.leng.myapplication2.ui.myView.LargeImageView
+    <com.example.leng.myapplication2.ui.myView.largeimage.LargeImageView
         android:id="@+id/largeimage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

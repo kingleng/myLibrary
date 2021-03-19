@@ -28,6 +28,7 @@ import com.example.leng.myapplication2.ui.activity.MyTextNewActivity;
 import com.example.leng.myapplication2.ui.activity.Pic2AsciiActivity;
 import com.example.leng.myapplication2.ui.activity.RefreshActivity;
 import com.example.leng.myapplication2.ui.activity.RxHttpActivity;
+import com.example.leng.myapplication2.ui.activity.SVGActivity;
 import com.example.leng.myapplication2.ui.activity.SendSMSActivity;
 import com.example.leng.myapplication2.ui.activity.SipPhoneActivity;
 import com.example.leng.myapplication2.ui.activity.TestActivity;
@@ -162,6 +163,9 @@ public class AppRouter extends BaseRouter {
                 break;
             case TypeManager.MIAN_ITEM_32:
                 context.startActivity(new Intent(context, LargeImageActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                break;
+            case TypeManager.MIAN_ITEM_33:
+                context.startActivity(new Intent(context, SVGActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 break;
             default:
                 isUsed = false;

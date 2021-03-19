@@ -1,26 +1,14 @@
 package com.example.leng.myapplication2.ui.activity;
 
 
-import android.content.res.AssetManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.BitmapRegionDecoder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.leng.myapplication2.R;
-import com.example.leng.myapplication2.ui.myView.LargeImageView;
+import com.example.leng.myapplication2.ui.myView.largeimage.LargeImageView;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 
 public class LargeImageActivity extends AppCompatActivity {
@@ -35,7 +23,7 @@ public class LargeImageActivity extends AppCompatActivity {
         try {
             InputStream is = getAssets().open("accvv.png");
             largeimage.setInputStream(is);
-            is.close();
+//            is.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
