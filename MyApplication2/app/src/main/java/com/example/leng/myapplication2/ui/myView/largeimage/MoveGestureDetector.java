@@ -32,7 +32,7 @@ public class MoveGestureDetector {
                     currentY0 = event.getY(0);
                     currentX1 = event.getX(1);
                     currentY1 = event.getY(1);
-                    lastDistance = (float) getDistance(currentX0,currentY0,currentX1,currentY1);
+                    lastDistance = 0;
                     break;
                 case MotionEvent.ACTION_MOVE:
 
@@ -51,9 +51,15 @@ public class MoveGestureDetector {
 
                         float distance = (float) getDistance(currentX0,currentY0,currentX1,currentY1);
 
-                        float scale = distance/lastDistance;
+                        if(lastDistance == 0){
+                            lastDistance = distance;
+                        }
 
-                        simpleMoveGestureDetector.onScale(scale,scale);
+                        float scale = (float) Math.sqrt(distance/lastDistance);
+                        float centerX = (currentX1+currentX0)/2;
+                        float centerY = (currentY1+currentY0)/2;
+
+                        simpleMoveGestureDetector.onScale(scale,centerX,centerY);
 
                         lastDistance = distance;
                     }
@@ -76,7 +82,7 @@ public class MoveGestureDetector {
 
         public interface SimpleMoveGestureDetector {
             void onMove(float distanceX, float distanceY);
-            void onScale(float scaleX, float scaleY);
+            void onScale(float scale, float centerX, float centerY);
             void onFinish();
         }
     }

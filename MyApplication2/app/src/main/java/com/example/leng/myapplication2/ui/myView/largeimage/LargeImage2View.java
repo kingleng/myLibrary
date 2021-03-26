@@ -198,9 +198,8 @@ public class LargeImage2View extends View{
             }
 
             @Override
-            public void onScale(float scaleX, float scaleY) {
-//                scaleMatrix.postScale(scaleX,scaleY);
-//                invalidate();
+            public void onScale(float scale, float centerX, float centerY) {
+
             }
 
             @Override

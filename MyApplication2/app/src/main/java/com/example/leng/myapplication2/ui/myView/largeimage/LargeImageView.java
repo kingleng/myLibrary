@@ -12,9 +12,11 @@ import android.os.Message;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.util.LruCache;
 import android.view.MotionEvent;
 import android.view.View;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -27,16 +29,35 @@ import java.util.concurrent.TimeUnit;
 
 public class LargeImageView extends View{
     public BitmapRegionDecoder mDecoder;
+    public BitmapRegionDecoder mDecoderCopy;
 
-    List<ItemParams> cache = new ArrayList<>();
+//    List<ItemParams> cache = new ArrayList<>();
 
-    Map<Integer,Integer> isDecode = new HashMap<>();
+    private LruCache<String, ItemParams> mMemoryCache;
+
+    public void addBitmapToMemoryCache(String key, ItemParams bitmap) {
+        if (getBitmapFromMemCache(key) == null) {
+            mMemoryCache.put(key, bitmap);
+        }
+    }
+    public ItemParams getBitmapFromMemCache(String key) {
+        return mMemoryCache.get(key);
+    }
+
+    /**
+     * 缓存图片的宽高比
+     */
+    float ratio = 0.1f;
+    int preCacheNum = 3;
 
     Matrix matrix = new Matrix();
 
     Matrix scaleMatrix = new Matrix();
+    float totalTranslateX = 0;
     float totalTranslateY = 0;
     float itemHeight = 0;
+
+    boolean isInit = false;
 
     /**
      * 图片的宽度和高度
@@ -45,8 +66,7 @@ public class LargeImageView extends View{
 
     private MoveGestureDetector mDetector;
 
-
-    ThreadPoolExecutor pool = new ThreadPoolExecutor(1, 1,
+    ThreadPoolExecutor pool = new ThreadPoolExecutor(3, 3,
             0L, TimeUnit.MILLISECONDS,
             new LinkedBlockingQueue<Runnable>());
 
@@ -55,7 +75,6 @@ public class LargeImageView extends View{
     static {
         options.inPreferredConfig = Bitmap.Config.RGB_565;
         options.inSampleSize = 1;
-
     }
 
     Handler mH = new Handler(){
@@ -65,11 +84,11 @@ public class LargeImageView extends View{
 
             switch (msg.what){
                 case 0:
+                    isInit = true;
                     requestLayout();
                     invalidate();
                     break;
                 case 1:
-                    isReset = true;
                     invalidate();
                     break;
             }
@@ -92,7 +111,6 @@ public class LargeImageView extends View{
                     long tt2 = System.currentTimeMillis();
                     Log.e("setInputStream:",tt2-tt1+"");
 
-
                     mH.sendEmptyMessage(0);
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -106,6 +124,19 @@ public class LargeImageView extends View{
                 }
             }
         });
+
+        // 获取到可用内存的最大值，使用内存超出这个值会引起OutOfMemory异常。
+        // LruCache通过构造函数传入缓存值，以KB为单位。
+        int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
+        // 使用最大可用内存值的1/8作为缓存的大小。
+        int cacheSize = maxMemory / 16;
+        mMemoryCache = new LruCache<String, ItemParams>(cacheSize) {
+            @Override
+            protected int sizeOf(String key, ItemParams bitmap) {
+                // 重写此方法来衡量每张图片的大小，默认返回图片数量。
+                return bitmap.mBitmap.getByteCount() / 1024;
+            }
+        };
     }
 
 //    private void checkWidth() {
@@ -141,6 +172,21 @@ public class LargeImageView extends View{
         }
     }
 
+    private void checkScale() {
+
+        float[] values = new float[9];
+        scaleMatrix.getValues(values);
+
+
+//        if (totalTranslateY < -(mImageHeight/s-height)) {
+//            totalTranslateY = -(mImageHeight/s-height);
+//        }
+//
+//        if (totalTranslateY > 0) {
+//            totalTranslateY = 0;
+//        }
+    }
+
 
     public LargeImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -169,35 +215,44 @@ public class LargeImageView extends View{
                     invalidate();
                 }
 
+                getBitmap();
+
+
             }
 
             @Override
-            public void onScale(float scaleX, float scaleY) {
-//                scaleMatrix.postScale(scaleX,scaleY);
-//                invalidate();
+            public void onScale(float scale, float centerX, float centerY) {
+                scaleMatrix.postScale(scale,scale);
+
+                totalTranslateY = totalTranslateY*scale - (centerY*scale-centerY);
+                totalTranslateX = totalTranslateX*scale - (centerX*scale-centerX);
+
+                checkScale();
+                invalidate();
             }
 
             @Override
             public void onFinish() {
 //                getBitmapcache();
-                getBitmap();
+
             }
         });
     }
 
+    Map<Integer,String> getBitmap = new HashMap();
     /******************       异步获取图片缓存  ********************/
     private void getBitmapcache(int position){
 
-//        if(isDecode.containsKey(position)){
-//            return;
-//        }
-        isDecode.put(position,0);
+        if(getBitmap.get(position) !=null){
+            return;
+        }
+        getBitmap.put(position,"1");
 
         Rect rect = new Rect();
         rect.left = 0;
-        rect.top = mImageWidth*position;
+        rect.top = (int)(mImageWidth*ratio*position);
         rect.right = mImageWidth;
-        rect.bottom = mImageWidth*(position+1);
+        rect.bottom = (int)(mImageWidth*ratio*(position+1)+1);
 
         pool.submit(new Runnable() {
             @Override
@@ -207,24 +262,14 @@ public class LargeImageView extends View{
                 params.mBitmap = mDecoder.decodeRegion(rect, options);
                 params.setRect(rect);
                 params.position = position;
-                if(cache.size() == 0){
-                    cache.add(params);
-                }else{
-                    for(int i=0;i<cache.size();i++){
-                        if(position<cache.get(i).position){
-                            cache.add(i,params);
-                        }
-                    }
 
-                    if(position>=cache.get(cache.size()-1).position){
-                        cache.add(params);
-                    }
+                addBitmapToMemoryCache(position+"",params);
+                synchronized (getBitmap){
+                    getBitmap.remove(position);
                 }
 
-                isDecode.remove(position);
-
                 long tt2 = System.currentTimeMillis();
-                Log.e("time:",tt2-tt1+"");
+                Log.e("time:","position = "+position +"::"+(tt2-tt1)+"");
 
                 mH.sendEmptyMessage(1);
             }
@@ -233,19 +278,20 @@ public class LargeImageView extends View{
 
     int width=0;
     int height = 0;
-    boolean isReset = false;
     float s;
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+        if(!isInit){
+            return;
+        }
 
         width = getMeasuredWidth();
         height = getMeasuredHeight();
 
         int imageWidth = mImageWidth;
         int imageHeight = mImageHeight;
-
-
 
         /******************       获取图片缩放比例 s  ********************/
         s = imageWidth*1f/width;
@@ -271,6 +317,11 @@ public class LargeImageView extends View{
         itemHeight = imageWidth/s;
 
         getBitmap();
+
+    }
+
+    private void getDecodeCopy(float sacle){
+//        mDecoderCopy = mDecoder.
     }
 
 
@@ -278,46 +329,29 @@ public class LargeImageView extends View{
         if(mDetector==null){
             return;
         }
-
         List<Integer> positons = showBitmap();
-
         for(int i=0;i<positons.size();i++){
-            boolean has = false;
-            for(ItemParams params :cache){
-                if(params.position == positons.get(i)){
-                    has = true;
-                }
-            }
-            if(!has){
+            if(getBitmapFromMemCache(positons.get(i)+"") == null){
                 getBitmapcache(positons.get(i));
             }
-
         }
-
-//        for(ItemParams params :cache){
-//            boolean has = false;
-//            if(params.position < positons.get(0)-1){
-//                cache.remove(params);
-//                continue;
-//            }
-//
-//            if(params.position > positons.get(positons.size()-1)+1){
-//                cache.remove(params);
-//                continue;
-//            }
-//
-//        }
-
-
-
-
     }
 
     public List<Integer> showBitmap(){
-        int firstPosition = (int)(-totalTranslateY/width);
-        int endPosition = (int)((-totalTranslateY+height)/width);
-        if(((-(totalTranslateY+height))%width)>0){
+        int firstPosition = (int)(-totalTranslateY/(width*ratio));
+        int endPosition = (int)((-totalTranslateY+height)/(width*ratio));
+        if(((-(totalTranslateY+height))%(width*ratio))>0){
             endPosition++;
+        }
+
+        for(int i=1;i<=preCacheNum;i++){
+            if((totalTranslateY+width*ratio*i)<0){
+                firstPosition--;
+            }
+
+            if(Math.abs(totalTranslateY-width*ratio*i)*s<mImageHeight){
+                endPosition++;
+            }
         }
 
         List<Integer> positions = new ArrayList<>();
@@ -332,14 +366,17 @@ public class LargeImageView extends View{
     protected void onDraw(Canvas canvas) {
         if (mDecoder != null) {
 
-            for(int i=0;i<cache.size();i++){
-//                if(i!=0){
-//                    break;
-//                }
+            List<Integer> positons = showBitmap();
+            for(int i=0;i<positons.size();i++){
+
+                ItemParams param = getBitmapFromMemCache(positons.get(i)+"");
+                if(param == null){
+                    continue;
+                }
                 matrix.reset();
                 matrix.postConcat(scaleMatrix);
-                matrix.postTranslate(0,cache.get(i).top/s+totalTranslateY);
-                canvas.drawBitmap(cache.get(i).mBitmap,matrix,null);
+                matrix.postTranslate(totalTranslateX,param.top/s+totalTranslateY);
+                canvas.drawBitmap(param.mBitmap,matrix,null);
             }
 
         }
@@ -379,7 +416,6 @@ public class LargeImageView extends View{
             left = rect.left;
             right = rect.right;
         }
-
 
     }
 
