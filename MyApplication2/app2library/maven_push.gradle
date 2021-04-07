@@ -77,7 +77,7 @@ repositories {
 uploadArchives {
     repositories {
         mavenDeployer {
-            repository(url: "http://192.168.11.205:8023/repository/maven-releases/") {
+            repository(url: "http://192.168.18.135:8081/repository/maven-releases/") {
                 authentication(userName: "admin", password: "admin123")
             }
             pom.project {
