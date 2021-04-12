@@ -343,18 +343,21 @@ public class LargeImageView extends View{
     }
 
     public List<Integer> showBitmap(){
-        int firstPosition = (int)(-totalTranslateY/(width*ratio));
-        int endPosition = (int)((-totalTranslateY+height)/(width*ratio));
-        if(((-(totalTranslateY+height))%(width*ratio))>0){
+
+        float[] values = new float[9];        
+        scaleMatrix.getValues(values);        
+        int firstPosition = (int)(-totalTranslateY/(width*values[0]/ss*ratio));
+        int endPosition = (int)((-totalTranslateY+height)/(width*values[0]/ss*ratio));
+        if(((-(totalTranslateY+height))%(width*values[0]/ss*ratio))>0){
             endPosition++;
         }
 
         for(int i=1;i<=preCacheNum;i++){
-            if((totalTranslateY+width*ratio*i)<0){
+            if((totalTranslateY+width*values[0]/ss*ratio*i)<0){
                 firstPosition--;
             }
 
-            if(Math.abs(totalTranslateY-width*ratio*i)*s<mImageHeight){
+            if(Math.abs(totalTranslateY-width*values[0]/ss*ratio*i)*s<mImageHeight){
                 endPosition++;
             }
         }
@@ -381,6 +384,7 @@ public class LargeImageView extends View{
                 if(param == null){
                     continue;
                 }
+                Log.e("onDraw","positons = "+positons.get(i));
                 matrix.reset();
                 matrix.postConcat(scaleMatrix);
                 scaleMatrix.getValues(values);
