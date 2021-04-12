@@ -47,7 +47,7 @@ public class LargeImageView extends View{
     /**
      * 缓存图片的宽高比
      */
-    float ratio = 0.1f;
+    float ratio = 0.3f;
     int preCacheNum = 3;
 
     Matrix matrix = new Matrix();
@@ -129,7 +129,7 @@ public class LargeImageView extends View{
         // LruCache通过构造函数传入缓存值，以KB为单位。
         int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
         // 使用最大可用内存值的1/8作为缓存的大小。
-        int cacheSize = maxMemory / 16;
+        int cacheSize = maxMemory / 8;
         mMemoryCache = new LruCache<String, ItemParams>(cacheSize) {
             @Override
             protected int sizeOf(String key, ItemParams bitmap) {
@@ -139,32 +139,27 @@ public class LargeImageView extends View{
         };
     }
 
-//    private void checkWidth() {
-//
-//
-//        Rect rect = mRect;
-//        int imageWidth = mImageWidth;
-//        int imageHeight = mImageHeight;
-//
-//        if (rect.right > imageWidth) {
-//            rect.right = imageWidth;
-//            rect.left = imageWidth - getWidth();
-//
-////            matrix.postTranslate(imageWidth-rect.right,0);
-//        }
-//
-//        if (rect.left < 0) {
-//            rect.left = 0;
-//            rect.right = getWidth();
-////            matrix.postTranslate(rect.left,0);
-//        }
-//    }
+    private void checkWidth() {
+
+        float[] values = new float[9];
+        scaleMatrix.getValues(values);
+
+        if (totalTranslateX < -(mImageWidth/s*values[0]/ss-width)) {
+            totalTranslateX = -(mImageWidth/s*values[0]/ss-width);
+        }
+
+        if (totalTranslateX > 0) {
+            totalTranslateX = 0;
+        }
+    }
 
 
     private void checkHeight() {
+        float[] values = new float[9];
+        scaleMatrix.getValues(values);
 
-        if (totalTranslateY < -(mImageHeight/s-height)) {
-            totalTranslateY = -(mImageHeight/s-height);
+        if (totalTranslateY < -(mImageHeight/s*values[0]/ss-height)) {
+            totalTranslateY = -(mImageHeight/s*values[0]/ss-height);
         }
 
         if (totalTranslateY > 0) {
@@ -176,6 +171,14 @@ public class LargeImageView extends View{
 
         float[] values = new float[9];
         scaleMatrix.getValues(values);
+
+        if(values[0]<ss){
+            scaleMatrix.setScale(ss,ss);
+        }
+
+        if(values[0]>(ss*s)){
+            scaleMatrix.setScale(ss*s,ss*s);
+        }
 
 
 //        if (totalTranslateY < -(mImageHeight/s-height)) {
@@ -198,17 +201,17 @@ public class LargeImageView extends View{
             @Override
             public void onMove(float distanceX, float distanceY) {
 
-                float[] matrix = new float[9];
-                scaleMatrix.getValues(matrix);
+//                float[] matrix = new float[9];
+//                scaleMatrix.getValues(matrix);
 
                 int moveX = (int) (distanceX);
                 int moveY = (int) (distanceY);
 
-//                if (mImageWidth > getWidth()) {
-//                    mRect.offset(-moveX, 0);
-//                    checkWidth();
-//                    invalidate();
-//                }
+                if (mImageWidth > getWidth()) {
+                    totalTranslateX += moveX;
+                    checkWidth();
+                    invalidate();
+                }
                 if (mImageHeight > getHeight()) {
                     totalTranslateY += moveY;
                     checkHeight();
@@ -223,11 +226,12 @@ public class LargeImageView extends View{
             @Override
             public void onScale(float scale, float centerX, float centerY) {
                 scaleMatrix.postScale(scale,scale);
-
+                
                 totalTranslateY = totalTranslateY*scale - (centerY*scale-centerY);
                 totalTranslateX = totalTranslateX*scale - (centerX*scale-centerX);
-
                 checkScale();
+                checkWidth();
+                checkHeight();
                 invalidate();
             }
 
@@ -279,6 +283,7 @@ public class LargeImageView extends View{
     int width=0;
     int height = 0;
     float s;
+    float ss = 1f;
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
@@ -309,7 +314,7 @@ public class LargeImageView extends View{
         options.inSampleSize = pow;
 
         /******************       获取图片最终缩放比例  ********************/
-        float ss = 1f;
+
         ss = ss*pow/s;
 
         scaleMatrix.setScale(ss,ss);
@@ -362,6 +367,9 @@ public class LargeImageView extends View{
         return positions;
     }
 
+
+    float[] values = new float[9];
+
     @Override
     protected void onDraw(Canvas canvas) {
         if (mDecoder != null) {
@@ -375,8 +383,10 @@ public class LargeImageView extends View{
                 }
                 matrix.reset();
                 matrix.postConcat(scaleMatrix);
-                matrix.postTranslate(totalTranslateX,param.top/s+totalTranslateY);
+                scaleMatrix.getValues(values);
+                matrix.postTranslate(totalTranslateX,param.top/s*values[0]/ss+totalTranslateY);
                 canvas.drawBitmap(param.mBitmap,matrix,null);
+
             }
 
         }

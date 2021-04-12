@@ -26,14 +26,15 @@ public class MoveGestureDetector {
                 case MotionEvent.ACTION_DOWN:
                     lastX = event.getX();
                     lastY = event.getY();
-                    break;
-                case MotionEvent.ACTION_POINTER_DOWN:
-                    currentX0 = event.getX(0);
-                    currentY0 = event.getY(0);
-                    currentX1 = event.getX(1);
-                    currentY1 = event.getY(1);
                     lastDistance = 0;
                     break;
+//                case MotionEvent.ACTION_POINTER_DOWN:
+//                    currentX0 = event.getX(0);
+//                    currentY0 = event.getY(0);
+//                    currentX1 = event.getX(1);
+//                    currentY1 = event.getY(1);
+//
+//                    break;
                 case MotionEvent.ACTION_MOVE:
 
                     if(event.getPointerCount()==1){
