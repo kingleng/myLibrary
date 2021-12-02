@@ -40,6 +40,7 @@ import com.example.leng.myapplication2.ui.activity.WNFXActivity;
 import com.example.leng.myapplication2.ui.activity.WebviewActivity;
 import com.example.leng.myapplication2.ui.activity.XuanFuActivity;
 import com.example.leng.myapplication2.ui.activity.YMTDActivity;
+import com.example.leng.myapplication2.ui.activity.star.StarActivity;
 import com.kingleng.baselibrary.router.BaseRouter;
 
 /**
@@ -166,6 +167,9 @@ public class AppRouter extends BaseRouter {
                 break;
             case TypeManager.MIAN_ITEM_33:
                 context.startActivity(new Intent(context, SVGActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                break;
+            case TypeManager.MIAN_ITEM_34:
+                context.startActivity(new Intent(context, StarActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 break;
             default:
                 isUsed = false;

@@ -1,6 +1,17 @@
+include ':app',
+        ':myloginlibrary',
+        ':mylibrary',
+        ':baselibrary',
+        ':app2library'
+
 include ':kl_compiler'
 include ':kl_annotation'
-include ':app', ':myloginlibrary', ':mylibrary', ':baselibrary', ':app2library', ':gradlelibrary'
+
 include ':linphonelibrary'
-include ':plugincorelibrary'
+
+include ':plugincorelibrary',
+        ':gradlelibrary'
 include ':mypluginapplication'
+
+//include ':lib_location_debug'
+//project(":lib_location_debug").projectDir = file('D:/workspace/manbang/lib-location/lib_location_debug')

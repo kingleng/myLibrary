@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.kingleng.demo.kl-plugin'
+//apply plugin: 'com.kingleng.demo.kl-plugin'
 
 android {
     compileSdkVersion 27
@@ -59,10 +59,10 @@ dependencies {
     implementation project(':baselibrary')
 }
 
-klApk {
-    packageId = 0x6f             // The package id of Resources.
-    targetHost = '../app'
-    // The path of application module in host project.
-    applyHostMapping = false      // [Optional] Default value is true.
-}
+//klApk {
+//    packageId = 0x6f             // The package id of Resources.
+//    targetHost = '../app'
+//    // The path of application module in host project.
+//    applyHostMapping = false      // [Optional] Default value is true.
+//}
 

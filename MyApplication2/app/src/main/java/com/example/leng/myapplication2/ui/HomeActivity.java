@@ -67,6 +67,7 @@ import com.example.leng.myapplication2.ui.activity.VlayoutActivity;
 import com.example.leng.myapplication2.ui.activity.WNFXActivity;
 import com.example.leng.myapplication2.ui.activity.XuanFuActivity;
 import com.example.leng.myapplication2.ui.activity.YMTDActivity;
+import com.example.leng.myapplication2.ui.activity.star.StarActivity;
 import com.example.leng.myapplication2.ui.customWidget.NameBean;
 import com.example.leng.myapplication2.ui.customWidget.SectionDecoration;
 import com.example.leng.myapplication2.ui.myView.FloatDragView;
@@ -604,7 +605,11 @@ public class HomeActivity extends BaseActivity {
         classData33.adType = "100033";
         datas.add(classData33);
 
-
+        ClassData classData34 = new ClassData();
+        classData34.name = "粒子 动画";
+        classData34.className = StarActivity.class;
+        classData34.adType = "100034";
+        datas.add(classData34);
 
     }
 

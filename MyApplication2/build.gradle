@@ -10,9 +10,9 @@ buildscript {
         maven {
             url "http://maven.aliyun.com/nexus/content/repositories/releases"
         }
-        maven {
-            url 'http://192.168.11.205:8023/repository/maven-releases/'
-        }
+//        maven {
+//            url 'http://192.168.11.205:8023/repository/maven-releases/'
+//        }
         maven {
             // Replace snapshots by releases for releases//
             url "https://linphone.org/maven_repository/"
@@ -31,7 +31,7 @@ buildscript {
         // in the individual module build.gradle files
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
-        classpath 'com.kingleng.demo:kl-app-gradle:1.1.1'//命名是我们的groupId：moduleName：version
+//        classpath 'com.kingleng.demo:kl-app-gradle:1.1.1'//命名是我们的groupId：moduleName：version
 
     }
 }
@@ -44,9 +44,9 @@ allprojects {
         maven {
             url "http://maven.aliyun.com/nexus/content/repositories/releases"
         }
-        maven {
-            url 'http://192.168.11.205:8023/repository/maven-releases/'
-        }
+//        maven {
+//            url 'http://192.168.11.205:8023/repository/maven-releases/'
+//        }
         maven {
             // Replace snapshots by releases for releases//
             url "https://linphone.org/maven_repository/"

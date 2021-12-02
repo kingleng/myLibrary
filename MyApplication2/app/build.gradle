@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
-apply plugin: 'com.kingleng.demo.kl-host'
+//apply plugin: 'com.kingleng.demo.kl-host'
 
 android {
 
@@ -23,6 +23,10 @@ android {
             abiFilters "armeabi"
 //            , "armeabi-v7a"
         }
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
     }
 
 

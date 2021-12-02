@@ -1,5 +1,7 @@
 package com.example.leng.myapplication2;
 
+import android.util.Log;
+
 import java.util.HashMap;
 
 /**
@@ -9,13 +11,14 @@ public class Test {
 
     public static void main(String[] args) {
 
-//        double a = 40;
-//        for(int i=0;i<10;i++){
-//            a = a*1.14+5;
-//
-//            System.out.println("i = "+i+ ":::"+"a ="+a);
-//        }
-//
+
+        double a = 40;
+        for(int i=0;i<10;i++){
+            a = a*1.14+5;
+
+            System.out.println("i = "+i+ ":::"+"a ="+a);
+        }
+
 //        KLHashMap<String,String> map = new KLHashMap();
 //        map.put("aa","aaaaaaaaaaa");
 //        map.put("bb","aabbbbbbbbbbbb");
