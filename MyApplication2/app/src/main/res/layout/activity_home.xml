@@ -21,7 +21,8 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/qb_px_400"
         android:layout_marginBottom="15dp"
-        android:layout_marginTop="15dp" >
+        android:layout_marginTop="15dp"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -44,7 +45,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/color_d4d4d4"
-        android:layout_below="@+id/fl_adplaceholder"/>
+        android:layout_below="@+id/fl_adplaceholder"
+        android:scrollbars="vertical"/>
 
 
 

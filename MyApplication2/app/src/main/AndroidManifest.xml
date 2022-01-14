@@ -48,7 +48,8 @@
         android:theme="@style/Theme.DesignDemo"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
-        <activity android:name=".ui.activity.star.StarActivity"></activity>
+        <activity android:name=".ui.activity.RecyclerViewPagerActivity"></activity>
+        <activity android:name=".ui.activity.star.StarActivity" />
         <activity android:name=".ui.activity.LargeImageActivity" />
         <activity android:name=".ui.activity.WNFXActivity" />
         <activity android:name=".ui.activity.YMTDActivity" />
@@ -88,7 +89,20 @@
             android:label="@string/title_activity_frame_animation"
             android:theme="@style/Theme.DesignDemo.NoActionBar" />
         <activity android:name=".ui.activity.CameraActivity" />
-        <activity android:name=".ui.activity.WebviewActivity" />
+        <activity android:name=".ui.activity.WebviewActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+
+
+            <!-- &lt;!&ndash; launcher配置 打开注释后该应用就是桌面app了 &ndash;&gt; -->
+            <!-- &lt;!&ndash; <category android:name="android.intent.category.HOME" /> &ndash;&gt; -->
+            <!-- &lt;!&ndash; <category android:name="android.intent.category.DEFAULT" /> &ndash;&gt; -->
+            <!-- </intent-filter> -->
+        </activity>
         <activity android:name=".ui.activity.VideoViewActivity" />
         <activity android:name=".ui.activity.XuanFuActivity" />
         <activity android:name=".ui.activity.ViewPagerActivity" />

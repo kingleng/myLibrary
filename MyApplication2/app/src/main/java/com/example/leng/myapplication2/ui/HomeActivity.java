@@ -14,6 +14,7 @@ import android.support.v4.view.LayoutInflaterCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -55,6 +56,7 @@ import com.example.leng.myapplication2.ui.activity.MusicActivity;
 import com.example.leng.myapplication2.ui.activity.MyGameActivity;
 import com.example.leng.myapplication2.ui.activity.MyTextNewActivity;
 import com.example.leng.myapplication2.ui.activity.Pic2AsciiActivity;
+import com.example.leng.myapplication2.ui.activity.RecyclerViewPagerActivity;
 import com.example.leng.myapplication2.ui.activity.RefreshActivity;
 import com.example.leng.myapplication2.ui.activity.SVGActivity;
 import com.example.leng.myapplication2.ui.activity.SendSMSActivity;
@@ -198,22 +200,6 @@ public class HomeActivity extends BaseActivity {
             }
 
         });
-
-//        PersonObserver p1 = new PersonObserver("小一");
-//        PersonObserver p2 = new PersonObserver("小二");
-//        PersonObserver p3 = new PersonObserver("小三");
-//        PersonObserver p4 = new PersonObserver("小四");
-//
-//        AndroidObervable androidObervable = new AndroidObervable();
-//
-//        androidObervable.addObserver(p1);
-//        androidObervable.addObserver(p2);
-//        androidObervable.addObserver(p3);
-//        androidObervable.addObserver(p4);
-//
-//        androidObervable.postNewInfo("吃饭了");
-//        androidObervable.postNewInfo("吃过了");
-
     }
 
     @Override
@@ -610,6 +596,12 @@ public class HomeActivity extends BaseActivity {
         classData34.className = StarActivity.class;
         classData34.adType = "100034";
         datas.add(classData34);
+
+        ClassData classData35 = new ClassData();
+        classData35.name = "RecyclerView实现Viewpager效果";
+        classData35.className = RecyclerViewPagerActivity.class;
+        classData35.adType = "100035";
+        datas.add(classData35);
 
     }
 

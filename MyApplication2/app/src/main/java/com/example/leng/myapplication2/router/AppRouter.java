@@ -26,6 +26,7 @@ import com.example.leng.myapplication2.ui.activity.MusicActivity;
 import com.example.leng.myapplication2.ui.activity.MyGameActivity;
 import com.example.leng.myapplication2.ui.activity.MyTextNewActivity;
 import com.example.leng.myapplication2.ui.activity.Pic2AsciiActivity;
+import com.example.leng.myapplication2.ui.activity.RecyclerViewPagerActivity;
 import com.example.leng.myapplication2.ui.activity.RefreshActivity;
 import com.example.leng.myapplication2.ui.activity.RxHttpActivity;
 import com.example.leng.myapplication2.ui.activity.SVGActivity;
@@ -170,6 +171,9 @@ public class AppRouter extends BaseRouter {
                 break;
             case TypeManager.MIAN_ITEM_34:
                 context.startActivity(new Intent(context, StarActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                break;
+            case TypeManager.MIAN_ITEM_35:
+                context.startActivity(new Intent(context, RecyclerViewPagerActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 break;
             default:
                 isUsed = false;
