@@ -45,22 +45,6 @@ public class RecyclerViewPagerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recycler_view_pager);
         recyclerView = findViewById(R.id.recyclerview_ll);
 
-        data.add("a");
-        data.add("a");
-        data.add("a");
-        data.add("a");
-        data.add("a");
-        data.add("a");
-        data.add("a");
-        data.add("a");
-        data.add("a");
-        data.add("a");
-        data.add("a");
-        data.add("a");
-        data.add("a");
-        data.add("a");
-        data.add("a");
-
         recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
             @Override
             public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
@@ -68,6 +52,7 @@ public class RecyclerViewPagerActivity extends AppCompatActivity {
             }
         });
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        initData();
         recyclerView.setAdapter(new QuickAdapter<String>(data) {
             @Override
             public int getLayoutId(int viewType) {
@@ -93,11 +78,18 @@ public class RecyclerViewPagerActivity extends AppCompatActivity {
                 }
             }
 
+            @Override
+            public void onViewAttachedToWindow(@NonNull VH holder) {
+                super.onViewAttachedToWindow(holder);
+                ScrollView scrollview_ll = holder.getView(R.id.scrollview_ll);
+                scrollview_ll.scrollTo(0,0);
+            }
         });
 
 
         MyPagerSnapHelper snapHelper = new MyPagerSnapHelper();
         snapHelper.attachToRecyclerView(recyclerView);//初始化数据
+
 
 
 //        recyclerView.setOnTouchListener(new View.OnTouchListener() {
@@ -189,6 +181,24 @@ public class RecyclerViewPagerActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void initData(){
+        data.add("a");
+        data.add("a");
+        data.add("a");
+        data.add("a");
+        data.add("a");
+        data.add("a");
+        data.add("a");
+        data.add("a");
+        data.add("a");
+        data.add("a");
+        data.add("a");
+        data.add("a");
+        data.add("a");
+        data.add("a");
+        data.add("a");
     }
 
     class  MyPagerSnapHelper extends PagerSnapHelper {

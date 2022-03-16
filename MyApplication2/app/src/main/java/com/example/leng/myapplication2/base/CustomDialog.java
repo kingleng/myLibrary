@@ -30,7 +30,7 @@ import com.example.leng.myapplication2.R;
  * |                      |
  * |  cancel        OK    |
  * |______________________|
- * </PRE>
+ * </PRE>DialogFragment
  *
  * @Title:
  * @Description:

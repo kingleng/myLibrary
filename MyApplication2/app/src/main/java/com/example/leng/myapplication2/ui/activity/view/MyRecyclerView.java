@@ -30,12 +30,13 @@ public class MyRecyclerView extends RecyclerView {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent e) {
-        Log.e("asd", "onInterceptTouchEvent");
         switch (e.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 lastY = e.getY();
+                super.onInterceptTouchEvent(e);
                 break;
             case MotionEvent.ACTION_MOVE:
+
                 //找到被点击位置的item的rootView
                 View view = findChildViewUnder(e.getX(), e.getY());
                 if (view != null) {
@@ -46,7 +47,6 @@ public class MyRecyclerView extends RecyclerView {
                     if (lastY != 0) {
                         float dY = e.getY() - lastY;
                         if (dY > 0) {
-                            Log.e("asd","下拉");
                             //下拉
                             boolean isTop;
                             if (scrollview_ll.canScrollVertically(-1)) {
@@ -59,7 +59,6 @@ public class MyRecyclerView extends RecyclerView {
                             return isTop;
                         } else {
                             //上滑
-                            Log.e("asd","上滑");
                             boolean isBottom;
                             if (scrollview_ll.canScrollVertically(1)){
                                 Log.e("asd","上滑：未到底");
@@ -68,7 +67,6 @@ public class MyRecyclerView extends RecyclerView {
                                 Log.e("asd","上滑：到底");
                                 isBottom = true;
                             }
-
                             return isBottom;
                         }
                     }
@@ -77,8 +75,12 @@ public class MyRecyclerView extends RecyclerView {
                 break;
             case MotionEvent.ACTION_UP:
                 lastY = 0;
+                super.onInterceptTouchEvent(e);
                 break;
+            default:
+                super.onInterceptTouchEvent(e);
         }
         return false;
     }
+
 }

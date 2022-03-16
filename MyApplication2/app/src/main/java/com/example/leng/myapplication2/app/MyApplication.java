@@ -76,7 +76,7 @@ public class MyApplication extends MultiDexApplication {
             }
         }).start();
 
-        ActivityTask.init(this, true);
+//        ActivityTask.init(this, true);
 
         if(videoCacheServer == null){
             videoCacheServer = new VideoCacheServer("");
