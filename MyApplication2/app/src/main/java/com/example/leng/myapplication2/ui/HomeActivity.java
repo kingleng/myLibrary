@@ -2,17 +2,28 @@ package com.example.leng.myapplication2.ui;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.res.Resources;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.IBinder;
 import android.provider.Settings;
+import android.support.annotation.RequiresApi;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.view.LayoutInflaterCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.RecyclerView;
@@ -73,6 +84,8 @@ import com.example.leng.myapplication2.ui.activity.star.StarActivity;
 import com.example.leng.myapplication2.ui.customWidget.NameBean;
 import com.example.leng.myapplication2.ui.customWidget.SectionDecoration;
 import com.example.leng.myapplication2.ui.myView.FloatDragView;
+import com.example.leng.myapplication2.ui.notification.ForegroundBinder;
+import com.example.leng.myapplication2.ui.notification.ForegroundService;
 import com.example.leng.myapplication2.ui.service.StartFloatBallService;
 import com.example.leng.myapplication2.utils.PluginUtil;
 import com.example.leng.myapplication2.voice.VoiceCallback;
@@ -146,6 +159,7 @@ public class HomeActivity extends BaseActivity {
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
 //        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+//        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2);
         recyclerView.setLayoutManager(linearLayoutManager);
 //        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
 //            @Override
@@ -200,6 +214,12 @@ public class HomeActivity extends BaseActivity {
             }
 
         });
+//        gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+//            @Override
+//            public int getSpanSize(int position) {
+//                return position == 0?1:2;
+//            }
+//        });
     }
 
     @Override
@@ -265,19 +285,65 @@ public class HomeActivity extends BaseActivity {
 //                startActivity(intent);
             }
         });
+//        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+//            createCargo(getApplicationContext());
+//        }
+//
+//
+//        NotificationCompat.Builder builder = new NotificationCompat.Builder(this,"amh.app.msg.cargo");
+//        builder.setSmallIcon(R.mipmap.icon_driver_app);
+//        builder.setContentTitle("郭嘉");
+//        builder.setContentText("我们打袁绍吧");
+//        //设置Notification.Default_ALL(默认启用全部服务(呼吸灯，铃声等)
+//        builder.setDefaults(Notification.DEFAULT_ALL);
+//        //调用NotificationCompat.Builder的setContentIntent()来添加PendingIntent
+//        Intent intent = new Intent(this, Main2Activity.class);
+//        intent.putExtra("info", "郭嘉给你发了一个计策！");
+//        PendingIntent pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+//        builder.setContentIntent(pi);
+//        //获取Notification
+//        Notification n = builder.build();
+//        //通过NotificationCompat.Builder.build()来获得notification对象自己
+//        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+//        //然后调用NotificationManager.notify()向系统转交
+//        manager.notify(0x02, n);
 
 
         FloatDragView.addFloatDragView(this, rela_layout, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new ParticleSystem(HomeActivity.this, 1000, R.drawable.p_weather_sun, 3000)
-                        .setSpeedModuleAndAngleRange(0.05f, 0.2f, 0, 360)
-                        .setRotationSpeed(30)
-                        .setScaleRange(0.1f,0.3f)
-                        .setAcceleration(0, 360)
-                        .oneShot(recyclerView, 200);
+//                new ParticleSystem(HomeActivity.this, 1000, R.drawable.p_weather_sun, 3000)
+//                        .setSpeedModuleAndAngleRange(0.05f, 0.2f, 0, 360)
+//                        .setRotationSpeed(30)
+//                        .setScaleRange(0.1f,0.3f)
+//                        .setAcceleration(0, 360)
+//                        .oneShot(recyclerView, 200);
 
-                permission();
+                final Intent intent = new Intent(HomeActivity.this, ForegroundService.class);
+
+                bindService(intent, new ServiceConnection() {
+                    @Override
+                    public void onServiceConnected(ComponentName name, IBinder binder) {
+                        try{
+                            if (binder instanceof ForegroundBinder) {
+                                ForegroundBinder fgBindeer = (ForegroundBinder) binder;
+                                ForegroundService service = fgBindeer.getService();
+                                if (service != null) {
+                                    service.forceForeground();
+                                }
+                            }
+                            unbindService(this);
+                        }catch (Exception e){
+
+                        }
+                    }
+
+                    @Override
+                    public void onServiceDisconnected(ComponentName name) {
+                    }
+                }, Context.BIND_AUTO_CREATE);
+
+//                permission();
 
 ////                 点击事件
 //                popupWindow.setAnchorView(view);
@@ -314,6 +380,25 @@ public class HomeActivity extends BaseActivity {
                 popupWindow.dismiss();
             }
         });
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private static void createCargo(Context context) {
+        String name = "cargo通知";
+        Uri sound = new Uri.Builder().scheme("android.resource")
+                .authority(context.getPackageName())
+                .path("raw/ring_oppo_ntf_channel_cargo")
+                .build();
+        NotificationChannel channel = new NotificationChannel("amh.app.msg.cargo", name, NotificationManager.IMPORTANCE_HIGH);
+//        channel.setDescription(context.getString(R.string.biz_common_app_ntf_channel_desc_msg_cargo));
+        channel.setSound(sound, Notification.AUDIO_ATTRIBUTES_DEFAULT);
+        channel.enableLights(false);
+        channel.enableVibration(false);
+        channel.setVibrationPattern(new long[]{0L});
+        NotificationManager manager = context.getSystemService(NotificationManager.class);
+        if (manager != null) {
+            manager.createNotificationChannel(channel);
+        }
     }
 
     public void permission(){
