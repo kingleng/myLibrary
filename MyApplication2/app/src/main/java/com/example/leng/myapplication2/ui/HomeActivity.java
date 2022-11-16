@@ -343,7 +343,7 @@ public class HomeActivity extends BaseActivity {
                     }
                 }, Context.BIND_AUTO_CREATE);
 
-//                permission();
+                permission();
 
 ////                 点击事件
 //                popupWindow.setAnchorView(view);

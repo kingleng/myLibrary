@@ -14,17 +14,25 @@
         android:layout_centerVertical="true"/>
 
 
-    <com.lihang.ShadowLayout
+<!--    <com.lihang.ShadowLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_toRightOf="@+id/item_icon"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginLeft="10dp"-->
+<!--        android:padding="@dimen/qb_px_10"-->
+<!--        app:hl_cornerRadius="5dp"-->
+<!--        app:hl_shadowColor="#2aff0000"-->
+<!--        app:hl_shadowBackColor="#fff"-->
+<!--        app:hl_shadowLimit="5dp">-->
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/item_icon"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="10dp"
-        android:padding="@dimen/qb_px_10"
-        app:hl_cornerRadius="5dp"
-        app:hl_shadowColor="#2aff0000"
-        app:hl_shadowBackColor="#fff"
-        app:hl_shadowLimit="5dp">
+        android:padding="@dimen/qb_px_10">
 
         <TextView
             android:id="@+id/item_name"
@@ -33,7 +41,9 @@
             android:text="@string/app_name"
             android:layout_centerVertical="true" />
 
-    </com.lihang.ShadowLayout>
+    </LinearLayout>
+
+<!--    </com.lihang.ShadowLayout>-->
 
 
 </RelativeLayout>

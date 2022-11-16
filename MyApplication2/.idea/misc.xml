@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable/bg_notification_btn.xml" value="0.222" />
         <entry key="app/src/main/res/drawable/bg_red_rectangle.xml" value="0.248" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/item_home_select.xml" value="0.16354166666666667" />
         <entry key="app/src/main/res/layout/notification_normal_layout.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/view_guide_simple.xml" value="0.12239583333333333" />
       </map>
