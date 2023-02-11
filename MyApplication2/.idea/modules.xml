@@ -4,16 +4,46 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/MyApplication2.iml" filepath="$PROJECT_DIR$/.idea/modules/MyApplication2.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MyApplication2.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MyApplication2.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MyApplication2.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MyApplication2.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MyApplication2.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MyApplication2.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MyApplication2.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MyApplication2.app.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app2library/MyApplication2.app2library.iml" filepath="$PROJECT_DIR$/.idea/modules/app2library/MyApplication2.app2library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app2library/MyApplication2.app2library.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app2library/MyApplication2.app2library.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app2library/MyApplication2.app2library.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app2library/MyApplication2.app2library.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app2library/MyApplication2.app2library.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app2library/MyApplication2.app2library.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/baselibrary/MyApplication2.baselibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/baselibrary/MyApplication2.baselibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/baselibrary/MyApplication2.baselibrary.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/baselibrary/MyApplication2.baselibrary.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/baselibrary/MyApplication2.baselibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/baselibrary/MyApplication2.baselibrary.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/baselibrary/MyApplication2.baselibrary.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/baselibrary/MyApplication2.baselibrary.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/gradlelibrary/MyApplication2.gradlelibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/gradlelibrary/MyApplication2.gradlelibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gradlelibrary/MyApplication2.gradlelibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/gradlelibrary/MyApplication2.gradlelibrary.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gradlelibrary/MyApplication2.gradlelibrary.test.iml" filepath="$PROJECT_DIR$/.idea/modules/gradlelibrary/MyApplication2.gradlelibrary.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/kl_annotation/MyApplication2.kl_annotation.iml" filepath="$PROJECT_DIR$/.idea/modules/kl_annotation/MyApplication2.kl_annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kl_annotation/MyApplication2.kl_annotation.main.iml" filepath="$PROJECT_DIR$/.idea/modules/kl_annotation/MyApplication2.kl_annotation.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kl_annotation/MyApplication2.kl_annotation.test.iml" filepath="$PROJECT_DIR$/.idea/modules/kl_annotation/MyApplication2.kl_annotation.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/kl_compiler/MyApplication2.kl_compiler.iml" filepath="$PROJECT_DIR$/.idea/modules/kl_compiler/MyApplication2.kl_compiler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kl_compiler/MyApplication2.kl_compiler.main.iml" filepath="$PROJECT_DIR$/.idea/modules/kl_compiler/MyApplication2.kl_compiler.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kl_compiler/MyApplication2.kl_compiler.test.iml" filepath="$PROJECT_DIR$/.idea/modules/kl_compiler/MyApplication2.kl_compiler.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/linphonelibrary/MyApplication2.linphonelibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/linphonelibrary/MyApplication2.linphonelibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/linphonelibrary/MyApplication2.linphonelibrary.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/linphonelibrary/MyApplication2.linphonelibrary.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/linphonelibrary/MyApplication2.linphonelibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/linphonelibrary/MyApplication2.linphonelibrary.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/linphonelibrary/MyApplication2.linphonelibrary.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/linphonelibrary/MyApplication2.linphonelibrary.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mylibrary/MyApplication2.mylibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/mylibrary/MyApplication2.mylibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mylibrary/MyApplication2.mylibrary.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/mylibrary/MyApplication2.mylibrary.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mylibrary/MyApplication2.mylibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mylibrary/MyApplication2.mylibrary.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mylibrary/MyApplication2.mylibrary.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/mylibrary/MyApplication2.mylibrary.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/myloginlibrary/MyApplication2.myloginlibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/myloginlibrary/MyApplication2.myloginlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/myloginlibrary/MyApplication2.myloginlibrary.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/myloginlibrary/MyApplication2.myloginlibrary.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/myloginlibrary/MyApplication2.myloginlibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/myloginlibrary/MyApplication2.myloginlibrary.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/myloginlibrary/MyApplication2.myloginlibrary.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/myloginlibrary/MyApplication2.myloginlibrary.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mypluginapplication/MyApplication2.mypluginapplication.iml" filepath="$PROJECT_DIR$/.idea/modules/mypluginapplication/MyApplication2.mypluginapplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mypluginapplication/MyApplication2.mypluginapplication.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/mypluginapplication/MyApplication2.mypluginapplication.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mypluginapplication/MyApplication2.mypluginapplication.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mypluginapplication/MyApplication2.mypluginapplication.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mypluginapplication/MyApplication2.mypluginapplication.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/mypluginapplication/MyApplication2.mypluginapplication.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugincorelibrary/MyApplication2.plugincorelibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/plugincorelibrary/MyApplication2.plugincorelibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugincorelibrary/MyApplication2.plugincorelibrary.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/plugincorelibrary/MyApplication2.plugincorelibrary.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugincorelibrary/MyApplication2.plugincorelibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/plugincorelibrary/MyApplication2.plugincorelibrary.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugincorelibrary/MyApplication2.plugincorelibrary.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/plugincorelibrary/MyApplication2.plugincorelibrary.unitTest.iml" />
     </modules>
   </component>
 </project>
