@@ -183,6 +183,23 @@ public class HomeActivity extends BaseActivity {
                 }
                 return "";
             }
+
+            @Override
+            public int getGroupType(int position) {
+                int size = 0;
+                if(position>0){
+                    if(TextUtils.equals(dataList.get(position-1).getName(),dataList.get(position).getName())){
+                        size++;
+                    }
+                }
+                if(position<dataList.size()-1){
+                    if(TextUtils.equals(dataList.get(position+1).getName(),dataList.get(position).getName())){
+                        size++;
+                    }
+                }
+
+                return size;
+            }
         }));
 
         recyclerView.setAdapter(new QuickAdapter<ClassData>(datas) {
@@ -312,38 +329,38 @@ public class HomeActivity extends BaseActivity {
         FloatDragView.addFloatDragView(this, rela_layout, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                new ParticleSystem(HomeActivity.this, 1000, R.drawable.p_weather_sun, 3000)
-//                        .setSpeedModuleAndAngleRange(0.05f, 0.2f, 0, 360)
-//                        .setRotationSpeed(30)
-//                        .setScaleRange(0.1f,0.3f)
-//                        .setAcceleration(0, 360)
-//                        .oneShot(recyclerView, 200);
+                new ParticleSystem(HomeActivity.this, 1000, R.drawable.p_weather_sun, 3000)
+                        .setSpeedModuleAndAngleRange(0.05f, 0.2f, 0, 360)
+                        .setRotationSpeed(30)
+                        .setScaleRange(0.1f,0.3f)
+                        .setAcceleration(0, 360)
+                        .oneShot(recyclerView, 200);
 
-                final Intent intent = new Intent(HomeActivity.this, ForegroundService.class);
-
-                bindService(intent, new ServiceConnection() {
-                    @Override
-                    public void onServiceConnected(ComponentName name, IBinder binder) {
-                        try{
-                            if (binder instanceof ForegroundBinder) {
-                                ForegroundBinder fgBindeer = (ForegroundBinder) binder;
-                                ForegroundService service = fgBindeer.getService();
-                                if (service != null) {
-                                    service.forceForeground();
-                                }
-                            }
-                            unbindService(this);
-                        }catch (Exception e){
-
-                        }
-                    }
-
-                    @Override
-                    public void onServiceDisconnected(ComponentName name) {
-                    }
-                }, Context.BIND_AUTO_CREATE);
-
-                permission();
+//                final Intent intent = new Intent(HomeActivity.this, ForegroundService.class);
+//
+//                bindService(intent, new ServiceConnection() {
+//                    @Override
+//                    public void onServiceConnected(ComponentName name, IBinder binder) {
+//                        try{
+//                            if (binder instanceof ForegroundBinder) {
+//                                ForegroundBinder fgBindeer = (ForegroundBinder) binder;
+//                                ForegroundService service = fgBindeer.getService();
+//                                if (service != null) {
+//                                    service.forceForeground();
+//                                }
+//                            }
+//                            unbindService(this);
+//                        }catch (Exception e){
+//
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onServiceDisconnected(ComponentName name) {
+//                    }
+//                }, Context.BIND_AUTO_CREATE);
+//
+//                permission();
 
 ////                 点击事件
 //                popupWindow.setAnchorView(view);

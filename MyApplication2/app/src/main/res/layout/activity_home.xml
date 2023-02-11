@@ -22,7 +22,7 @@
         android:layout_height="@dimen/qb_px_400"
         android:layout_marginBottom="15dp"
         android:layout_marginTop="15dp"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <TextView
             android:layout_width="wrap_content"

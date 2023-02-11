@@ -112,7 +112,8 @@
         <activity
             android:name=".ui.HomeActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -169,7 +170,8 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
-        <receiver android:name="com.mintegral.msdk.click.AppReceiver">
+        <receiver android:name="com.mintegral.msdk.click.AppReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_ADDED" />
 
@@ -177,7 +179,8 @@
             </intent-filter>
         </receiver>
 
-        <service android:name="com.mintegral.msdk.shell.MTGService">
+        <service android:name="com.mintegral.msdk.shell.MTGService"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.mintegral.msdk.download.action" />
             </intent-filter>

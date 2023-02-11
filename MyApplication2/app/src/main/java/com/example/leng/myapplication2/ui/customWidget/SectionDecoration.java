@@ -2,6 +2,7 @@ package com.example.leng.myapplication2.ui.customWidget;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -10,7 +11,9 @@ import android.support.v7.widget.RecyclerView;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.leng.myapplication2.R;
 import com.example.leng.myapplication2.ui.tools.DensityUtil;
@@ -33,14 +36,18 @@ public class SectionDecoration extends RecyclerView.ItemDecoration {
     private int alignBottom;
     private Paint.FontMetrics fontMetrics;
 
+    private Context mContext;
+
 
     public SectionDecoration(List<NameBean> dataList, Context context, DecorationCallback decorationCallback) {
         Resources res = context.getResources();
+        this.mContext = context;
         this.dataList = dataList;
         this.callback = decorationCallback;
         //设置悬浮栏的画笔---paint
         paint = new Paint();
-        paint.setColor(res.getColor(R.color.color_69222222));
+//        paint.setColor(res.getColor(R.color.color_69222222));
+        paint.setColor(res.getColor(R.color.color_d4d4d4));
 
         //设置悬浮栏中文本的画笔
         textPaint = new TextPaint();
@@ -112,6 +119,10 @@ public class SectionDecoration extends RecyclerView.ItemDecoration {
 
             int viewBottom = view.getBottom();
             float textY = Math.max(topGap, view.getTop());
+//            float textY = view.getTop();
+//            if(callback.getGroupType(position)>0){
+//                textY = Math.max(topGap, view.getTop());
+//            }
             //下一个和当前不一样移动当前
             if (position + 1 < itemCount) {
                 String nextGroupId = callback.getGroupId(position + 1);
@@ -124,8 +135,41 @@ public class SectionDecoration extends RecyclerView.ItemDecoration {
             c.drawRect(left, textY - topGap, right, textY, paint);
             //left+2*alignBottom 决定了文本往左偏移的多少（加-->向左移）
             //textY-alignBottom  决定了文本往右偏移的多少  (减-->向上移)
-            c.drawText(textLine, left + 2 * alignBottom, textY - alignBottom, textPaint);
+//            c.drawText(textLine, left + 2 * alignBottom, textY - alignBottom, textPaint);
+
+            if(view0 == null){
+                view0 = LayoutInflater.from(mContext).inflate(R.layout.notification_normal_layout,null,false);
+            }
+
+            view0.draw(c);
         }
+
+    }
+
+    View view0;
+
+    private Bitmap copyByCanvas(View view) {
+
+        view.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+
+                View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+
+        int width = view.getMeasuredWidth();
+
+        int height = view.getMeasuredHeight();
+
+        view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+
+        Bitmap bp = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+
+        Canvas canvas = new Canvas(bp);
+
+        view.draw(canvas);
+
+        canvas.save();
+
+        return bp;
+
     }
 
     @Override
@@ -174,5 +218,7 @@ public class SectionDecoration extends RecyclerView.ItemDecoration {
         String getGroupId(int position);
 
         String getGroupFirstLine(int position);
+
+        int getGroupType(int position);
     }
 }
