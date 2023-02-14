@@ -140,8 +140,14 @@ public class SectionDecoration extends RecyclerView.ItemDecoration {
             if(view0 == null){
                 view0 = LayoutInflater.from(mContext).inflate(R.layout.notification_normal_layout,null,false);
             }
+            view0.findViewById(R.id.navigate_layout).setOnClickListener(view1 -> {
+                Toast.makeText(mContext, "navigate_layout : "+position, Toast.LENGTH_SHORT).show();
+            });
+            view0.findViewById(R.id.order_layout).setOnClickListener(view1 -> {
+                Toast.makeText(mContext, "order_layout : "+position, Toast.LENGTH_SHORT).show();
+            });
+            c.drawBitmap(copyByCanvas(view0),left, textY - topGap,paint);
 
-            view0.draw(c);
         }
 
     }
