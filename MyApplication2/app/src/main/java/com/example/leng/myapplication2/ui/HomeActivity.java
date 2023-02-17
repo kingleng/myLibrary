@@ -226,6 +226,13 @@ public class HomeActivity extends BaseActivity {
                             AppModule.startActivityByUrl(HomeActivity.this,data.url);
                         }
 
+//                        String s = "<font color='#ÅFFF665' style='font-size:14px;'>冷冻品 托盘 2月16日24点前装货 一装一卸</font>";
+//
+//                        Log.e("asd","s1 = "+s);
+//                        String s2 = s.replaceAll("color='#\\w{6,8}'","color='#ffffff'");
+//
+//                        Log.e("asd","s2 = "+s2);
+
                     }
                 });
             }
